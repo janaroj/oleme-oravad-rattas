@@ -311,6 +311,7 @@ td { vertical-align: top; }
 .otsing-more {
     background-image: url("/img/otsing-more.png");
 }
+
 span {
     padding-top: 25px;
     font-family: 'Segoe UI';
@@ -323,23 +324,25 @@ span {
     height: 165px;
 }
 
+.sidebar{
+    width: 370px;
+    position: relative;
+
+}
 .content {
-    width: 700px;
-    height: 600px;
-    margin-left: 300px;
-    background-color: #222;
+    margin-left: 390px;
+    margin-top: -70px;
+    width: 300px;
+    height: 170px;
+    background-color: #fff;
 }
 
-.search-box-half{
+.half{
     height: 200px;
-    width: 370px;
-    position: relative;
 }
 
-.search-box-full{
+.full{
     height: 470px;
-    width: 370px;
-    position: relative;
 }
 
 .details {
@@ -352,7 +355,7 @@ span {
 .search-triangle{
     width: 370px;
     height: 90px;
-    position: relative;
+   
 }
 .search-button{
     position: absolute;
