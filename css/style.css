@@ -312,6 +312,10 @@ td { vertical-align: top; }
     background-image: url("/img/otsing-more.png");
 }
 
+.objekt {
+    background-image: url("/img/objekt.png");
+}
+
 span {
     padding-top: 25px;
     font-family: 'Segoe UI';
