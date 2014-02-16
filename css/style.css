@@ -313,7 +313,6 @@ td { vertical-align: top; }
 }
 span {
     padding-top: 25px;
-    padding-left: 130px;
     font-family: 'Segoe UI';
     font-size: 26px;
     position: static;
@@ -325,20 +324,37 @@ span {
 }
 
 .content {
-    width: fill-available;
-    height: fill-available;
+    width: 700px;
+    height: 600px;
     margin-left: 300px;
     background-color: #222;
 }
 
 .search-box-half{
-    height: 165px;
+    height: 200px;
+    width: 370px;
+    position: relative;
 }
 
 .search-box-full{
-    height: 400px;
+    height: 470px;
+    width: 370px;
+    position: relative;
 }
 
 .details {
     font-size: 32px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+        
+}
+.search-triangle{
+    width: 370px;
+    height: 90px;
+    position: relative;
+}
+.search-button{
+    position: absolute;
+    left: 130px; 
 }
