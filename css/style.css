@@ -28,7 +28,7 @@ span {
     font-weight: 500;
 }
 
-.top-nav {
+.header {
     height: 165px;
 }
 
@@ -68,9 +68,4 @@ span {
 .search-button{
     position: absolute;
     left: 130px; 
-}
-.ask-info-button{
-    position: absolute;
-    left: 150px;
-    top: 780px;
 }
