@@ -10,7 +10,7 @@
  
     <title>Website Title</title>
  
-    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
  
     <!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
     <link rel="shortcut icon" href="images/favicon.png" />
@@ -23,6 +23,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
   <div class="header">
-   <input type="button" value="Logi sisse" onClick="location.href='login.html'">
-   <input type="button" value="Registreeri" onClick="location.href='registration.html'">
- </div>
+    <div class="container">
+      <img src="img/stiilneAuto.png">
+      <input type="button" value="Logi sisse" onClick="location.href='login.html'">
+      <input type="button" value="Registreeri" onClick="location.href='registration.html'">
+    </div>
+  </div>
