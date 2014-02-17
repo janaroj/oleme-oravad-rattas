@@ -85,44 +85,38 @@ span {
 }
 
 .header {
-        height: 200px;
-        border: 2px;
-        background-color: #ff00dc;
-        opacity: 0.6;
-}
-
-.sidebar{
-    width: 340px;
-    position: relative;
-    background-color: #f00;
-    float: left;
-    min-height: 2px;
-
-}
-
-.sidebar select{
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0px;
+    left: 0px;
     width: 100%;
-
+    z-index: 100;
+     
 }
-
-.sidebar-content{
+.login  {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 300px;
+}
+.login-field  {
     display: none;
+}
+.login-toggle{
+    left: 50%;
+    margin-left: -150px;
+    background: green;
+    text-align: center;
+    cursor: pointer;
 }
 
 .content {
-    width: 700px;
-    height: 500px;
+    margin-top: 120px;
     background-color: #fff;
-    float: left;
     padding: 15px;
 }
-
-.half{
-    height: 200px;
-}
-
-.full{
-    height: 470px;
+.detail-search{
+    display: none;
 }
 
 .details {
@@ -132,37 +126,37 @@ span {
     right: 10px;
         
 }
-.search-triangle{
-    position: absolute;
-    left: 0;
-    bottom: -68px;
-    width: 0; 
-    height: 0; 
-    border-left: 170px solid transparent;
-    border-right: 170px solid transparent;
-    border-top: 70px solid #f00;
-   
+.search-box{
+    margin-top: 78px;
 }
-.element:hover{
+.object:hover{
     background-color:#ECE8E2; 
 }
-a {
+.object-img{
+    width: 25%;
+    float: left;
+
+}
+.object-img img{
+    width: 100%;
+}
+.object-text{
+    width: 75%;
+    float: left;
+}
+.object a {
+    display: inline-block;
     color: #000000;
     text-decoration: none;
 }
-.element{
-    width: 320px;
+.object{
+    width: 45%;
     float: left;
+    margin-left: 2.5%
+    margin-right: 2.5%;
     padding: 10px;
 
 }  
-.element img{
-    float: left;
-
-}
-.element p{
-    margin-left: 210px;
-}
 .open-search{
     position: absolute;
     left: 0;
@@ -174,6 +168,8 @@ a {
 .container{
     width: 1140px;
     margin: 0 auto;
+    position: relative;
+    min-height: 1px;
 }
 .clear {
     clear: both;

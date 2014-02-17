@@ -24,8 +24,69 @@
 
   <div class="header">
     <div class="container">
-      <img src="img/stiilneAuto.png">
-      <input type="button" value="Logi sisse" onClick="location.href='login.html'">
-      <input type="button" value="Registreeri" onClick="location.href='registration.html'">
+      <div class="login">
+        <div class="login-field">
+          <form>
+            <input type="text" name="" placeholder="username" >
+            <input type="password" name="" placeholder="password" >
+            <input type="submit" value="Logi sisse">
+          </form>
+            <div>
+              <a href="registration.html">Registreeru</a>
+          </div>
+        </div>
+        <div class="login-toggle">Logi sisse</div>
+        
+      </div>
+      <div class="clear"></div>
     </div>
+
+    <div class="search-box">
+      <div class="container">
+        <select>
+          <option>Mis iganes</option>
+          <option>Kes iganes</option>
+          <option>Kus iganes</option>
+          <option>Mida iganes</option>
+        </select>
+      <select>
+          <option>Mis iganes</option>
+          <option>Kes iganes</option>
+          <option>Kus iganes</option>
+          <option>Mida iganes</option>
+        </select>
+      <button>Otsi</button>
+      <button class="more-details">Rohkem detaile</button>
+      <div class="detail-search">
+        <select>
+          <option>Mis iganes</option>
+          <option>Kes iganes</option>
+          <option>Kus iganes</option>
+          <option>Mida iganes</option>
+        </select>
+      <select>
+          <option>Mis iganes</option>
+          <option>Kes iganes</option>
+          <option>Kus iganes</option>
+          <option>Mida iganes</option>
+        </select>
+      <select>
+          <option>Mis iganes</option>
+          <option>Kes iganes</option>
+          <option>Kus iganes</option>
+          <option>Mida iganes</option>
+        </select>
+      <select>
+          <option>Mis iganes</option>
+          <option>Kes iganes</option>
+          <option>Kus iganes</option>
+          <option>Mida iganes</option>
+        </select>
+        
+
+      </div>
+
+      </div>
+    </div>
+
   </div>
