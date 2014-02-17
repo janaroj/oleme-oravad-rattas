@@ -74,24 +74,4 @@ Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõ
   <div class="clear"></div>
   </div>
   </div>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-  $(function(){
-    $(".more-details").click(function(){
-      $(".detail-search").slideToggle();
-    });
-    $(".login-toggle").click(function(){
-      $(".login-field").slideToggle();
-    });
-    $(".small-image img").click(function(){
-      var img = $('<img>');
-      $('.big-image img').hide();
-      img.attr('src',  $(this).attr('src'));
-      img.hide().appendTo('.big-image').fadeIn(500);
-    });
-
-  });
-
-</script>
-</body>
-</html>
+<?php include 'footer.php';?>

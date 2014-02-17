@@ -11,7 +11,8 @@
     <title>Website Title</title>
  
     <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
- 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
     <!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
     <link rel="shortcut icon" href="images/favicon.png" />
  

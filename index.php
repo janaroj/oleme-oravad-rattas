@@ -27,7 +27,7 @@
         </div>
       </a>
       </div>
-<div class="object">
+      <div class="object">
       <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
@@ -78,17 +78,4 @@
 
   </div>
   </div>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-  $(function(){
-    $(".more-details").click(function(){
-      $(".detail-search").slideToggle();
-    });
-    $(".login-toggle").click(function(){
-      $(".login-field").slideToggle();
-    });
-  });
-
-</script>
-</body>
-</html>
+<?php include 'footer.php';?>
