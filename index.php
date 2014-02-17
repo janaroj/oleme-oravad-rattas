@@ -4,7 +4,7 @@
 
   <div class="content">
       <div class="object">
-      <a href="objekt.html">
+      <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
         </div>
@@ -16,7 +16,7 @@
       </a>
       </div>
 <div class="object">
-      <a href="objekt.html">
+      <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
         </div>
@@ -28,7 +28,7 @@
       </a>
       </div>
 <div class="object">
-      <a href="objekt.html">
+      <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
         </div>
@@ -40,7 +40,7 @@
       </a>
       </div>
       <div class="object">
-      <a href="objekt.html">
+      <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
         </div>
@@ -51,7 +51,7 @@
         </div>
       </a>
       </div><div class="object">
-      <a href="objekt.html">
+      <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
         </div>
@@ -62,7 +62,7 @@
         </div>
       </a>
       </div><div class="object">
-      <a href="objekt.html">
+      <a href="object.php">
         <div class="object-img">
         <img alt="" src="img/car.jpg" />
         </div>
