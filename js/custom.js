@@ -1,5 +1,6 @@
 
   $(function(){
+    
     $(".more-details").click(function(){
       $(".detail-search").slideToggle();
       if($(this).text() == "Rohkem detaile"){

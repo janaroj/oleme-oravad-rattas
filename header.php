@@ -56,7 +56,7 @@
           <option>Kus iganes</option>
           <option>Mida iganes</option>
         </select>
-      <button>Otsi</button>
+      <a href="index.php"><button>Otsi</button></a>
       <button class="more-details">Rohkem detaile</button>
       <div class="detail-search">
         <select>
