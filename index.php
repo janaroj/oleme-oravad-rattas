@@ -1,5 +1,8 @@
 
-<?php include 'header.php';?>
+<?php 
+  include 'header.php';
+  include 'head.php';?>
+
 <div class="container">
 
   <div class="content">
@@ -77,5 +80,5 @@
   <div class="clear"></div>
 
   </div>
-  </div>
+</div>
 <?php include 'footer.php';?>

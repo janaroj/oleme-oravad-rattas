@@ -1,5 +1,8 @@
 
-<?php include 'header.php';?>
+<?php 
+    include 'header.php';
+    include 'head.php';
+?>
 <div class="container">
 
   <div class="content">
@@ -71,7 +74,10 @@ Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõ
         </ul>
       </div>
     </div>
-  <div class="clear"></div>
+
+    <a href="index.php">Tagasi otsingutulemuste juurde</a>
+    
+    <div class="clear"></div>
   </div>
   </div>
 <?php include 'footer.php';?>

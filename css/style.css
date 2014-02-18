@@ -184,6 +184,12 @@ body {
 .big-image img{
     width: 100%;
 }
+h1{
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 0.6em;
+}
+
 h2{
     font-size: 18px;
     font-weight: 600;
@@ -203,6 +209,7 @@ h3 {
     width: 100%;
 }
 .content-small{
+    padding-left: 2%;
     width: 67%;
     float: left;
     display: inline-block;
@@ -210,6 +217,13 @@ h3 {
 }
 .data-input-table table{
     width: 100%;
+}
+.data-input-content{
+
+}
+.car{
+    display: none;
+    width: 50%;
 }
 
 

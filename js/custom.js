@@ -23,4 +23,26 @@
     {      
       $(".registration-form").text("Sinu kasutaja on edukalt registreeritud");
     })
+    $(".add-car").click(function(){
+        $(".car").hide();
+        $(".data-input-table table").find("input").each(function(){
+          if(!$(this).val()){
+            $(this).attr("placeholder","Sisesta info");
+          }
+        })    
+      
+    })
+    $(".change-car").click(function(){
+        $(".car").toggle();
+
+        $(".data-input-table table").find("input").each(function(){
+          if(!$(this).val()){
+            $(this).attr("placeholder","bla bla");
+          }
+        })
+
+    })
+
+    
+
       });
