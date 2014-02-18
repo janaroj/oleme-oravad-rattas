@@ -71,6 +71,11 @@ body {
     right: 0px;
     width: 300px;
 }
+
+.login-button{
+    width: 50%;
+}
+
 .login-field  {
     display: none;
 }
@@ -86,6 +91,7 @@ body {
     margin-top: 120px;
     background-color: #fff;
     padding: 15px;
+    display: inline-block;
 }
 .detail-search{
     display: none;
@@ -186,6 +192,24 @@ h3 {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4em;
+}
+
+.side-nav{
+    width: 30%;
+    float: left;
+    display: inline-block;
+}
+.side-nav button{
+    width: 100%;
+}
+.content-small{
+    width: 67%;
+    float: left;
+    display: inline-block;
+
+}
+.data-input-table table{
+    width: 100%;
 }
 
 

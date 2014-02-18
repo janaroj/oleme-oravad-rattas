@@ -30,10 +30,13 @@
           <form>
             <input type="text" name="" placeholder="username" >
             <input type="password" name="" placeholder="password" >
+            <!--
             <input type="submit" value="Logi sisse">
+            -->
           </form>
+          <a href="login.php" class="login-button">Logi sisse</a>
             <div>
-              <a href="registration.html">Registreeru</a>
+              <a href="registration.php">Registreeru</a>
           </div>
         </div>
         <div class="login-toggle">Logi sisse</div>
