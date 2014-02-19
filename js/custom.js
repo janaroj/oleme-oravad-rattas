@@ -1,6 +1,9 @@
 
   $(function(){
-    
+     $(".ask-for-information").click(function(){
+        $(".ask-info").toggle();
+     });
+
     $(".more-details").click(function(){
       $(".detail-search").slideToggle();
       if($(this).text() == "Rohkem detaile"){

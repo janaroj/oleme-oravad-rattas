@@ -55,6 +55,15 @@
 
 Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõidu algusest ühtegi videosalvestust ning venelase starte ei näidatud ka televisiooni otseülekandes. Samal ajal on hõbeda saanud lätlase Martins Dukursi ja kõigi teiste sõitjate start jäädvustatud videolindile, vahendab lenta.ru.
         </p>
+        <button class="ask-for-information">Küsi infot</button>
+        <div class="ask-info">
+          <form action="">
+            <p>Nimi:<input type="text" name="Nimi"/></p>
+            <p>Email:<input type="email" name="Email"/><br/></p>
+            <p>Telefon:<input type="number" name="phone"/><br/></p>
+            <p>Lisainfo:<input type="text" name="info" /><br/></p>
+          </form>
+        </div>
     </div>
     <div class="detail-img">
       <div class="big-image">
