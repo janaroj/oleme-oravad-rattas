@@ -62,7 +62,7 @@ Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõ
             <p>Email:<input type="text" name="Email"/><br/></p>
             <p>Telefon:<input type="text" name="phone"/><br/></p>
             <p>Lisainfo:<input type="text" name="info" /><br/></p>
-            <button>Küsi</button>
+            <div><button>Küsi</button></div>
           </form>
         </div>
     </div>
