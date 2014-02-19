@@ -59,9 +59,10 @@ Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõ
         <div class="ask-info">
           <form action="">
             <p>Nimi:<input type="text" name="Nimi"/></p>
-            <p>Email:<input type="email" name="Email"/><br/></p>
-            <p>Telefon:<input type="number" name="phone"/><br/></p>
+            <p>Email:<input type="text" name="Email"/><br/></p>
+            <p>Telefon:<input type="text" name="phone"/><br/></p>
             <p>Lisainfo:<input type="text" name="info" /><br/></p>
+            <button>Küsi</button>
           </form>
         </div>
     </div>
