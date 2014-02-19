@@ -49,7 +49,7 @@
     $(".object").click(function(){
       var url= document.URL;
       console.log(url);
-      window.location = url + "/object.php";
+      window.location = url + "object.php";
     })
 
     
