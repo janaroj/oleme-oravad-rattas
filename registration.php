@@ -6,10 +6,10 @@
   <div class="content">
         <div class="registration-form">
             <form action="">
-            Kasutajanimi: <input type="text" name="userName" /><br/>
-            Parool: <input type="password" name="passWord" /><br/>
-            Email: <input type="email" name="email" /><br/>
-            Telefon: <input type="number" name="phone" /><br/>
+            <p>Kasutajanimi: <input type="text" name="userName" /></p>
+            <p>Parool: <input type="password" name="passWord" /></p>
+            <p>Email: <input type="text" name="email" /></p>
+            <p>Telefon: <input type="text" name="phone" /></p>
             <!--
             <input type="button" value="Tühista" onClick="parent.location='index.html'">
             -->            
