@@ -11,7 +11,8 @@
             <button class="car">Auto 1</button>
             <button class="car">Auto 1</button>
             <button class="car">Auto 1</button>
-            <button>Muuda oma kasutaja seadeid</button>
+            <button class="my-querys">Vaata minule tehtud päringuid</button>
+            <button class="change-settings">Muuda oma kasutaja seadeid</button>
             <a href="index.php">Logi välja</a>
             </div>
         <div class="content-small">
