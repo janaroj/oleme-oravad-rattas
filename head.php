@@ -3,8 +3,8 @@
       <div class="login">
         <div class="login-field">
           <form>
-            <input type="text" name="" value="" ="username" >
-            <input type="password" name="" value="" ="password" >
+            <input type="text" name="" value="" ="username" />
+            <input type="password" name="" value="" ="password" />
             <!--
             <input type="submit" value="Logi sisse">
             -->

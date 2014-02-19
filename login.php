@@ -19,12 +19,12 @@
             <h3>Sisesta andmed tabelisse</h3>
             <div class="data-input-table">
             <table>
-                <tr><td>Värvus</td><td class="insert"><input type="text"></td></tr>
-                <tr><td>Värvus</td><td class="insert"><input type="text"></td></tr>
-                <tr><td>Värvus</td><td class="insert"><input type="text"></td></tr>
-                <tr><td>Värvus</td><td class="insert"><input type="text"></td></tr>
-                <tr><td>Värvus</td><td class="insert"><input type="text"></td></tr>
-                <tr><td>Värvus</td><td class="insert"><input type="text"></td></tr>
+                <tr><td>Värvus</td><td class="insert"><input type="text" /></td></tr>
+                <tr><td>Värvus</td><td class="insert"><input type="text" /></td></tr>
+                <tr><td>Värvus</td><td class="insert"><input type="text" /></td></tr>
+                <tr><td>Värvus</td><td class="insert"><input type="text" /></td></tr>
+                <tr><td>Värvus</td><td class="insert"><input type="text" /></td></tr>
+                <tr><td>Värvus</td><td class="insert"><input type="text" /></td></tr>
             </table>
             </div>
             <h3>Sisesta vabatekst</h3>
@@ -37,7 +37,7 @@
             </div>
 
             <h3>Lisa pildid</h3>
-            <p>Vali üleslaadimise kaust <input type="text"></p>
+            <p>Vali üleslaadimise kaust <input type="text" /></p>
             <button >Salvesta</button>
             <button >Hülga muudatused</button>
         </div>
