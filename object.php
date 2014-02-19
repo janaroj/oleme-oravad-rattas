@@ -58,18 +58,18 @@ Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõ
     </div>
     <div class="detail-img">
       <div class="big-image">
-        <img src="img/big-image.jpg">
+        <img src="img/big-image.jpg" alt="pilt autost">
       </div>
       <div class="small-image">
         <ul>
           <li>
-            <img src="img/big-image.jpg">
+            <img src="img/big-image.jpg" alt="pilt autost">
           </li>
           <li>
-            <img src="img/car.jpg">
+            <img src="img/car.jpg" alt="pilt autost">
           </li>
           <li>
-            <img src="img/car.jpg">
+            <img src="img/car.jpg" alt="pilt autost">
           </li>
         </ul>
       </div>
