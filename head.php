@@ -2,12 +2,14 @@
     <div class="container">
       <div class="login">
         <div class="login-field">
-          <form>
-            <input type="text" name="" value="username" />
-            <input type="password" name="" value="password" />
-            <!--
-            <input type="submit" value="Logi sisse">
-            -->
+          <form action="">
+            <div>
+              <input type="text" name="" value="username" />
+              <input type="password" name="" value="password" />
+              <!--
+              <input type="submit" value="Logi sisse">
+              -->
+            </div>
           </form>
           <a href="login.php" class="login-button">Logi sisse</a>
             <div>
