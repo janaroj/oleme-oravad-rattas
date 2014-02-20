@@ -1,11 +1,31 @@
+  function GetLocalhost(){
+    var hostname = window.location.host;
+    if(hostname == "localhost"){
+      return("/oleme-oravad-rattas/")
+    }
+    else{
+      return("/");
+    }
+  }
+
 
   $(function(){
+    $(".data-input-table table").find("input").each(function(){
+          if(!$(this).val()){
+            $(this).attr("placeholder","Sisesta info");
+          }
+        });
+
+
+      
+ 
      $(".ask-for-information").click(function(){
         $(".ask-info").toggle();
-     });
+        });
 
     $(".more-details").click(function(){
       $(".detail-search").slideToggle();
+     
       if($(this).text() == "Rohkem detaile"){
         $(this).text("Vähem detaile");
       }
@@ -27,51 +47,45 @@
       $(".registration-form").text("Sinu kasutaja on edukalt registreeritud");
     })
     $(".add-car").click(function(){
-      $(".l-seaded").hide();
-      $(".l-querys").hide();
+      window.location = GetLocalhost() + "login.php";
       $(".l-car").show();
-
         $(".car").hide();
-        $(".data-input-table table").find("input").each(function(){
-          if(!$(this).val()){
-            $(this).attr("placeholder","Sisesta info");
-          }
-        })    
      });
 
     $(".my-querys").click(function(){
-       $(".car").hide();
-      $(".l-seaded").hide();
-      $(".l-car").hide();
-      $(".l-querys").show();
+      window.location = GetLocalhost() + "querys.php";
     });
 
     $(".change-settings").click(function(){
-       $(".car").hide();
-      $(".l-querys").hide();
-      $(".l-car").hide();
-      $(".l-seaded").show();
+      window.location = GetLocalhost() + "settings.php";
     });
 
     $(".change-car").click(function(){
-      $(".l-seaded").hide();
-      $(".l-querys").hide();
-      $(".l-car").show();
-      $(".car").toggle();
-        $(".data-input-table table").find("input").each(function(){
-          if(!$(this).val()){
-            $(this).attr("placeholder","bla bla");
-          }
-        })
+        window.location = GetLocalhost() + "login.php?a=changecar";
 
     });
     
     $(".object").click(function(){
-      var url= document.URL;
-      console.log(url);
-      window.location = url + "object.php";
+      window.location = GetLocalhost() + "object.php";
     });
 
-    
+    $(".approve-query").click(function(){
+      alert("Sinu kontaktandmed on edastatud");
+      $(".data-input-table").hide();
+    });
+    $(".decline-query").click(function(){
+      alert("Sa keeldusid päringule vastamast");
+      $(".data-input-table").hide();
+    });
+    $(".cancel").click(function(){
+      alert("Muudatused on tühistatud");
+      location.reload();
+    });
+    $(".save-changes").click(function(){
+      alert("Muudatused on salvestatud");
+      location.reload();
+    });
+
+
 
       });

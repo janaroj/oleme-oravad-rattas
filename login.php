@@ -4,17 +4,10 @@
 <div class="container">
 
     <div class="content">
-        <div class="side-nav">
-  
-            <button class="add-car">Lisa auto</button>
-            <button class="change-car">Muuda oma autosid</button>                        
-            <button class="car">Auto 1</button>
-            <button class="car">Auto 2</button>
-            <button class="car">Auto 3</button>
-            <button class="my-querys">Vaata minule tehtud päringuid</button>
-            <button class="change-settings">Muuda oma kasutaja seadeid</button>
-            <a href="index.php">Logi välja</a>
-            </div>
+        
+        <?php include 'sidebar.php'; ?>
+
+
         <div class="content-small l-car">
             <h1>Siin saad sa oma auto kohta muuta ja lisada infot ja pilte</h1>
             <h3>Sisesta andmed tabelisse</h3>
@@ -42,35 +35,7 @@
             <button >Salvesta</button>
             <button class="l-reset">Hülga muudatused</button>
         </div>
-        <div class="content-small l-seaded">
-            <h1>Siin saad sa oma seadeid muuta</h1>
-                <p>Email<input type="text" /></p>
-                <p>Telefon<input type="text"/></p>
-                <p>Parool<input type="text" /></p>
-                <button>Salvesta muudatused</button>
-                <button>Tühista</button>
-        </div>
-        <div class="content-small l-querys">
-            <h1>Siin on sinule tulnud päringud</h1> <br/>
-                <table class="l-query-table">
-                <tr>
-                    <th>Id</th>
-                    <th>Auto</th>
-                    <th>Nimi</th>
-                    <th>Email</th>
-                    <th>Telefon</th>
-                    <th>Lisainfo</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Opel</td>
-                    <td>Janar</td>
-                    <td>j@n.com</td>
-                    <td>5252525</td>
-                    <td>mock</td>
-                </tr>
-            </table>
-        </div>
+
     </div>
 </div>
 
