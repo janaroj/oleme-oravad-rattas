@@ -15,7 +15,7 @@
             <button class="change-settings">Muuda oma kasutaja seadeid</button>
             <a href="index.php">Logi välja</a>
             </div>
-        <div class="content l-small">
+        <div class="content-small">
             <h1>Siin saad sa oma auto kohta muuta ja lisada infot ja pilte</h1>
             <h3>Sisesta andmed tabelisse</h3>
             <div class="data-input-table">
@@ -42,13 +42,13 @@
             <button >Salvesta</button>
             <button >Hülga muudatused</button>
         </div>
-        <div class="content l-seaded">
+        <div class="l-seaded">
             <h1>Siin saad sa oma seadeid muuta</h1>
                 <p>Email<input type="text" /></p>
                 <p>Telefon<input type="text"/></p>
                 <p>Parool<input type="text" /></p>
         </div>
-        <div class="content l-querys">
+        <div class="l-querys">
             <h1>Siin on sinule tulnud päringud</h1> 
                 <table>
                 <tr>
@@ -60,14 +60,13 @@
                     <th>Lisainfo</th>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>1</td>
+                    <td>Opel</td>
+                    <td>Janar</td>
+                    <td>j@n.com</td>
+                    <td>5252525</td>
+                    <td>mock</td>
                 </tr>
-               
             </table>
         </div>
     </div>
