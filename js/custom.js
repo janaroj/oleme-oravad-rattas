@@ -39,13 +39,13 @@
     $(".my-querys").click(function(){
      $(".l-seaded").toggle(false);
       $(."l-car").toggle(false);
-      $(".l-querys").toggle(true)
+      $(".l-querys").toggle(true);
     });
 
     $(".change-settings").click(function(){
       $(".l-seaded").toggle(true);
       $(."l-car").toggle(false);
-      $(".l-querys").toggle(false)
+      $(".l-querys").toggle(false);
     });
 
     $(".change-car").click(function(){
