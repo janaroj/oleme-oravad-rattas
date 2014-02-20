@@ -42,13 +42,13 @@
             <button >Salvesta</button>
             <button >Hülga muudatused</button>
         </div>
-        <div class="l-seaded">
+        <div class="content-small l-seaded">
             <h1>Siin saad sa oma seadeid muuta</h1>
                 <p>Email<input type="text" /></p>
                 <p>Telefon<input type="text"/></p>
                 <p>Parool<input type="text" /></p>
         </div>
-        <div class="l-querys">
+        <div class="content-small l-querys">
             <h1>Siin on sinule tulnud päringud</h1> 
                 <table>
                 <tr>
