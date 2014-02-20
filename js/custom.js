@@ -71,6 +71,10 @@
       window.location = GetLocalhost() + "object.php";
     });
 
+    $(".l-reset").click(function(){
+      location.reload();
+    });
+
     $(".approve-query").click(function(){
       alert("Sinu kontaktandmed on edastatud");
       $(".data-input-table").hide();
