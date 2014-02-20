@@ -37,11 +37,15 @@
     });
 
     $(".my-querys").click(function(){
-      $(".l-querys").toggle();
+     $(".l-seaded").toggle(false);
+      $(."l-car").toggle(false);
+      $(".l-querys").toggle(true)
     });
 
     $(".change-settings").click(function(){
-      $(".l-seaded").toggle();
+      $(".l-seaded").toggle(true);
+      $(."l-car").toggle(false);
+      $(".l-querys").toggle(false)
     });
 
     $(".change-car").click(function(){

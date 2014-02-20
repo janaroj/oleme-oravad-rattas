@@ -15,7 +15,7 @@
             <button class="change-settings">Muuda oma kasutaja seadeid</button>
             <a href="index.php">Logi välja</a>
             </div>
-        <div class="content-small">
+        <div class="content-small l-car">
             <h1>Siin saad sa oma auto kohta muuta ja lisada infot ja pilte</h1>
             <h3>Sisesta andmed tabelisse</h3>
             <div class="data-input-table">
