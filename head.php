@@ -35,7 +35,7 @@
           <option>Kus iganes</option>
           <option>Mida iganes</option>
         </select>
-      <button class="add-car">Otsi</button>
+      <button class="logout">Otsi</button>
       <button class="more-details">Rohkem detaile</button>
       <div class="detail-search">
         <select>
