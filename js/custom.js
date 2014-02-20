@@ -40,6 +40,10 @@
       img.attr('src',  $(this).attr('src'));
       img.hide().appendTo('.big-image').fadeIn(500);
     });
+    $(".register-form").click(function(){
+      window.location = GetLocalhost() + "registration.php";
+    })
+
     $(".register").click(function()
     {      
       $(".registration-form").text("Sinu kasutaja on edukalt registreeritud, sind suunatakse sinu konto juurde 3 sekundi jooksul");

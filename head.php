@@ -11,10 +11,9 @@
               -->
             </div>
           </form>
-          <a href="login.php" class="login-button">Logi sisse</a>
-            <div>
-              <a href="registration.php">Registreeru</a>
-          </div>
+          <button class="login-button add-car">Logi sisse</button>
+          <button class="register-form">Registreeru</button>
+          
         </div>
         <div class="login-toggle">Logi sisse</div>
         
@@ -36,7 +35,7 @@
           <option>Kus iganes</option>
           <option>Mida iganes</option>
         </select>
-      <a href="index.php"><button>Otsi</button></a>
+      <button class="add-car">Otsi</button>
       <button class="more-details">Rohkem detaile</button>
       <div class="detail-search">
         <select>

@@ -15,7 +15,7 @@
             -->            
             </form>
             <button class="register">Registreeri</button>
-            <a href="index.php"><button class="decline">Tühista</button></a>
+            <button class="logout">Tühista</button>
                         
 
         </div>
