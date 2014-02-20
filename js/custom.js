@@ -37,15 +37,15 @@
     });
 
     $(".my-querys").click(function(){
-     $(".l-seaded").toggle(false);
-      $(."l-car").toggle(false);
-      $(".l-querys").toggle(true);
+     $(".l-seaded").toggle();
+      $(."l-car").toggle();
+      $(".l-querys").toggle();
     });
 
     $(".change-settings").click(function(){
-      $(".l-seaded").toggle(true);
-      $(."l-car").toggle(false);
-      $(".l-querys").toggle(false);
+      $(".l-seaded").toggle();
+      $(."l-car").toggle();
+      $(".l-querys").toggle();
     });
 
     $(".change-car").click(function(){
