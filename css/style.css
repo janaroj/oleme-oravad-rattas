@@ -211,13 +211,22 @@ h3 {
 .side-nav button{
     width: 100%;
 }
-.content-small{
+.content{
     padding-left: 2%;
     width: 67%;
     float: left;
     display: inline-block;
-
 }
+
+.l-querys{
+border: 1px;
+display:none;
+}
+
+.l-seaded{
+    display:none;
+}
+
 .data-input-table table{
     width: 100%;
 }

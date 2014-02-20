@@ -34,7 +34,16 @@
           }
         })    
       
-    })
+    });
+
+    $(".my-querys").click(function(){
+      $(".l-querys").toggle();
+    });
+
+    $(".change-settings").click(function(){
+      $(".l-seaded").toggle();
+    });
+
     $(".change-car").click(function(){
         $(".car").toggle();
 
@@ -44,13 +53,13 @@
           }
         })
 
-    })
+    });
     
     $(".object").click(function(){
       var url= document.URL;
       console.log(url);
       window.location = url + "object.php";
-    })
+    });
 
     
 
