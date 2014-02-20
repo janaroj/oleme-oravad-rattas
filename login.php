@@ -40,17 +40,19 @@
             <h3>Lisa pildid</h3>
             <p>Vali üleslaadimise kaust <input type="text" /></p>
             <button >Salvesta</button>
-            <button >Hülga muudatused</button>
+            <button class="l-reset">Hülga muudatused</button>
         </div>
         <div class="content-small l-seaded">
             <h1>Siin saad sa oma seadeid muuta</h1>
                 <p>Email<input type="text" /></p>
                 <p>Telefon<input type="text"/></p>
                 <p>Parool<input type="text" /></p>
+                <button>Salvesta muudatused</button>
+                <button>Tühista</button>
         </div>
         <div class="content-small l-querys">
-            <h1>Siin on sinule tulnud päringud</h1> 
-                <table>
+            <h1>Siin on sinule tulnud päringud</h1> <br/>
+                <table class="l-query-table">
                 <tr>
                     <th>Id</th>
                     <th>Auto</th>

@@ -219,12 +219,19 @@ h3 {
 }
 
 .l-querys{
-border: 1px solid black;
 display:none;
+}
+
+.l-query-table{
+    border: 1px solid black;
 }
 
 .l-seaded{
     display:none;
+}
+
+.l-car{
+
 }
 
 .data-input-table table{

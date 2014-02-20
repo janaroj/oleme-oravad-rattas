@@ -27,26 +27,37 @@
       $(".registration-form").text("Sinu kasutaja on edukalt registreeritud");
     })
     $(".add-car").click(function(){
+      $(".l-seaded").hide();
+      $(".l-querys").hide();
+      $(".l-car").show();
+
         $(".car").hide();
         $(".data-input-table table").find("input").each(function(){
           if(!$(this).val()){
             $(this).attr("placeholder","Sisesta info");
           }
         })    
-      
-    });
+     });
 
     $(".my-querys").click(function(){
-      $(".l-seaded").toggle();
+       $(".car").hide();
+      $(".l-seaded").hide();
+      $(".l-car").hide();
+      $(".l-querys").show();
     });
 
     $(".change-settings").click(function(){
-      $(".l-seaded").toggle();
+       $(".car").hide();
+      $(".l-querys").hide();
+      $(".l-car").hide();
+      $(".l-seaded").show();
     });
 
     $(".change-car").click(function(){
-        $(".car").toggle();
-
+      $(".l-seaded").hide();
+      $(".l-querys").hide();
+      $(".l-car").show();
+      $(".car").toggle();
         $(".data-input-table table").find("input").each(function(){
           if(!$(this).val()){
             $(this).attr("placeholder","bla bla");
