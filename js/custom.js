@@ -17,11 +17,9 @@
         });
 
 
-      
- 
-     $(".ask-for-information").click(function(){
+    $(".ask-for-information").click(function(){
         $(".ask-info").toggle();
-        });
+    });
 
     $(".more-details").click(function(){
       $(".detail-search").slideToggle();
@@ -44,7 +42,8 @@
     });
     $(".register").click(function()
     {      
-      $(".registration-form").text("Sinu kasutaja on edukalt registreeritud");
+      $(".registration-form").text("Sinu kasutaja on edukalt registreeritud, sind suunatakse sinu konto juurde 3 sekundi jooksul");
+      window.setTimeout(function(){window.location = GetLocalhost() + "login.php"},3000)
     })
     $(".add-car").click(function(){
       window.location = GetLocalhost() + "login.php";
@@ -62,7 +61,10 @@
 
     $(".change-car").click(function(){
         window.location = GetLocalhost() + "login.php?a=changecar";
+    });
 
+    $(".logout").click(function(){
+      window.location = GetLocalhost();
     });
     
     $(".object").click(function(){

@@ -85,7 +85,7 @@ Lätlaste pahameel on tingitud asjaolust, et korraldajatel ei ole Tretjakovi sõ
       </div>
     </div>
 
-    <a href="index.php">Tagasi otsingutulemuste juurde</a>
+    <button class="logout">Tagasi otsingutulemuste juurde</button>
     
     <div class="clear"></div>
   </div>
