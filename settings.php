@@ -19,9 +19,9 @@
                 <button class="cancel">Tühista</button>
         </div>
         
-        </div>
     </div>
 </div>
+
 
     
 <?php include 'footer.php'; ?>
