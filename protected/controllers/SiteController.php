@@ -16,6 +16,21 @@ class SiteController extends Controller
 		));	
 	}
 
+	public function actionLogin()
+{
+    $model=new LoginForm;
+    if(isset($_POST['LoginForm']))
+    {
+        // collects user input data
+        $model->attributes=$_POST['LoginForm'];
+        // validates user input and redirect to previous page if validated
+        if($model->validate())
+            $this->redirect(Yii::app()->user->returnUrl);
+    }
+    // displays the login form
+    $this->render('login',array('model'=>$model));
+}
+
 	public function actionObject()
 	{
 		$criteria = new CDbCriteria();
