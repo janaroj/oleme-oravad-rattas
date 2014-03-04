@@ -18,8 +18,17 @@ class SiteController extends Controller
 
 	public function actionObject()
 	{
+		$criteria = new CDbCriteria();
+		$criteria->compare('make','Lada');
+
+		$car = Cars::model()->findAll($criteria);
+
+		print_r($car);
+
+
+
 		$this->render('object',array(
-			'ando'=>'on mongol'
+			'car'=>$car
 		));
 	}
 
