@@ -36,11 +36,12 @@ class SiteController extends Controller
 		$criteria = new CDbCriteria();
 		$criteria->compare('make','Lada');
 
-		$car = Cars::model()->findAll($criteria);
+		//$car = Cars::model()->findAll($criteria);
+
+		
+		$car = Cars::model()->findByPk($_GET['id']);
 
 		print_r($car);
-
-
 
 		$this->render('object',array(
 			'car'=>$car
@@ -65,9 +66,5 @@ class SiteController extends Controller
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
-	public function actionLogout()
-	{
-		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
-	}
+
 }
