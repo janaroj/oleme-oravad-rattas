@@ -17,21 +17,22 @@
         </p>
         <button class="ask-for-information">Küsi infot</button>
         <div class="ask-info">
-    <div class="detail-img">
+      </div>
+      <div class="detail-img">
       <div class="big-image">
-        <img src="img/big-image.jpg" alt="pilt autost" />
+        <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="pilt autost" />
       </div>
       <div class="small-image">
         <ul>
+
+        <?php foreach ($images as $image) { ?>
+        
           <li>
-            <img src="img/big-image.jpg" alt="pilt autost" />
+            <img src="images/<?php echo $car->ID; echo "/"; echo $image->picture; ?>" alt="pilt autost" />
           </li>
-          <li>
-            <img src="img/car.jpg" alt="pilt autost" />
-          </li>
-          <li>
-            <img src="img/car.jpg" alt="pilt autost" />
-          </li>
+        
+          <?php } ?>
+        
         </ul>
       </div>
     </div>

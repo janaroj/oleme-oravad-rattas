@@ -71,9 +71,6 @@
       window.location = GetLocalhost();
     });
     
-    $(".object").click(function(){
-      window.location = GetLocalhost() + "object.php";
-    });
 
     $(".l-reset").click(function(){
       location.reload();

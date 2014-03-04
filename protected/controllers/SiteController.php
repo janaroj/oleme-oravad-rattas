@@ -9,7 +9,11 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$cars = Cars::model()->findAll();
+		$criteria = new CDbCriteria();
+		$criteria->limit=8;
+		$criteria->order="ID DESC";
+
+		$cars = Cars::model()->findAll($criteria);
 
 		$this->render('index', array(
 			'cars'=>$cars
@@ -33,18 +37,24 @@ class SiteController extends Controller
 
 	public function actionObject()
 	{
-		$criteria = new CDbCriteria();
-		$criteria->compare('make','Lada');
 
-		//$car = Cars::model()->findAll($criteria);
-
+		$id = $_GET['id'];
 		
-		$car = Cars::model()->findByPk($_GET['id']);
+		$car = Cars::model()->findByPk($id);
+		$criteria = new CDbCriteria();
+		$criteria->condition="carId=:id";
+		$criteria->params = array(':id' => $id );
 
-		print_r($car);
+		$car_images = CarPictures::model()->findAll($criteria);
+
+		print_r($car_images);
+
+
+		//print_r($car);
 
 		$this->render('object',array(
-			'car'=>$car
+			'car'=>$car,
+			'images' =>$car_images
 		));
 	}
 

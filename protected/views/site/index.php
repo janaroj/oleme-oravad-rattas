@@ -76,10 +76,10 @@
       
   <?php foreach ($cars as $car) {?>
     <div class="object">
-      <a href=<?php  ?>></a>
+      <a href="?r=site/object&id=<?php echo $car->ID; ?>">MIDA KURADIT SA TAHAD</a>
       <div class="object-img">
       
-      <img alt="" src="img/car.jpg" />
+      <img alt="" src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" />
       </div>
       <div class="object-text">
       <h2><?php echo $car->make; echo $car->model; ?></h2>
