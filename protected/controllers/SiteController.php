@@ -20,6 +20,20 @@ class SiteController extends Controller
 		));	
 	}
 
+	public function actionRegistration() 
+	{
+		$model = new RegistrationForm;
+		if(isset($_POST['RegistrationForm']))
+		{
+			$model->attributes=$_POST['RegistrationForm'];
+			if ($model->validate()) {
+				$model->register();
+				$this->redirect(Yii::app()->user->returnUrl);
+			}
+		}
+		$this->render('registration',array('model'=>$model));
+	}
+
 	public function actionLogin()
 {
     $model=new LoginForm;
