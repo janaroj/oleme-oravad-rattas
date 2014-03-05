@@ -33,7 +33,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['AddCarForm'];
 			if ($model->validate()) {
 				$model->save();
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(array('myUser'));
 			}
 		}
 		$this->render('addCar',array('model'=>$model));
@@ -47,7 +47,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['RegistrationForm'];
 			if ($model->validate()) {
 				$model->register();
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(array('myUser'));
 			}
 		}
 		$this->render('registration',array('model'=>$model));
@@ -62,7 +62,7 @@ class SiteController extends Controller
         $model->attributes=$_POST['LoginForm'];
         // validates user input and redirect to previous page if validated
         if($model->validate())
-            $this->redirect(Yii::app()->user->returnUrl);
+            $this->redirect(array('myUser'));
     }
     // displays the login form
     $this->render('login',array('model'=>$model));
