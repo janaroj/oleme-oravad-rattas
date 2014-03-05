@@ -2,15 +2,7 @@
     <div class="container">
       <div class="login">
         <div class="login-field">
-          <form action="">
-            <div>
-              <input type="text" name="" value="username" />
-              <input type="password" name="" value="password" />
-              <!--
-              <input type="submit" value="Logi sisse">
-              -->
-            </div>
-          </form>
+         
           <button class="login-button add-car">Logi sisse</button>
           <button class="register-form">Registreeru</button>
           

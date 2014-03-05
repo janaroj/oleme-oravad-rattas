@@ -12,7 +12,7 @@
  * @property integer $year
  * @property string $color
  * @property string $status
- * @property string $text
+ * @property string $description
  * @property integer $price
  *
  * The followings are the available model relations:
@@ -39,10 +39,10 @@ class Cars extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('userId, year, price', 'numerical', 'integerOnly'=>true),
-			array('make, model, location, color, status, text', 'length', 'max'=>45),
+			array('make, model, location, color, status, description', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, userId, make, model, location, year, color, status, text, price', 'safe', 'on'=>'search'),
+			array('ID, userId, make, model, location, year, color, status, description, price', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,7 +74,7 @@ class Cars extends CActiveRecord
 			'year' => 'Year',
 			'color' => 'Color',
 			'status' => 'Status',
-			'text' => 'Text',
+			'description' => 'description',
 			'price' => 'Price',
 		);
 	}
@@ -105,7 +105,7 @@ class Cars extends CActiveRecord
 		$criteria->compare('year',$this->year);
 		$criteria->compare('color',$this->color,true);
 		$criteria->compare('status',$this->status,true);
-		$criteria->compare('text',$this->text,true);
+		$criteria->compare('description',$this->description,true);
 		$criteria->compare('price',$this->price);
 
 		return new CActiveDataProvider($this, array(

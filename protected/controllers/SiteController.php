@@ -20,6 +20,25 @@ class SiteController extends Controller
 		));	
 	}
 
+	public function actionMyUser()
+	{	
+		$this->render('myUser');
+	}
+
+	public function actionAddCar()
+	{
+		$model = new AddCarForm;
+		if(isset($_POST['AddCarForm']))
+		{
+			$model->attributes=$_POST['AddCarForm'];
+			if ($model->validate()) {
+				$model->save();
+				$this->redirect(Yii::app()->user->returnUrl);
+			}
+		}
+		$this->render('addCar',array('model'=>$model));
+	}
+
 	public function actionRegistration() 
 	{
 		$model = new RegistrationForm;
