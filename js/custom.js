@@ -3,6 +3,9 @@
     if(hostname == "localhost"){
       return("/oleme-oravad-rattas/")
     }
+    else if(hostname =="localhost:81"){
+      return("/oleme-oravad-rattas/")
+    }
     else{
       return("/");
     }
