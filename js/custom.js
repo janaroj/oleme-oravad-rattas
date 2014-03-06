@@ -31,9 +31,8 @@
         $(this).text("Rohkem detaile");
       }
     });
-    $(".login-toggle").click(function(){
-      $(".login-field").slideToggle();
-    });
+
+
     $(".small-image img").click(function(){
       var img = $('<img>');
       $('.big-image img').hide();
@@ -54,6 +53,10 @@
       $(".l-car").show();
         $(".car").hide();
      });
+
+    $(".login-button").click(function(){
+      window.location = GetLocalhost() + "?r=site/login"
+    });
 
     $(".my-querys").click(function(){
       window.location = GetLocalhost() + "querys.php";

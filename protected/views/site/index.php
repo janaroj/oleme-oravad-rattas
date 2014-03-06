@@ -1,14 +1,10 @@
 <div class="header">
     <div class="container">
       <div class="login">
-        <div class="login-field">
          
-          <button class="login-button add-car">Logi sisse</button>
+          <button class="login-button">Logi sisse</button>
           <button class="register-form">Registreeru</button>
           
-        </div>
-        <div class="login-toggle">Logi sisse</div>
-        
       </div>
       <div class="clear"></div>
     </div>
