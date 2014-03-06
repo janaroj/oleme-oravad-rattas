@@ -2,6 +2,7 @@
 <div class="container">
 	<div class="content">
 		<div class="side-nav">  
+		<?php echo "Tere ";echo Yii::app()->user->getName();?>
 	        <button class="add-car">Lisa auto</button>
 	        <button class="change-car">Muuda oma autosid</button>                        
 	        <!--
@@ -9,6 +10,7 @@
 	        -->
 	        <button class="my-querys">Vaata minule tehtud päringuid</button>
 	        <button class="change-settings">Muuda oma kasutaja seadeid</button>
+	        <button class="frontpage">Esilehele</button>
         	<button class="logout">Logi välja</button>
 		</div>
 

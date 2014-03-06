@@ -7,22 +7,22 @@
  */
 class LoginForm extends CFormModel
 {
-	public $username;
+	public $mail;
 	public $password;
 	public $rememberMe;
 
-	private $_identity;
+	
 
 	/**
 	 * Declares the validation rules.
-	 * The rules state that username and password are required,
+	 * The rules state that mail and password are required,
 	 * and password needs to be authenticated.
 	 */
 	public function rules()
 	{
 		return array(
-			// username and password are required
-			array('username, password', 'required'),
+			// mail and password are required
+			array('mail, password', 'required'),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
@@ -37,7 +37,7 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			'rememberMe'=>'Pea mind meeles',
-		);
+		);	
 	}
 
 	/**
@@ -46,32 +46,27 @@ class LoginForm extends CFormModel
 	 */
 	public function authenticate($attribute,$params)
 	{
-		if(!$this->hasErrors())
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Vale email või parool');
-		}
-	}
+		// we only want to authenticate when no input errors
+    if (! $this->hasErrors()) {
+        $identity = new UserIdentity($this->mail, $this->password);
+        $identity->authenticate();
+        switch ($identity->errorCode) {
+            case UserIdentity::ERROR_NONE:
+                $duration = ($this->rememberMe)
+                    ? 3600*24*14 // 14 days
+                    : 0; // login till the user closes the browser
+                Yii::app()->user->login($identity, $duration);
+                break;
 
-	/**
-	 * Logs in the user using the given username and password in the model.
-	 * @return boolean whether login is successful
-	 */
-	public function login()
-	{
-		if($this->_identity===null)
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			$this->_identity->authenticate();
-		}
-		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
-		{
-			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
-			Yii::app()->user->login($this->_identity,$duration);
-			return true;
-		}
-		else
-			return false;
+            default:
+                // UserIdentity::ERROR_USERNAME_INVALID
+                // UserIdentity::ERROR_PASSWORD_INVALID
+                // UserIdentity::ERROR_MEMBER_NOT_APPOVED
+                $this->addError('', Yii::t('auth',
+                    'Vale email või parool'));
+                break;
+        }
+    }
+
 	}
 }

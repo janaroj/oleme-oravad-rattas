@@ -9,7 +9,7 @@
          
             <div class="row">
                 <?php echo CHtml::activeLabel($model,'Email'); ?>
-                <?php echo CHtml::activeTextField($model,'username') ?>
+                <?php echo CHtml::activeTextField($model,'mail') ?>
             </div>
          
             <div class="row">

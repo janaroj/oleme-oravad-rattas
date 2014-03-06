@@ -82,9 +82,12 @@
     });
 
     $(".logout").click(function(){
-      window.location = GetLocalhost();
+      window.location = GetLocalhost() + "?r=site/logout";
     });
     
+    $(".frontpage").click(function(){
+      window.location = GetLocalhost();
+    });
 
     $(".l-reset").click(function(){
       location.reload();

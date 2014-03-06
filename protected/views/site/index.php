@@ -2,8 +2,15 @@
     <div class="container">
       <div class="login">
          
-          <button class="login-button">Logi sisse</button>
-          <button class="register-button">Registreeru</button>
+         <?php 
+         if (Yii::app()->user->isGuest) {
+          echo CHtml::link('Logi sisse',array('login')); 
+          echo CHtml::link('Registreeri',array('registration'));}
+         else {
+          echo CHtml::link('Minu kasutaja',array('myUser'));
+          echo CHtml::link('Logi välja',array('logout'));
+          }
+          ?>
           
       </div>
       <div class="clear"></div>

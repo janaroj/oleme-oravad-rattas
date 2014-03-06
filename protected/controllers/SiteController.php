@@ -33,7 +33,8 @@ class SiteController extends Controller
 			$model->attributes=$_POST['AddCarForm'];
 			if ($model->validate()) {
 				$model->save();
-				$this->redirect(array('myUser'));
+				Yii::app()->user->returnUrl=array('myUser');
+        		$this->redirect(Yii::app()->user->returnUrl);
 			}
 		}
 		$this->render('addCar',array('model'=>$model));
@@ -47,7 +48,8 @@ class SiteController extends Controller
 			$model->attributes=$_POST['RegistrationForm'];
 			if ($model->validate()) {
 				$model->register();
-				$this->redirect(array('myUser'));
+				Yii::app()->user->returnUrl=array('myUser');
+        		$this->redirect(Yii::app()->user->returnUrl);
 			}
 		}
 		$this->render('registration',array('model'=>$model));
@@ -62,11 +64,20 @@ class SiteController extends Controller
         $model->attributes=$_POST['LoginForm'];
         // validates user input and redirect to previous page if validated
         if($model->validate())
-            $this->redirect(array('myUser'));
+        	$this->redirect(Yii::app()->user->returnUrl);
     }
     // displays the login form
     $this->render('login',array('model'=>$model));
 }
+
+	public function actionLogout()
+	{
+		 Yii::app()->user->logout();
+		 Yii::app()->user->clearStates();
+		 $_SESSION = array();
+		 $this->redirect(array("index"));
+
+	}
 
 	public function actionObject()
 	{
@@ -105,9 +116,28 @@ class SiteController extends Controller
 		}
 	}
 
-	
-	/**
-	 * Logs out the current user and redirect to homepage.
-	 */
+	public function filters(){
+		 return array(
+            'accessControl',
+        );
+	}
+
+	public function accessRules()
+    {
+        return array(
+            array('deny',
+                'actions'=>array('logout', 'addCar','myUser'),
+                'users'=>array('?'),
+            ),
+            array('allow',
+                'actions'=>array('logout','myUser','addCar'),
+                'roles'=>array('@'),
+            ),
+             array('allow',
+                'actions'=>array('index','error','object','login','registration'),
+                'roles'=>array('*'),
+            ),
+        );
+    }
 
 }
