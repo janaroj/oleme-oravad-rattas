@@ -146,6 +146,7 @@ body {
 }
 /*Object on index.php end*/
 
+/*mySite view layout elements */
 .side-nav{
     width: 30%;
     float: left;
@@ -158,6 +159,24 @@ body {
     width: 67%;
     float: left;
 }
+/*mySite view layout elements end*/
+
+/*login and registration forms */
+.form .row label{
+    float: left;
+    width: 15%;
+    clear: left;
+}   
+.form .row input {
+    float: left;
+    width: 35%;
+}
+
+.form .submit{
+    clear: both;
+}
+/*Form end  */
+
 
 .open-search{
     position: absolute;

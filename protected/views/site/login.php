@@ -18,8 +18,8 @@
             </div>
          
             <div class="row rememberMe">
-                <?php echo CHtml::activeCheckBox($model,'rememberMe'); ?>
                 <?php echo CHtml::activeLabel($model,'rememberMe'); ?>
+                <?php echo CHtml::activeCheckBox($model,'rememberMe'); ?>
             </div>
          
             <div class="row submit">
@@ -28,6 +28,7 @@
          
         <?php echo CHtml::endForm(); ?>
         </div><!-- form -->
+        <div class="clear"></div>
     </div>
 </div>
     

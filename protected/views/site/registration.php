@@ -18,7 +18,7 @@
             </div>
 
              <div class="row">
-                <?php echo CHtml::activeLabel($model,'Kinnita parool'); ?>
+                <?php echo CHtml::activeLabel($model,'Parool uuesti'); ?>
                 <?php echo CHtml::activePasswordField($model,'confirmedPassword') ?>
             </div>
          
@@ -44,5 +44,6 @@
          
         <?php echo CHtml::endForm(); ?>
         </div><!-- form -->
+        <div class="clear"></div>
     </div>
 </div>
