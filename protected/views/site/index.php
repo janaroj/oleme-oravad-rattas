@@ -3,7 +3,7 @@
       <div class="login">
          
           <button class="login-button">Logi sisse</button>
-          <button class="register-form">Registreeru</button>
+          <button class="register-button">Registreeru</button>
           
       </div>
       <div class="clear"></div>

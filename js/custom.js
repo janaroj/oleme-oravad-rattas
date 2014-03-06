@@ -39,9 +39,7 @@
       img.attr('src',  $(this).attr('src'));
       img.hide().appendTo('.big-image').fadeIn(500);
     });
-    $(".register-form").click(function(){
-      window.location = GetLocalhost() + "registration.php";
-    })
+    
 
     $(".register").click(function()
     {      
@@ -57,6 +55,11 @@
     $(".login-button").click(function(){
       window.location = GetLocalhost() + "?r=site/login"
     });
+
+    $(".register-button").click(function(){
+      window.location = GetLocalhost() + "?r=site/registration";
+    })
+
 
     $(".my-querys").click(function(){
       window.location = GetLocalhost() + "querys.php";
