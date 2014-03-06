@@ -5,9 +5,22 @@
       <h2><?php echo $car->make; echo " "; echo $car->model;?></h2>
         <table>
           <tr>
-            <td></td>
-            <td></td>
+            <td>Asukoht</td>
+            <td><?php echo $car->location; ?></td>
           </tr>
+          <tr>
+            <td>Väljalaskeaasta</td>
+            <td><?php echo $car->year; ?></td>
+          </tr>
+          <tr>
+            <td>Värvus</td>
+            <td><?php echo $car->color; ?></td>
+          </tr>
+          <tr>
+            <td>Saadavus</td>
+            <td><?php echo $car->status; ?></td>
+          </tr>
+
         </table>
         <h3>
           Muu info:
