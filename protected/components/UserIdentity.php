@@ -15,22 +15,27 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	public function authenticate()
-	{
-	
-		$criteria = new CDbCriteria();
-		$criteria->compare('mail',$this->username);
-		$criteria->compare('password',$this->password);
-		$criteria->select = 'mail, password'; 
-
-		$users = Users::model()->findAll($criteria);
-	
-		if(empty($users))
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
-	}
+ 	private $_id;
+ 
+    public function authenticate()
+    {
+        $user=Users::model()->findByAttributes(array('mail'=>$this->username));
+        if($user===null)
+            $this->errorCode=self::ERROR_USERNAME_INVALID;
+        else if($user->password!==$this->password)
+            $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        else
+        {
+            $this->_id=$user->ID;
+            $this->errorCode=self::ERROR_NONE;
+        }
+        return !$this->errorCode;
+    }
+ 
+    public function getId()
+    {
+        return $this->_id;
+    }
 
 	
 }

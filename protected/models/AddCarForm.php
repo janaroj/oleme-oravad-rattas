@@ -36,6 +36,7 @@ class AddCarForm extends CFormModel
 	public function save()
 	{
 		$car = new Cars;
+		$car->userId=Yii::app()->user->getId(); 
 		$car->make=$this->make;
 		$car->model=$this->model;
 		$car->location=$this->location;
