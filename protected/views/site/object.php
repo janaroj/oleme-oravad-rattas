@@ -25,7 +25,10 @@
       </div>
       <div class="small-image">
         <ul>
-
+        <li>
+          <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" />
+        </li>
+        
         <?php foreach ($images as $image) { ?>
         
           <li>

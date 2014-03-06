@@ -94,7 +94,7 @@ body {
     margin-top: 120px;
     background-color: #fff;
     padding: 15px;
-    display: inline-block;
+    display: block;
 }
 .detail-search{
     display: none;
@@ -119,7 +119,7 @@ body {
     width: 39%;
     float: left;
     padding-right: 1%;
-
+    margin-top: 3em;
 }
 .object-img img{
     width: 100%;
@@ -158,6 +158,7 @@ body {
     margin: 0 auto;
     position: relative;
     min-height: 1px;
+
 }
 .clear {
     clear: both;
@@ -188,6 +189,7 @@ body {
     float: left;
 }
 .small-image li {
+    margin-top: 1em;
     width: 25%;
     float: left;
 }
@@ -197,8 +199,7 @@ body {
 }
 .big-image img{
     width: 100%; 
-    max-height: 350px;
-}
+    }
 h1,h2,h3 {
     line-height: 1.4em;
     padding-bottom: 0.2em;
