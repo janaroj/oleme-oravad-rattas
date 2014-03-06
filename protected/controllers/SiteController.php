@@ -11,7 +11,7 @@ class SiteController extends Controller
 	{
 		$criteria = new CDbCriteria();
 		$criteria->limit=8;
-		$criteria->order="ID DESC";
+		$criteria->order="ID ASC";
 
 		$cars = Cars::model()->findAll($criteria);
 
