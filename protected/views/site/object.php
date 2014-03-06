@@ -3,6 +3,7 @@
   <div class="content">
     <div class="detail-text">
       <h2><?php echo $car->make; echo " "; echo $car->model;?></h2>
+      <h3>Üldandmed</h3>
         <table>
           <tr>
             <td>Asukoht</td>
@@ -22,9 +23,7 @@
           </tr>
 
         </table>
-        <h3>
-          Muu info:
-        </h3>
+        <h3>Info</h3>
         <p>
         <?php echo $car->description; ?>
         </p>
