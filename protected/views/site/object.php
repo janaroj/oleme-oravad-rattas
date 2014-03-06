@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <button class="logout">Tagasi otsingutulemuste juurde</button>
+   <?php echo CHtml::link('Tagasi otsingutulemuste juurde',array('index')); ?>
     
     <div class="clear"></div>
   </div>

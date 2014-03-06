@@ -3,6 +3,7 @@
       <div class="login">
          
          <?php 
+         echo Yii::app()->user->name;
          if (Yii::app()->user->isGuest) {
           echo CHtml::link('Logi sisse',array('login')); 
           echo CHtml::link('Registreeri',array('registration'));}

@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="content">
 		<div class="side-nav">  
-		<?php echo "Tere ";echo Yii::app()->user->getName();?>
+		
 	        <button class="add-car">Lisa auto</button>
 	        <button class="change-car">Muuda oma autosid</button>                        
 	        <!--
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="content-small">
-		    <h1>Sinu kasutaja leht</h1> 
+		    <h1><?php echo "Tere ";echo Yii::app()->user->getName();?></h1> 
 			<p>Siin on sinu kasutaja leht</p>
 		</div>
 		<div class="clear"></div>
