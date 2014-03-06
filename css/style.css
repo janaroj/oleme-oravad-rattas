@@ -195,12 +195,13 @@ body {
 .clear {
     clear: both;
 }
+
+/*Object view elements*/
 .detail-text{
     width: 38%;
     float: left;
     padding-right: 2%; 
 }
-
 .detail-text table{
     width: 100%;
 }
@@ -211,7 +212,6 @@ body {
 .detail-text tr:nth-child(odd){
     background: #CFCDCD;
 }
-
 .detail-img{
     width: 60%;
     float: left;
@@ -221,8 +221,9 @@ body {
     float: left;
 }
 .small-image li {
-    margin-top: 1em;
-    width: 25%;
+    margin: 1%;
+    margin-left: 0;
+    width: 24%;
     float: left;
 }
 .small-image img  {
@@ -232,6 +233,9 @@ body {
 .big-image img{
     width: 100%; 
 }
+/*Object view elements END*/
+
+
 h1,h2,h3 {
     line-height: 1.4em;
     padding-bottom: 0.2em;
