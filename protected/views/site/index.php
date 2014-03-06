@@ -77,7 +77,10 @@
     </div>  
   <?php } ?>
       
-
+  <div class="bottom-nav">
+    <button class="previous">Eelmised</button>
+    <button class="next">Järgmised</button>
+  </div>
   <div class="clear"></div>
 
   </div>

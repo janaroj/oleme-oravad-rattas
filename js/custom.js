@@ -48,7 +48,7 @@
     {      
       $(".registration-form").text("Sinu kasutaja on edukalt registreeritud, sind suunatakse sinu konto juurde 3 sekundi jooksul");
       window.setTimeout(function(){window.location = GetLocalhost() + "login.php"},3000)
-    })
+    });
     
     //Button click functions(new)
     $(".add-car").click(function(){
@@ -61,7 +61,12 @@
 
     $(".register-button").click(function(){
       window.location = GetLocalhost() + "?r=site/registration";
-    })
+    });
+
+    $(".next").click(function(){
+        window.location = GetLocalhost() + ""
+    });
+
     //END
 
     $(".my-querys").click(function(){
