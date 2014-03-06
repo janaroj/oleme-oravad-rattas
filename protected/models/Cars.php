@@ -14,6 +14,8 @@
  * @property string $status
  * @property string $description
  * @property integer $price
+ * @property string $mainImg
+ * @property string $Date
  *
  * The followings are the available model relations:
  * @property CarPictures[] $carPictures
@@ -39,10 +41,11 @@ class Cars extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('userId, year, price', 'numerical', 'integerOnly'=>true),
-			array('make, model, location, color, status, description', 'length', 'max'=>45),
+			array('make, model, location, color, status, mainImg', 'length', 'max'=>45),
+			array('description, Date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, userId, make, model, location, year, color, status, description, price', 'safe', 'on'=>'search'),
+			array('ID, userId, make, model, location, year, color, status, description, price, mainImg, Date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,8 +77,10 @@ class Cars extends CActiveRecord
 			'year' => 'Year',
 			'color' => 'Color',
 			'status' => 'Status',
-			'description' => 'description',
+			'description' => 'Description',
 			'price' => 'Price',
+			'mainImg' => 'Main Img',
+			'Date' => 'Date',
 		);
 	}
 
@@ -107,6 +112,8 @@ class Cars extends CActiveRecord
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('price',$this->price);
+		$criteria->compare('mainImg',$this->mainImg,true);
+		$criteria->compare('Date',$this->Date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
