@@ -68,12 +68,7 @@ body {
     z-index: 100;
      
 }
-.login  {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 300px;
-}
+
 
 .login-button{
     width: 50%;
@@ -112,7 +107,33 @@ margin-bottom: 100px;
     margin-top: 78px;
 }
 
-/*Objects on index.php start*/
+/*Index.php styles, objects*/
+.login {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 30%;
+    background-color: black;
+}
+.login-as{
+    color: white;
+    padding: 2px;
+    display: block;
+    float: right;
+    clear: both;
+    line-height: 1.4em;
+}
+.choices a{
+    color:white;
+    padding:2px;
+    float: right;
+    display: block;
+    clear: both;
+}
+.choices a:visited{
+    color: white;
+}
+
 .object:hover{
     background-color:#ECE8E2; 
 }
@@ -168,7 +189,7 @@ margin-bottom: 100px;
 }
 /*END*/
 
-/*login and registration forms */
+/*Login and registration forms */
 .form .row label{
     float: left;
     width: 15%;

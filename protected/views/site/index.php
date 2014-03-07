@@ -1,15 +1,22 @@
 <div class="header">
     <div class="container">
       <div class="login">
-         
-         <?php 
-         echo Yii::app()->user->name;
-         if (Yii::app()->user->isGuest) {
-          echo CHtml::link('Logi sisse',array('login')); 
-          echo CHtml::link('Registreeri',array('registration'));}
-         else {
+         <?php
+         if (Yii::app()->user->isGuest) { 
+          echo "<span class='choices'>";
+          echo CHtml::link('Logi sisse',array('login'));
+          echo "</span><span class='choices'>"; 
+          echo CHtml::link('Registreeri',array('registration'));
+          echo "</span>";
+        } else {
+          echo "<span class='login-as'>Oled sisse logitud kui: ";
+          echo Yii::app()->user->name;
+          echo "</span>";      
+          echo "<span class='choices'>"; 
           echo CHtml::link('Minu kasutaja',array('myUser'));
+          echo "</span><span class='choices'>"; 
           echo CHtml::link('Logi välja',array('logout'));
+          echo "</span>"; 
           }
           ?>
           
