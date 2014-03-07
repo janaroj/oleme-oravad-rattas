@@ -368,7 +368,7 @@ h3 {
         width: 100%;
     }
     .small-image li{
-        width: 50%;
+        width: 49%;
     }
 }
 @media (max-width: 790px){
@@ -381,4 +381,5 @@ h3 {
     .object-img{
         height: auto;
     }
+
 }
