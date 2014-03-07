@@ -376,5 +376,9 @@ h3 {
         width: 100%;
         margin: 0;
         padding: 0;
+        height: auto;
+    }
+    .object-img{
+        height: auto;
     }
 }
