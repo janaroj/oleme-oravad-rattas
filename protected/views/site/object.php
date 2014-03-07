@@ -3,7 +3,8 @@
   <div class="content">
     <div class="detail-text">
       <h2><?php echo $car->make; echo " "; echo $car->model;?></h2>
-      <h3>Üldandmed</h3>
+        
+        <h3>Üldandmed</h3>
         <table>
           <tr>
             <td>Asukoht</td>
@@ -21,8 +22,8 @@
             <td>Saadavus</td>
             <td><?php echo $car->status; ?></td>
           </tr>
-
         </table>
+        
         <h3>Info</h3>
         <p>
         <?php echo $car->description; ?>
@@ -53,7 +54,7 @@
       </div>
     </div>
 
-   <?php echo CHtml::link('Tagasi otsingutulemuste juurde',array('index')); ?>
+    <button class="logout">Tagasi otsingutulemuste juurde</button>
     
     <div class="clear"></div>
   </div>
