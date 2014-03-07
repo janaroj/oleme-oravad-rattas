@@ -239,6 +239,7 @@ margin-bottom: 100px;
 
 /*Object view elements*/
 .detail-text{
+    font-size: 1.05em;
     width: 38%;
     float: left;
     padding-right: 2%; 
@@ -251,8 +252,13 @@ margin-bottom: 100px;
 .detail-text tr{
     height: 2.5em;
 }
+/*
 .detail-text tr:nth-child(odd){
     background: #CFCDCD;
+}
+*/
+.detail-text tr{
+    border-bottom: 2px solid rgb(61, 58, 58);
 }
 .detail-text td{
     vertical-align: middle;
@@ -269,7 +275,7 @@ margin-bottom: 100px;
     width: 100%;
 }
 .detail-text h3{
-    padding-top: 0.5em;
+    padding-top: 1em;
 }
 
 .detail-text button{
@@ -313,11 +319,11 @@ h1{
     }
 
 h2{
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 600;
 }
 h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 
 }
@@ -341,8 +347,6 @@ h3 {
     width: 100%;
 }
 
-
-
 .data-input-table th {
     font-weight: 600;
 }
@@ -351,7 +355,6 @@ h3 {
     width: 15%;
     text-align: center;
     padding-left: 25px;
-    border: 1px solid black;
 }
 
 
