@@ -30,9 +30,26 @@ class SiteController extends Controller
 		$model = new AddCarForm;
 		if(isset($_POST['AddCarForm']))
 		{
+	
 			$model->attributes=$_POST['AddCarForm'];
+           
+  			$uploadedFile=CUploadedFile::getInstance($model,'image');
+            $fileName = "{$uploadedFile}";  
+
 			if ($model->validate()) {
+				$model->image = $fileName;
+
 				$model->save();
+				$carId = Yii::app()->db->getLastInsertID();
+
+				$fileSavePath = Yii::app()->basePath.'/../images/'.$carId;
+
+				if (!file_exists ($fileSavePath)) {
+    				mkdir ($fileSavePath, 0777, true);
+    			}
+
+				$uploadedFile->saveAs($fileSavePath.'/'.$fileName);
+				
 				Yii::app()->user->returnUrl=array('myUser');
         		$this->redirect(Yii::app()->user->returnUrl);
 			}

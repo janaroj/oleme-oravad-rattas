@@ -1,4 +1,3 @@
-
 	<div class="container">
 	
 	    <div class="content">
@@ -16,7 +15,8 @@
 
 	       <div class="content-small">
 	            <h1>Siin saad sa lisada uue auto</h1>
-           
+
+            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
             	<div class="form">
             	<?php echo CHtml::beginForm(); ?>
              
@@ -63,9 +63,10 @@
                 </div>
 
                 <div class="row">
-                    <?php echo CHtml::activeLabel($model,'MainImg'); ?>
-                    <?php echo CHtml::activeTextField($model,'mainImg') ?>
-                </div>
+                   <?php echo CHtml::activeLabel($model,'Image'); ?>
+                    <?php echo CHtml::activeFileField($model, 'image'); ?>
+                 
+               </div>
              
                
                 <div class="row submit">

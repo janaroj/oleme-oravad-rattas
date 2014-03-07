@@ -16,7 +16,8 @@ class AddCarForm extends CFormModel
 	public $status;
 	public $description;
 	public $price;
-	public $mainImg;
+	public $image;
+
 
 
 	
@@ -24,9 +25,11 @@ class AddCarForm extends CFormModel
 	{
 		return array(
 			
-			array('make, model,location,year,color,status,price,mainImg', 'required'),
+			array('make, model,location,year,color,status,price,description', 'required'),
 			
-			array('year', 'numerical'),
+			array('year,price', 'numerical'),
+
+			array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
 			
 		);
 	}
@@ -45,8 +48,8 @@ class AddCarForm extends CFormModel
 		$car->status=$this->status;
 		$car->description=$this->description;
 		$car->price=$this->price;
-		$car->mainImg=$this->mainImg;
-
+		$car->mainImg=$this->image;
+		
 		$car->save();
 	}
 }
