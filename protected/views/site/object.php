@@ -34,12 +34,12 @@
       </div>
       <div class="detail-img">
       <div class="big-image">
-        <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="pilt autost" />
+        <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt" />
       </div>
       <div class="small-image">
         <ul>
         <li>
-          <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" />
+          <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt"/>
         </li>
         
         <?php foreach ($images as $image) { ?>
