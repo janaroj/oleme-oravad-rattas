@@ -91,7 +91,7 @@ class SiteController extends Controller
 
 		$car_images = CarPictures::model()->findAll($criteria);
 
-		print_r($car_images);
+		//print_r($car_images);
 
 
 		//print_r($car);
