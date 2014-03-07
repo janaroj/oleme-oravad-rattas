@@ -138,6 +138,8 @@ margin-bottom: 100px;
     background-color:#ECE8E2; 
 }
 .object-img{
+    overflow: hidden;
+    max-height: 150px;
     width: 39%;
     float: left;
     padding-right: 1%;
@@ -159,6 +161,7 @@ margin-bottom: 100px;
 }
 .object{
     width: 45%;
+    height: 200px;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
