@@ -2,18 +2,9 @@
 	
 	    <div class="content">
 	        
-	       <div class="side-nav">
-                <button class="add-car">Lisa auto</button>
-                <button class="change-car">Muuda oma autosid</button>                        
-                <!--
-                <button class="car">Auto 1</button>
-                -->
-                <button class="my-querys">Vaata minule tehtud päringuid</button>
-                <button class="change-settings">Muuda oma kasutaja seadeid</button>
-                <button class="logout">Logi välja</button>              
-           </div>
+            <?php include 'admin-sidebar.php'; ?>
 
-	       <div class="content-small">
+            <div class="content-small">
 	            <h1>Siin saad sa lisada uue auto</h1>
 
             <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>

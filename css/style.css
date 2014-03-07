@@ -147,6 +147,7 @@ margin-bottom: 100px;
 }
 .object-img img{
     width: 100%;
+    vertical-align: middle;
 }
 .object-text{
     width: 60%;
