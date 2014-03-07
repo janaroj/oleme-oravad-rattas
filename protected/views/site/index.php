@@ -1,5 +1,6 @@
 <div class="header">
     <div class="container">
+    <div class="logo"></div>
       <div class="login">
          <?php
          if (Yii::app()->user->isGuest) { 
