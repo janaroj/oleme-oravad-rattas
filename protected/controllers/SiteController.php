@@ -20,9 +20,19 @@ class SiteController extends Controller
 		));	
 	}
 
+
 	public function actionMyUser()
 	{	
 		$this->render('myUser');
+	}
+
+	public function actionSettings()
+	{
+		$id = Yii::app()->user->id;
+
+		$model = Users::model()->findByPk($id);
+
+		$this->render('settings',array('model'=>$model));
 	}
 
 	public function actionAddCar()
@@ -52,6 +62,7 @@ class SiteController extends Controller
 				$uploadedFile->saveAs($fileSavePath.'/'.$fileName);
 				
 				if (count($uploadedFiles) > 0) {
+					$model->images= $uploadedFiles;
 					$model->saveImages($carId);
 					 foreach ($uploadedFiles as $image => $pic) {
 					 	$fileName = "{$pic}";

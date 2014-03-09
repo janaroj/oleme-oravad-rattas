@@ -44,50 +44,12 @@
     });
     
 
-    $(".register").click(function()
-    {      
-      $(".registration-form").text("Sinu kasutaja on edukalt registreeritud, sind suunatakse sinu konto juurde 3 sekundi jooksul");
-      window.setTimeout(function(){window.location = GetLocalhost() + "login.php"},3000)
-    });
-    
-    //Button click functions(new)
-    $(".add-car").click(function(){
-      window.location = GetLocalhost() + "?r=site/addCar";
-    });
-
-    $(".login-button").click(function(){
-      window.location = GetLocalhost() + "?r=site/login"
-    });
-
-    $(".register-button").click(function(){
-      window.location = GetLocalhost() + "?r=site/registration";
-    });
-
     $(".next").click(function(){
         window.location = GetLocalhost() + ""
     });
 
     //END
 
-    $(".my-querys").click(function(){
-      window.location = GetLocalhost() + "querys.php";
-    });
-
-    $(".change-settings").click(function(){
-      window.location = GetLocalhost() + "settings.php";
-    });
-
-    $(".change-car").click(function(){
-        window.location = GetLocalhost() + "login.php?a=changecar";
-    });
-
-    $(".logout").click(function(){
-      window.location = GetLocalhost() + "?r=site/logout";
-    });
-    
-    $(".frontpage").click(function(){
-      window.location = GetLocalhost();
-    });
 
     $(".l-reset").click(function(){
       location.reload();

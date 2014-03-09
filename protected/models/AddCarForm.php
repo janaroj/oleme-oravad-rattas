@@ -36,14 +36,14 @@ class AddCarForm extends CFormModel
 	}
 
 	public function saveImages($carId){
-		if (is_array($this->images)) {
-			foreach ($this->images as $img) {
+
+			foreach ($this->images as $image => $pic) {
 				$carPictures = new CarPictures;
 				$carPictures->carId=$carId;
-				$carPictures->picture="{$img}";
+				$carPictures->picture="{$pic}";
 				$carPictures->save();
 			}
-		}
+		
 		
 	}
 
