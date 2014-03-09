@@ -17,6 +17,7 @@ class AddCarForm extends CFormModel
 	public $description;
 	public $price;
 	public $image;
+	public $images;
 
 
 
@@ -29,12 +30,22 @@ class AddCarForm extends CFormModel
 			
 			array('year,price', 'numerical'),
 
-			array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
+			array('image,images', 'file','types'=>'jpg, gif, png,jpeg', 'allowEmpty'=>true),
 			
 		);
 	}
 
-
+	public function saveImages($carId){
+		if (is_array($this->images)) {
+			foreach ($this->images as $img) {
+				$carPictures = new CarPictures;
+				$carPictures->carId=$carId;
+				$carPictures->picture="{$img}";
+				$carPictures->save();
+			}
+		}
+		
+	}
 
 	public function save()
 	{
@@ -51,5 +62,6 @@ class AddCarForm extends CFormModel
 		$car->mainImg=$this->image;
 		
 		$car->save();
+		
 	}
 }

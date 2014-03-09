@@ -34,6 +34,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['AddCarForm'];
            
   			$uploadedFile=CUploadedFile::getInstance($model,'image');
+  			$uploadedFiles=CUploadedFile::getInstancesByName('images');
             $fileName = "{$uploadedFile}";  
 
 			if ($model->validate()) {
@@ -50,6 +51,14 @@ class SiteController extends Controller
 
 				$uploadedFile->saveAs($fileSavePath.'/'.$fileName);
 				
+				if (count($uploadedFiles) > 0) {
+					$model->saveImages($carId);
+					 foreach ($uploadedFiles as $image => $pic) {
+					 	$fileName = "{$pic}";
+					 	$pic->saveAs($fileSavePath.'/'.$fileName);
+					 }
+				}
+
 				Yii::app()->user->returnUrl=array('myUser');
         		$this->redirect(Yii::app()->user->returnUrl);
 			}

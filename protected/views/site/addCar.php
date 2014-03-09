@@ -7,7 +7,7 @@
             <div class="content-small">
 	            <h1>Siin saad sa lisada uue auto</h1>
 
-            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
+           <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
             	<div class="form">
             	<?php echo CHtml::beginForm(); ?>
              
@@ -54,8 +54,23 @@
                 </div>
 
                 <div class="row">
-                   <?php echo CHtml::activeLabel($model,'Image'); ?>
+                   <?php echo CHtml::activeLabel($model,'Main Image'); ?>
                     <?php echo CHtml::activeFileField($model, 'image'); ?>
+                 
+               </div>
+
+                <div class="row">
+                   <?php echo CHtml::activeLabel($model,'Other Images'); ?>
+                   <?php 
+                $this->widget('CMultiFileUpload', array(
+                'name' => 'images',
+                'htmlOptions' => array('enctype' => 'multipart/form-data','multiple' => 'multiple'),
+                'accept' => 'jpeg|jpg|gif|png', // useful for verifying files
+                'duplicate' => 'Duplicate file!', // useful, i think
+                'denied' => 'Invalid file type', // useful, i think
+            ));
+                    ?>
+
                  
                </div>
              
