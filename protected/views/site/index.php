@@ -4,18 +4,18 @@
       <div class="login">
          <?php
          if (Yii::app()->user->isGuest) { 
-          echo "<span class='choices'>";
+          echo "<span class='login-as'>";
           echo CHtml::link('Logi sisse',array('login'));
-          echo "</span><span class='choices'>"; 
+          echo "</span><span class='login-as'>"; 
           echo CHtml::link('Registreeri',array('registration'));
           echo "</span>";
         } else {
           echo "<span class='login-as'>Oled sisse logitud kui: ";
           echo Yii::app()->user->name;
           echo "</span>";      
-          echo "<span class='choices'>"; 
+          echo "<span class='login-as'>"; 
           echo CHtml::link('Minu kasutaja',array('myUser'));
-          echo "</span><span class='choices'>"; 
+          echo "</span><span class='login-as'>"; 
           echo CHtml::link('Logi välja',array('logout'));
           echo "</span>"; 
           }

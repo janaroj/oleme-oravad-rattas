@@ -145,7 +145,16 @@ body {
     clear: both;
     line-height: 1.4em;
 }
+.login-as a{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+    display: block;
+    float: right;
+    clear: both;
+    line-height: 1.4em;
 
+}
 
 .object:hover{
     background-color: #ECE8E2; 
@@ -204,7 +213,7 @@ body {
     float: right;
     display: block;
     clear: both;
-    text-align: right;
+    text-align: center;
     text-transform: uppercase;
 }
 .choices a:visited{
