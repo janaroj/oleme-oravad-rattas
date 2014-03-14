@@ -145,16 +145,7 @@ body {
     clear: both;
     line-height: 1.4em;
 }
-.choices a{
-    color:white;
-    padding:2px;
-    float: right;
-    display: block;
-    clear: both;
-}
-.choices a:visited{
-    color: white;
-}
+
 
 .object:hover{
     background-color: #ECE8E2; 
@@ -204,9 +195,20 @@ body {
 .side-nav{
     width: 30%;
     float: left;
+    margin-top: 2.5em;
 }
-.side-nav button{
+.choices a{
     width: 100%;
+    color:black;
+    padding: 5px 2px;
+    float: right;
+    display: block;
+    clear: both;
+    text-align: right;
+    text-transform: uppercase;
+}
+.choices a:visited{
+    color: black;
 }
 .content-small{
     padding-left: 2%;
@@ -369,12 +371,7 @@ h3 {
     text-align: center;
     padding-left: 25px;
 }
-
-
-
-.data-input-content input{
-
-}   
+  
 .car{
     display: none;
     width: 50%;
