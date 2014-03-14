@@ -46,17 +46,19 @@
             <div class="row">
                 <?php echo CHtml::activeLabel($model,'Telefon'); ?>
                 <?php echo CHtml::activeTextField($model,'phone') ?>
-                <div class="row">
+            </div>
+            <div class="row">
                 <?php echo CHtml::activeLabel($model,'Lisainfo'); ?>
                 <?php echo CHtml::activeTextField($model,'text') ?>
             </div>
 
-             <div class="row submit">
+            <div class="row submit">
                 <?php echo CHtml::submitButton('Päri infot'); ?>
             </div>
 
 
              <?php echo CHtml::endForm(); ?>
+            </div>
         </div>
       </div>
       <div class="detail-img">
