@@ -47,6 +47,7 @@ table {
     border-spacing: 0;
 }
 
+/*CSS RESET END*/
 
 body {
     background: url("carbon_fibre.png") top left repeat;
@@ -55,60 +56,12 @@ body {
     line-height: 1.4em;
 }
 
-.ask-info{
-    display:none;
-}
-
-
-
-.login-button{
-    width: 50%;
-}
-
-.button {
-  font: bold 12px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
-}
-
-.login-field  {
-    display: none;
-}
-.login-toggle{
-    left: 50%;
-    margin-left: -150px;
-    background: green;
-    text-align: center;
-    cursor: pointer;
-}
-
 .content {
     margin-top: 130px;
     background-color: #fff;
     padding: 15px;
     display: block;
     margin-bottom: 100px;
-    box-shadow: 0 5px 30px #888888;
-}
-.detail-search{
-    display: none;
-}
-
-.details {
-    font-size: 32px;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-        
-}
-.search-box{
-    margin-top: 100px;
 }
 
 /*Index.php styles, objects*/
@@ -118,8 +71,7 @@ body {
     top: 0px;
     left: 0px;
     width: 100%;
-    z-index: 100;
-    
+    z-index: 100;  
 }
 
 .logo{
@@ -137,6 +89,7 @@ body {
     right: 0px;
     width: 30%;
 }
+
 .login-as{
     color: white;
     padding: 2px;
@@ -145,6 +98,7 @@ body {
     clear: both;
     line-height: 1.4em;
 }
+
 .login-as a{
     text-decoration: none;
     color: white;
@@ -154,6 +108,14 @@ body {
     clear: both;
     line-height: 1.4em;
 
+}
+
+.search-box{
+    margin-top: 100px;
+}
+
+.detail-search{
+    display: none;
 }
 
 .object:hover{
@@ -190,7 +152,6 @@ body {
     margin-right: 1%;
     padding: 10px;
     position: relative;
-
 }
 /*END*/
 
@@ -306,6 +267,11 @@ body {
     width: 50%;
     padding:0.1em;
 }
+
+.ask-info{
+    display:none;
+}
+
 .detail-img{
     width: 60%;
     float: left;
@@ -329,7 +295,6 @@ body {
 }
 /*Object view elements END*/
 
-
 h1,h2,h3 {
     line-height: 1.4em;
     padding-bottom: 0.2em;
@@ -349,43 +314,7 @@ h2{
 h3 {
     font-size: 18px;
     font-weight: 400;
-
 }
-
-
-
-
-.l-query-table{
-    border: 1px solid black;
-}
-
-.l-seaded{
-    display:none;
-}
-
-.l-car{
-
-}
-
-.data-input-table table{
-    width: 100%;
-}
-
-.data-input-table th {
-    font-weight: 600;
-}
-
-.data-input-table th, td {
-    width: 15%;
-    text-align: center;
-    padding-left: 25px;
-}
-  
-.car{
-    display: none;
-    width: 50%;
-}
-
 
 @media (max-width: 1150px){
     .container{

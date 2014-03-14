@@ -12,9 +12,9 @@
  
     <?php 	
     	$cs = Yii::app()->getClientScript();
+        $cs->registerCssFile('css/style.css');
     	$cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js');
-    	$cs->registerScriptFile('js/custom.js');
-		$cs->registerCssFile('css/style.css');?>
+    	$cs->registerScriptFile('js/custom.js');?>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css' />
