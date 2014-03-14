@@ -7,14 +7,15 @@
         <div class="content-small">
             <h1>Siin on sinule tulnud päringud</h1> <br/>
          
-                <table class="data-input-table">
-                <tr>
-                    <td>Auto</td>
-                    <td>Nimi</td>
-                    <td>Email</td>
-                    <td>Telefon</td>
-                    <td>Lisainfo</td>
-                </tr>
+            <table class="request-table">
+                <thead>
+                    <th>Soovitud auto</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Lisainfo</th>
+                    <th></th>
+                    <th></th>
+                </thead>
 
                  <?php foreach ($requests as $request) { ?>
          		<tr>
@@ -22,10 +23,9 @@
           			<td><?php echo $request['mail']; ?></td>
           			<td><?php echo $request['phone']; ?></td>
           			<td><?php echo $request['text']; ?></td>
-          			<td>
-          			 <button class="approve-query">Vasta päringule</button>
-                    <button class="decline-query">Keeldu päringust</button>
-                    </td>
+                <td class="req-answer">Vasta</td>
+                <td class="req-answer">Keeldu</td>          			
+          			
           		</tr>
           <?php } ?>
              

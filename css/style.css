@@ -165,7 +165,9 @@ body {
 .side-nav{
     width: 30%;
     float: left;
-    margin-top: 2.5em;
+    padding-top: 2.5em;
+    padding-bottom: 100px;
+    background-color: #EAEAEA;
 }
 .choices a{
     width: 100%;
@@ -187,15 +189,38 @@ body {
 }
 /*END*/
 
+/*Requests page -- admin*/
+.request-table{
+    width: 80%;
+}
+.request-table th{
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #EAEAEA;
+}
+.request-table td{
+    padding-top: 1em;
+}
+.req-answer{
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+/*END*/
+
 /*Login and registration forms */
 .form .row label{
     float: left;
-    width: 15%;
+    width: 20%;
     clear: left;
+    text-transform: uppercase;
 }   
 .form .row input {
     float: left;
     width: 35%;
+    margin-bottom: 0.6em;
 }
 
 .form .submit{
@@ -203,6 +228,13 @@ body {
 }
 /*END */
 
+/*addCar page -- admin*/
+
+.form .description input{
+    min-height: 50px;
+}
+
+/*END*/
 
 .open-search{
     position: absolute;
