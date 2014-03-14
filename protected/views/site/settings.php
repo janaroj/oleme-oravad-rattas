@@ -30,6 +30,10 @@
                 </div>
 
                 <div class="row">
+                    <?php echo CHtml::activeLabel($model,'Uus Parool'); ?>
+                    <?php echo CHtml::activePasswordField($model,'password') ?>
+                </div>
+                <div class="row">
                     <?php echo CHtml::activeLabel($model,'Korda parooli'); ?>
                     <?php echo CHtml::activePasswordField($model,'password') ?>
                 </div>

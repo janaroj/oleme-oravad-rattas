@@ -29,8 +29,35 @@
         <?php echo $car->description; ?>
         </p>
         <button class="ask-for-information">Küsi infot</button>
-      <div class="ask-info">
-      </div>
+        <div class="ask-info">
+            <div class="form">
+            <?php echo CHtml::beginForm(); ?>
+
+             <div class="row">
+                <?php echo CHtml::activeLabel($model,'Nimi'); ?>
+                <?php echo CHtml::activeTextField($model,'name') ?>
+                </div>
+
+            <div class="row">
+                <?php echo CHtml::activeLabel($model,'Email'); ?>
+                <?php echo CHtml::activeTextField($model,'email') ?>
+            </div>
+         
+            <div class="row">
+                <?php echo CHtml::activeLabel($model,'Telefon'); ?>
+                <?php echo CHtml::activeTextField($model,'phone') ?>
+                <div class="row">
+                <?php echo CHtml::activeLabel($model,'Lisainfo'); ?>
+                <?php echo CHtml::activeTextField($model,'text') ?>
+            </div>
+
+             <div class="row submit">
+                <?php echo CHtml::submitButton('Päri infot'); ?>
+            </div>
+
+
+             <?php echo CHtml::endForm(); ?>
+        </div>
       </div>
       <div class="detail-img">
       <div class="big-image">
