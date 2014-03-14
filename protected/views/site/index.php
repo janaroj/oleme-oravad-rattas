@@ -83,10 +83,10 @@
       <a href="?r=site/object&amp;id=<?php echo $car->ID; ?>"></a>
       <div class="object-img">
       
-      <img alt="" src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" />
+      <img alt="" src="images/<?php echo $car->ID."/".$car->mainImg; ?>" />
       </div>
       <div class="object-text">
-      <h2><?php echo $car->make; echo " "; echo $car->model; ?></h2>
+      <h2><?php echo $car->make." ".echo $car->model; ?></h2>
       <p><?php echo $car->description; ?></p>
       </div>
     
