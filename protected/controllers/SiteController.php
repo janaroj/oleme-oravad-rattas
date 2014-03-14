@@ -163,7 +163,7 @@ class SiteController extends Controller
     {
         return array(
             array('deny',
-                'actions'=>array('logout', 'addCar','myUser'),
+                'actions'=>array('logout', 'addCar','myUser','settings'),
                 'users'=>array('?'),
             ),
             array('deny',
@@ -171,7 +171,7 @@ class SiteController extends Controller
                 'users'=>array('@'),
             ),
             array('allow',
-                'actions'=>array('logout','myUser','addCar'),
+                'actions'=>array('logout','myUser','addCar','settings'),
                 'roles'=>array('@'),
             ),
              array('allow',
