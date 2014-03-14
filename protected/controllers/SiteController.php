@@ -21,6 +21,11 @@ class SiteController extends Controller
 	}
 
 
+	public function actionMyRequests(){
+
+		$this->render('myRequests');
+	}
+
 	public function actionMyUser()
 	{	
 		$this->render('myUser');
@@ -116,6 +121,8 @@ class SiteController extends Controller
 
 	}
 
+
+
 	public function actionObject()
 	{
 
@@ -169,7 +176,7 @@ class SiteController extends Controller
     {
         return array(
             array('deny',
-                'actions'=>array('logout', 'addCar','myUser','settings'),
+                'actions'=>array('logout', 'addCar','myUser','settings','myRequests'),
                 'users'=>array('?'),
             ),
             array('deny',
@@ -177,7 +184,7 @@ class SiteController extends Controller
                 'users'=>array('@'),
             ),
             array('allow',
-                'actions'=>array('logout','myUser','addCar','settings'),
+                'actions'=>array('logout','myUser','addCar','settings','myRequests'),
                 'roles'=>array('@'),
             ),
              array('allow',

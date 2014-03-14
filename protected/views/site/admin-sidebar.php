@@ -5,7 +5,7 @@
      echo "</span><span class='choices'>"; 
      echo CHtml::link('Muuda oma autosid',array('index'),array('class'=>'button'));  
      echo "</span><span class='choices'>";                   
-     echo CHtml::link('Päringud',array('index'),array('class'=>'button'));
+     echo CHtml::link('Päringud',array('myRequests'),array('class'=>'button'));
      echo "</span><span class='choices'>"; 
      echo CHtml::link('Muuda oma kasutaja seadeid',array('settings'),array('class'=>'button'));
      echo "</span><span class='choices'>"; 
