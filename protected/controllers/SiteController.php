@@ -21,6 +21,15 @@ class SiteController extends Controller
 		));	
 	}
 
+	private function rmdir_recursive($dir) {
+    foreach(scandir($dir) as $file) {
+        if ('.' === $file || '..' === $file) continue;
+        if (is_dir("$dir/$file")) rmdir_recursive("$dir/$file");
+        else unlink("$dir/$file");
+    }
+    rmdir($dir);
+}
+
 	public function actionChangeCar() {
 		$id = $_GET['carId'];
 		$model = Cars::model()->findByPk($id);
@@ -61,10 +70,12 @@ class SiteController extends Controller
 		$this->render('changeCar',array('model'=>$model));
 	}
 
-	public function actionDeleteCar() { //Ilmselt kustutab andmebaasist, aga kuidas eemaldada pildid serverist?
+	public function actionDeleteCar() { 
 		$id = $_GET['carId'];
 		$car = Cars::model()->findByPk($id);
 		$car->delete();
+		$fileSavePath = Yii::app()->basePath.'/../images/'.$id;
+		$this->rmdir_recursive($fileSavePath);
 
 		$cars = cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
 		$this->render('myCars',array('cars'=>$cars));
