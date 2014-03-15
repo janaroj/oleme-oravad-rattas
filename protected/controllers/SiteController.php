@@ -11,7 +11,8 @@ class SiteController extends Controller
 	{
 		$criteria = new CDbCriteria();
 		$criteria->limit=8;
-		$criteria->order="ID ASC";
+		$criteria->offset=0;
+		$criteria->order="Date DESC";
 
 		$cars = Cars::model()->findAll($criteria);
 
@@ -20,6 +21,54 @@ class SiteController extends Controller
 		));	
 	}
 
+	public function actionChangeCar() {
+		$id = $_GET['carId'];
+		$model = Cars::model()->findByPk($id);
+
+		if(isset($_POST['Cars']))
+		{
+			 $model->setAttributes($_POST['Cars']);
+
+			 $uploadedFile=CUploadedFile::getInstance($model,'image');
+  			 $uploadedFiles=CUploadedFile::getInstancesByName('images');
+
+             $fileName = "{$uploadedFile}";  
+            
+
+			 $fileSavePath = Yii::app()->basePath.'/../images/'.$id;
+			 if (!empty($uploadedFile)) {
+			 $uploadedFile->saveAs($fileSavePath.'/'.$fileName);
+			 $model->mainImg = $fileName; //REFACTOR;DELETE existing ones?
+			}
+				
+ 			$model->save();
+
+			if (count($uploadedFiles) > 0) { //Lisab pildid, ei eemalda vanu
+				$model->images= $uploadedFiles;
+				$model->saveImages();
+				 foreach ($uploadedFiles as $image => $pic) {
+				 	$fileName = "{$pic}";
+				 	$pic->saveAs($fileSavePath.'/'.$fileName);
+				 }
+			}
+
+
+			 Yii::app()->user->returnUrl=array('myCars');
+        	 $this->redirect(Yii::app()->user->returnUrl);
+
+		}
+
+		$this->render('changeCar',array('model'=>$model));
+	}
+
+	public function actionDeleteCar() { //Ilmselt kustutab andmebaasist, aga kuidas eemaldada pildid serverist?
+		$id = $_GET['carId'];
+		$car = Cars::model()->findByPk($id);
+		$car->delete();
+
+		$cars = cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
+		$this->render('myCars',array('cars'=>$cars));
+	}
 
 	public function actionMyRequests(){
 
@@ -31,6 +80,12 @@ class SiteController extends Controller
 		$requests=$command->query();
 	
 		$this->render('myRequests',array('requests'=>$requests));
+	}
+
+	public function actionMyCars(){
+
+		$cars = cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
+		$this->render('myCars',array('cars'=>$cars));
 	}
 
 	public function actionMyUser()
@@ -49,18 +104,19 @@ class SiteController extends Controller
 
 	public function actionAddCar()
 	{
-		$model = new AddCarForm;
-		if(isset($_POST['AddCarForm']))
+		$model = new Cars;
+		if(isset($_POST['Cars']))
 		{
 	
-			$model->attributes=$_POST['AddCarForm'];
+			$model->attributes=$_POST['Cars'];
            
   			$uploadedFile=CUploadedFile::getInstance($model,'image');
   			$uploadedFiles=CUploadedFile::getInstancesByName('images');
             $fileName = "{$uploadedFile}";  
 
 			if ($model->validate()) {
-				$model->image = $fileName;
+				$model->mainImg = $fileName;
+				$model->userId = Yii::app()->user->id;
 
 				$model->save();
 				$carId = Yii::app()->db->getLastInsertID();
@@ -75,7 +131,7 @@ class SiteController extends Controller
 				
 				if (count($uploadedFiles) > 0) {
 					$model->images= $uploadedFiles;
-					$model->saveImages($carId);
+					$model->saveImages();
 					 foreach ($uploadedFiles as $image => $pic) {
 					 	$fileName = "{$pic}";
 					 	$pic->saveAs($fileSavePath.'/'.$fileName);
@@ -183,7 +239,7 @@ class SiteController extends Controller
     {
         return array(
             array('deny',
-                'actions'=>array('logout', 'addCar','myUser','settings','myRequests'),
+                'actions'=>array('logout', 'addCar','myUser','settings','myRequests','myCars','changeCar'),
                 'users'=>array('?'),
             ),
             array('deny',
@@ -191,7 +247,7 @@ class SiteController extends Controller
                 'users'=>array('@'),
             ),
             array('allow',
-                'actions'=>array('logout','myUser','addCar','settings','myRequests'),
+                'actions'=>array('logout','myUser','addCar','settings','myRequests','myCars','changeCar'),
                 'roles'=>array('@'),
             ),
              array('allow',

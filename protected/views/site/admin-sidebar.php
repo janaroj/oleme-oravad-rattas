@@ -1,9 +1,11 @@
 <div class="side-nav">  
 	<?php 
      echo "<span class='choices'>";
+     echo CHtml::link("Minu profiil",array('myUser'),array('class'=>'button'));
+     echo "</span><span class='choices'>"; 
      echo CHtml::link("Lisa auto",array('addCar'),array('class'=>'button'));
      echo "</span><span class='choices'>"; 
-     echo CHtml::link('Muuda oma autosid',array('index'),array('class'=>'button'));  
+     echo CHtml::link('Muuda oma autosid',array('myCars'),array('class'=>'button'));  
      echo "</span><span class='choices'>";                   
      echo CHtml::link('Päringud',array('myRequests'),array('class'=>'button'));
      echo "</span><span class='choices'>"; 

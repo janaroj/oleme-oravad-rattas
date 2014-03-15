@@ -44,10 +44,6 @@
     });
     
 
-    $(".next").click(function(){
-        window.location = GetLocalhost() + ""
-    });
-
     //END
 
 

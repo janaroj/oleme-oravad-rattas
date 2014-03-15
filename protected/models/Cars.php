@@ -24,6 +24,8 @@
  */
 class Cars extends CActiveRecord
 {
+	public $image;
+	public $images;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -41,6 +43,8 @@ class Cars extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('userId, year, price', 'numerical', 'integerOnly'=>true),
+			array('make, model,location,year,color,status,price,description', 'required'),
+			array('image,images', 'file','types'=>'jpg, gif, png,jpeg', 'allowEmpty'=>true),
 			array('make, model, location, color, status, mainImg', 'length', 'max'=>45),
 			array('description, Date', 'safe'),
 			// The following rule is used by search().
@@ -82,6 +86,18 @@ class Cars extends CActiveRecord
 			'mainImg' => 'Main Img',
 			'Date' => 'Date',
 		);
+	}
+
+	public function saveImages(){
+
+			foreach ($this->images as $image => $pic) {
+				$carPictures = new CarPictures;
+				$carPictures->carId=$this->ID;
+				$carPictures->picture="{$pic}";
+				$carPictures->save();
+			}
+		
+		
 	}
 
 	/**
