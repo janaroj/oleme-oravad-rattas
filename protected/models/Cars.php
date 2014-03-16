@@ -88,17 +88,49 @@ class Cars extends CActiveRecord
 		);
 	}
 
-	public function saveImages(){
+	private function saveImagesToServer($uploadedFile,$uploadedFiles){
+		 $fileSavePath = Yii::app()->basePath.'/../images/'.$this->ID;
+		  if (!file_exists ($fileSavePath)) {
+    				mkdir ($fileSavePath, 0777, true);
+    			}
 
+ 			foreach ($uploadedFiles as $image => $pic) {
+				 	$fileName = "{$pic}";
+				 	$pic->saveAs($fileSavePath.'/'.$fileName);
+				 }
+			 if (!empty($uploadedFile)) {
+			 	$fileName = "{$uploadedFile}";  
+			 	$uploadedFile->saveAs($fileSavePath.'/'.$fileName);
+			}
+
+	}
+
+	public function saveData($uploadedFile,$uploadedFiles){
+
+		if (!empty($uploadedFile)) {
+			$this->mainImg = "{$uploadedFile}";
+			$this->save();
+		}
+
+		if (count($uploadedFiles) > 0) { //Lisab pildid, ei eemalda vanu
+				$this->images= $uploadedFiles;
+				
 			foreach ($this->images as $image => $pic) {
 				$carPictures = new CarPictures;
 				$carPictures->carId=$this->ID;
 				$carPictures->picture="{$pic}";
 				$carPictures->save();
 			}
-		
-		
+		}
+
+		$this->processAndSaveImages($uploadedFile,$uploadedFiles);
+
 	}
+
+	private function processAndSaveImages($uploadedFile,$uploadedFiles) { //Resizing needed
+		$this->saveImagesToServer($uploadedFile	,$uploadedFiles);
+	}
+
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

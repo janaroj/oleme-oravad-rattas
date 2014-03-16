@@ -22,12 +22,14 @@ class SiteController extends Controller
 	}
 
 	private function rmdir_recursive($dir) {
+	if (file_exists ($dir)) {
     foreach(scandir($dir) as $file) {
         if ('.' === $file || '..' === $file) continue;
         if (is_dir("$dir/$file")) rmdir_recursive("$dir/$file");
         else unlink("$dir/$file");
     }
     rmdir($dir);
+	}
 }
 
 	public function actionChangeCar() {
@@ -36,34 +38,28 @@ class SiteController extends Controller
 
 		if(isset($_POST['Cars']))
 		{
-			 $model->setAttributes($_POST['Cars']);
+			$model->attributes=$_POST['Cars'];
+			$uploadedFile=CUploadedFile::getInstance($model,'image');
+  			$uploadedFiles=CUploadedFile::getInstancesByName('images');
 
-			 $uploadedFile=CUploadedFile::getInstance($model,'image');
-  			 $uploadedFiles=CUploadedFile::getInstancesByName('images');
-
-             $fileName = "{$uploadedFile}";  
-            
-
-			 $fileSavePath = Yii::app()->basePath.'/../images/'.$id;
-			 if (!empty($uploadedFile)) {
-			 $uploadedFile->saveAs($fileSavePath.'/'.$fileName);
-			 $model->mainImg = $fileName; //REFACTOR;DELETE existing ones?
-			}
-				
- 			$model->save();
-
-			if (count($uploadedFiles) > 0) { //Lisab pildid, ei eemalda vanu
-				$model->images= $uploadedFiles;
-				$model->saveImages();
-				 foreach ($uploadedFiles as $image => $pic) {
-				 	$fileName = "{$pic}";
-				 	$pic->saveAs($fileSavePath.'/'.$fileName);
-				 }
-			}
-
-
-			 Yii::app()->user->returnUrl=array('myCars');
+		
+			if ($model->validate()) {
+			
+           
+				$transaction = Yii::app()->db->beginTransaction();
+				try {
+ 			 $model->saveData($uploadedFile,$uploadedFiles);
+ 			 $transaction->commit();
+ 			 Yii::app()->user->returnUrl=array('myCars');
         	 $this->redirect(Yii::app()->user->returnUrl);
+        	 }
+				catch (Exception $e)
+				{
+				$transaction->rollBack();
+				} 
+
+        	}
+			
 
 		}
 
@@ -120,37 +116,27 @@ class SiteController extends Controller
 		{
 	
 			$model->attributes=$_POST['Cars'];
-           
-  			$uploadedFile=CUploadedFile::getInstance($model,'image');
+           	$uploadedFile=CUploadedFile::getInstance($model,'image');
   			$uploadedFiles=CUploadedFile::getInstancesByName('images');
-            $fileName = "{$uploadedFile}";  
 
+  			
 			if ($model->validate()) {
-				$model->mainImg = $fileName;
+
 				$model->userId = Yii::app()->user->id;
-
-				$model->save();
-				$carId = Yii::app()->db->getLastInsertID();
-
-				$fileSavePath = Yii::app()->basePath.'/../images/'.$carId;
-
-				if (!file_exists ($fileSavePath)) {
-    				mkdir ($fileSavePath, 0777, true);
-    			}
-
-				$uploadedFile->saveAs($fileSavePath.'/'.$fileName);
-				
-				if (count($uploadedFiles) > 0) {
-					$model->images= $uploadedFiles;
-					$model->saveImages();
-					 foreach ($uploadedFiles as $image => $pic) {
-					 	$fileName = "{$pic}";
-					 	$pic->saveAs($fileSavePath.'/'.$fileName);
-					 }
-				}
-
+				$transaction = Yii::app()->db->beginTransaction();
+				try 
+				{
+				$model->saveData($uploadedFile,$uploadedFiles);
+				$transaction->commit();
 				Yii::app()->user->returnUrl=array('myUser');
         		$this->redirect(Yii::app()->user->returnUrl);
+				}
+				catch (Exception $e)
+				{
+				$transaction->rollBack();
+				} 
+				
+				
 			}
 		}
 		$this->render('addCar',array('model'=>$model));
