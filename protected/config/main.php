@@ -32,10 +32,17 @@ return array(
 
 	// application components
 	'components'=>array(
+		//Yii node socket register
+		'nodeSocket' => array(
+		    'class' => 'application.extensions.yii-node-socket.lib.php.NodeSocket',
+		    'host' => 'localhost',  // default is 127.0.0.1, can be ip or domain name, without http
+		    'port' => 3001      // default is 3001, should be integer
+		)		
+
 		'image'=>array( 
 			'class'=>'application.extensions.image.CImageComponent',
 			'driver'=>'GD',
-),
+		),
 
 		'user'=>array(
 			// enable cookie-based authentication
@@ -91,10 +98,5 @@ return array(
 		'adminEmail'=>'ando@ut.ee',
 	),
 
-	//Yii node socket register
-	'nodeSocket' => array(
-    'class' => 'application.extensions.yii-node-socket.lib.php.NodeSocket',
-    'host' => 'localhost',  // default is 127.0.0.1, can be ip or domain name, without http
-    'port' => 3001      // default is 3001, should be integer
-	)
+
 );
