@@ -32,6 +32,11 @@ return array(
 
 	// application components
 	'components'=>array(
+		'image'=>array( 
+			'class'=>'application.extensions.image.CImageComponent',
+			'driver'=>'GD',
+),
+
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

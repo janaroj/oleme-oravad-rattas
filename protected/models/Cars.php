@@ -24,8 +24,7 @@
  */
 class Cars extends CActiveRecord
 {
-	public $image;
-	public $images;
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -44,7 +43,6 @@ class Cars extends CActiveRecord
 		return array(
 			array('userId, year, price', 'numerical', 'integerOnly'=>true),
 			array('make, model,location,year,color,status,price,description', 'required'),
-			array('image,images', 'file','types'=>'jpg, gif, png,jpeg', 'allowEmpty'=>true),
 			array('make, model, location, color, status, mainImg', 'length', 'max'=>45),
 			array('description, Date', 'safe'),
 			// The following rule is used by search().
@@ -97,11 +95,20 @@ class Cars extends CActiveRecord
  			foreach ($uploadedFiles as $image => $pic) {
 				 	$fileName = "{$pic}";
 				 	$pic->saveAs($fileSavePath.'/'.$fileName);
+				 	$image = Yii::app()->image->load($fileSavePath.'/'.$fileName);
+    				$image->resize(300, 300); //RESIZE right values needed
+    				$image->save();
 				 }
 			 if (!empty($uploadedFile)) {
 			 	$fileName = "{$uploadedFile}";  
 			 	$uploadedFile->saveAs($fileSavePath.'/'.$fileName);
+			 	$image = Yii::app()->image->load($fileSavePath.'/'.$fileName);
+    			$image->resize(50, 50);
+    			$image->save();
 			}
+
+
+
 
 	}
 
@@ -113,9 +120,9 @@ class Cars extends CActiveRecord
 		}
 
 		if (count($uploadedFiles) > 0) { //Lisab pildid, ei eemalda vanu
-				$this->images= $uploadedFiles;
+			
 				
-			foreach ($this->images as $image => $pic) {
+			foreach ($uploadedFiles as $image => $pic) {
 				$carPictures = new CarPictures;
 				$carPictures->carId=$this->ID;
 				$carPictures->picture="{$pic}";
@@ -123,14 +130,11 @@ class Cars extends CActiveRecord
 			}
 		}
 
-		$this->processAndSaveImages($uploadedFile,$uploadedFiles);
-
-	}
-
-	private function processAndSaveImages($uploadedFile,$uploadedFiles) { //Resizing needed
 		$this->saveImagesToServer($uploadedFile	,$uploadedFiles);
+
 	}
 
+	
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
