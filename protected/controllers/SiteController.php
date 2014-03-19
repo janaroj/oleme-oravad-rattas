@@ -160,13 +160,7 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
 
-    /**
-     * Declares class-based actions.
-     */
-    public function actions()
-    {
-
-
+    
 		$config = array( 
       		"base_url" => "http://oravadrattas.azurewebsites.com/protected/extensions/hoauth/hybridauth/",  
 		 	"providers" => array (
