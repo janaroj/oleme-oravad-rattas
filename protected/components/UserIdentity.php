@@ -21,10 +21,14 @@ class UserIdentity extends CUserIdentity
  
     public function authenticate()
     {
-        $user=Users::model()->findByAttributes(array('mail'=>$this->username));
-        if($user===null)
+        $user=Users::model()->findByAttributes(array('email'=>$this->username));
+        if($user===null){
             $this->errorCode=self::ERROR_USERNAME_INVALID;
-        else if($user->password!==$this->password)
+        }
+    /*    else if($user->acc_status == 1){
+            $this->errorCode=self::ERROR_NONE;
+        }
+    */    else if($user->password!==$this->password)
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
         else
         {
