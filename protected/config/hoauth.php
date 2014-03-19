@@ -13,8 +13,7 @@
 
 return 
 	array(
-		//index.php?r=site/oauth
-		"base_url" => "http://oravadrattas.azurewebsites.net/", 
+		"base_url" => "http://oravadrattas.azurewebsites.net/index.php?r=site/oauth", 
 
 		"providers" => array ( 
 			// openid providers
