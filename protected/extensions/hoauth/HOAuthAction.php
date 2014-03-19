@@ -35,7 +35,7 @@ class HOAuthAction extends CAction
 	/**
 	 * @var string $model yii alias for user model (or class name, when this model class exists in import path)
 	 */
-	public $model = 'User';
+	public $model = 'Users';
 
 	/**
 	 * @var array $attributes attributes synchronization array (user model attribute => oauth attribute). List of available profile attributes you can see at {@link http://hybridauth.sourceforge.net/userguide/Profile_Data_User_Profile.html "HybridAuth's Documentation"}.
