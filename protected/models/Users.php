@@ -114,8 +114,10 @@ class Users extends CActiveRecord
    * @access public
    * @return User
    */
+ 	/*
   public function findByEmail($email)
   {
-    return self::model()->findByAttributes(array('mail' => $email));
+    return self::model()->findByAttributes(array('email' => $email));
   }
+  */
 }
