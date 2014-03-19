@@ -25,10 +25,10 @@ class UserIdentity extends CUserIdentity
         if($user===null){
             $this->errorCode=self::ERROR_USERNAME_INVALID;
         }
-    /*    else if($user->acc_status == 1){
-            $this->errorCode=self::ERROR_NONE;
+        else if($user->acc_status == 1){
+            return true;
         }
-    */    else if($user->password!==$this->password)
+        else if($user->password!==$this->password)
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
         else
         {
