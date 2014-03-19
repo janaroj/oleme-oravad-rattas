@@ -158,19 +158,41 @@ class SiteController extends Controller
 	}
 
 	public function actionLogin()
-{
-    $model=new LoginForm;
-    if(isset($_POST['LoginForm']))
-    {
-        // collects user input data
-        $model->attributes=$_POST['LoginForm'];
-        // validates user input and redirect to previous page if validated
-        if($model->validate())
-        	$this->redirect(Yii::app()->user->returnUrl);
-    }
-    // displays the login form
-    $this->render('login',array('model'=>$model));
-}
+	{
+		$config = array( 
+      	"base_url" => "http://oravadrattas.azurewebsites.com/protected/extensions/hoauth/hybridauth/",  
+     	"providers" => array (
+        "Google" => array ( 
+        "enabled" => true,
+       	"keys"    => array ( "id" => "672052276846.apps.googleusercontent.comE", "secret" => "nZQqEZTY0s5ofOoTsQaPmUEg" ), 
+        "scope"           => "https://www.googleapis.com/auth/userinfo.profile ". // optional
+                            "https://www.googleapis.com/auth/userinfo.email"   , // optional
+        "access_type"     => "offline",   // optional
+        "approval_prompt" => "force",     // optional
+        "hd"              => "domain.com" // optional
+	    )));
+    
+	    require_once( "/protected/extensions/hoauth/hybridauth/Hybrid/Auth.php" );
+	    
+	    $hybridauth = new Hybrid_Auth( $config );
+	  
+	    $adapter = $hybridauth->authenticate( "Google" );  
+	    
+	    $user_profile = $adapter->getUserProfile(); 
+
+
+		$model=new LoginForm;
+		if(isset($_POST['LoginForm']))
+			{
+			// collects user input data
+			$model->attributes=$_POST['LoginForm'];
+			// validates user input and redirect to previous page if validated
+		if($model->validate())
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		// displays the login form
+		$this->render('login',array('model'=>$model));
+	}
 
 	public function actionLogout()
 	{
