@@ -87,7 +87,7 @@ class UserIdentity extends CUserIdentity
 
     public function getId()
     {
-        return $this->user->id;
+        return $this->user->Id;
     }
 
     public function getName()
