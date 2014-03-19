@@ -21,7 +21,7 @@ class SiteController extends Controller
         'attributes' => array(
           'firstName' => 'firstName',
           'lastName' => 'lastName',
-          'email' => 'mail',
+          //'email' => 'mail',
           //'gender' => 'genderShort',
           //'birthday' => 'birthDate',
           // you can also specify additional values, 
