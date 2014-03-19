@@ -32,10 +32,10 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('firstName, lastName, mail, phone, password', 'length', 'max'=>45),
+			array('firstName, lastName, email, phone, password', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, firstName, lastName, mail, phone, password', 'safe', 'on'=>'search'),
+			array('ID, firstName, lastName, email, phone, password', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +60,7 @@ class Users extends CActiveRecord
 			'ID' => 'ID',
 			'firstName' => 'First Name',
 			'lastName' => 'Last Name',
-			'mail' => 'Mail',
+			'email' => 'Mail',
 			'phone' => 'Phone',
 			'password' => 'Password',
 		);
@@ -87,7 +87,7 @@ class Users extends CActiveRecord
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('firstName',$this->firstName,true);
 		$criteria->compare('lastName',$this->lastName,true);
-		$criteria->compare('mail',$this->mail,true);
+		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('password',$this->password,true);
 
@@ -117,7 +117,7 @@ class Users extends CActiveRecord
  	
 	  public function findByEmail($email)
 	  {
-	    return self::model()->findByAttributes(array('mail' => $email));
+	    return self::model()->findByAttributes(array('email' => $email));
 	  }
   
 }
