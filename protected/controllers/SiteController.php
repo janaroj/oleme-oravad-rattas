@@ -188,7 +188,7 @@ class SiteController extends Controller
         'class'=>'ext.hoauth.HOAuthAdminAction',
       ),
         );
-    }
+    
 
 
    		/* 
