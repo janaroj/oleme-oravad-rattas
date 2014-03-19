@@ -2,6 +2,8 @@
 <div class="container">
     <div class="content">
         <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>
+        
+        <span><?php $this->widget('ext.hoauth.widgets.HOAuth'); ?></span>
         <div class="form">
         <?php echo CHtml::beginForm(); ?>
          
