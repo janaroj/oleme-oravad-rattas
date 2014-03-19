@@ -19,11 +19,11 @@ class SiteController extends Controller
         // model attribute => profile attribute
         // the list of avaible attributes is below
         'attributes' => array(
-          'email' => 'email',
+          'email' => 'mail',
           'fname' => 'firstName',
           'lname' => 'lastName',
-          'gender' => 'genderShort',
-          'birthday' => 'birthDate',
+          //'gender' => 'genderShort',
+          //'birthday' => 'birthDate',
           // you can also specify additional values, 
           // that will be applied to your model (eg. account activation status)
           'acc_status' => 1,
