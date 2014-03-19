@@ -122,7 +122,7 @@ class Users extends CActiveRecord
   
  	public function verifyPassword($password)
  	 {
- 	 	if($this=>password == $password){
+ 	 	if($this->password == $password){
  	 		return true;
  	 	}
  	 	return false;
