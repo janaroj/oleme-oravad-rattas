@@ -21,6 +21,7 @@ class UserIdentity extends CUserIdentity
  
     public function authenticate()
     {
+        echo("omen");
         $user=Users::model()->findByAttributes(array('email'=>$this->username));
         if($user===null){
             $this->errorCode=self::ERROR_USERNAME_INVALID;
