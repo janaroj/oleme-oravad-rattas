@@ -95,5 +95,10 @@ class UserIdentity extends CUserIdentity
         return $this->user->email;
     }
 
+    public function beforeAuthentication()
+    {
+        // do before authenctiation work
+    }
+
 	
 }
