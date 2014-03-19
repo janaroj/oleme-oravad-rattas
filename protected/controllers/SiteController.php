@@ -26,7 +26,7 @@ class SiteController extends Controller
           //'birthday' => 'birthDate',
           // you can also specify additional values, 
           // that will be applied to your model (eg. account activation status)
-          'acc_status' => 1,
+          //'acc_status' => 1,
         ),
       ),
       // this is an admin action that will help you to configure HybridAuth 
