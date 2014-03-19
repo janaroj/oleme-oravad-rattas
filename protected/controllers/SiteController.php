@@ -9,9 +9,6 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-
-		Yii::app()->nodeSocket->registerClientScripts();
-		
 		$criteria = new CDbCriteria();
 		$criteria->limit=8;
 		$criteria->offset=0;
@@ -256,7 +253,5 @@ class SiteController extends Controller
             ),
         );
     }
-
-
 
 }
