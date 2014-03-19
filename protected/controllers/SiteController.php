@@ -159,17 +159,25 @@ class SiteController extends Controller
 
 	public function actionLogin()
 	{
+
+    /**
+     * Declares class-based actions.
+     */
+    public function actions()
+    {
+
+
 		$config = array( 
-      	"base_url" => "http://oravadrattas.azurewebsites.com/protected/extensions/hoauth/hybridauth/",  
-     	"providers" => array (
-        "Google" => array ( 
-        "enabled" => true,
-       	"keys"    => array ( "id" => "672052276846.apps.googleusercontent.comE", "secret" => "nZQqEZTY0s5ofOoTsQaPmUEg" ), 
-        "scope"           => "https://www.googleapis.com/auth/userinfo.profile ". // optional
-                            "https://www.googleapis.com/auth/userinfo.email"   , // optional
-        "access_type"     => "offline",   // optional
-        "approval_prompt" => "force",     // optional
-        "hd"              => "domain.com" // optional
+      		"base_url" => "http://oravadrattas.azurewebsites.com/protected/extensions/hoauth/hybridauth/",  
+		 	"providers" => array (
+		    "Google" => array ( 
+			    "enabled" => true,
+			   	"keys"    => array ( "id" => "672052276846.apps.googleusercontent.com", "secret" => "nZQqEZTY0s5ofOoTsQaPmUEg" ), 
+			    "scope"           => "https://www.googleapis.com/auth/userinfo.profile ". // optional
+			                        "https://www.googleapis.com/auth/userinfo.email"   , // optional
+			    "access_type"     => "offline",   // optional
+			    "approval_prompt" => "force",     // optional
+		    	//"hd"              => "domain.com" // optional
 	    )));
     
 	    require_once( "/protected/extensions/hoauth/hybridauth/Hybrid/Auth.php" );
