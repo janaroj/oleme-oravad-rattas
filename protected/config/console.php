@@ -9,17 +9,6 @@ return array(
 	// preloading 'log' component
 	'preload'=>array('log'),
 
-	//Yii node socket code
-	'commandMap' => array(
-    'node-socket' => 'application.extensions.yii-node-socket.lib.php.NodeSocketCommand'
-	)
-
-	'nodeSocket' => array(
-    'class' => 'application.extensions.yii-node-socket.lib.php.NodeSocket',
-    'host' => 'localhost',  // default is 127.0.0.1, can be ip or domain name, without http
-    'port' => 3001      // default is 3001, should be integer
-	)
-
 	// application components
 	'components'=>array(
 		'db'=>array(
