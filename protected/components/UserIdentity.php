@@ -50,7 +50,7 @@ class UserIdentity extends CUserIdentity
         // sets username and password values
         parent::__construct($username,$password);
 
-        $this->user = User::model()->find('LOWER(email)=?',array(strtolower($this->username)));
+        $this->user = Users::model()->find('LOWER(email)=?',array(strtolower($this->username)));
 
         if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
