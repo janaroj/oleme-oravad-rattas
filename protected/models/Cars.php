@@ -116,8 +116,8 @@ class Cars extends CActiveRecord
 
 		if (!empty($uploadedFile)) {
 			$this->mainImg = "{$uploadedFile}";
-			$this->save();
 		}
+		$this->save();
 
 		if (count($uploadedFiles) > 0) { //Lisab pildid, ei eemalda vanu
 			
