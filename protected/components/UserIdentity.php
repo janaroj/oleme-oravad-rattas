@@ -74,7 +74,7 @@ class UserIdentity extends CUserIdentity
     {
         if($this->errorCode === self::ERROR_UNKNOWN_IDENTITY)
         {
-            if (!$this->user->validatePassword($this->password))
+            if (!$this->user->verifyPassword($this->password))
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
             else 
             {
