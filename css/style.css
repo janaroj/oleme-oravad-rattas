@@ -48,7 +48,9 @@ table {
 }
 
 /*CSS RESET END*/
-a {
+
+/*Main CSS elements and frame*/
+a{
     text-decoration: none;
     line-height: 1.4em;
     color:black;
@@ -56,20 +58,47 @@ a {
 a :visited{
     color:black;
 }
-
 body {
     background: url("carbon_fibre.png") top left repeat;
     font-family: "Open Sans", sans-serif;
     font-size: 13px;
     line-height: 1.4em;
 }
+h1,h2,h3 {
+    line-height: 1.4em;
+    padding-bottom: 0.2em;
+    padding-top: 0.2em;
+}
 
+h1{
+    font-size: 21px;
+    font-weight: 600;
+    padding-bottom: 0.6em;
+    }
+
+h2{
+    font-size: 21px;
+    font-weight: 600;
+}
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
 .content {
     margin-top: 130px;
     background-color: #fff;
     padding: 15px;
     display: block;
     margin-bottom: 100px;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 1px;
+}
+.clear {
+    clear: both;
 }
 
 /*Index.php styles, objects*/
@@ -121,7 +150,6 @@ body {
 .search-box{
     margin-top: 100px;
 }
-
 .object:hover{
     background-color: #ECE8E2; 
 }
@@ -191,8 +219,6 @@ body {
     width: 100%;
 }
 
-/*END*/
-
 /*Requests page -- admin*/
 .request-table{
     width: 80%;
@@ -209,16 +235,12 @@ body {
 .req-answer{
     font-weight: 600;
     text-transform: uppercase;
-
 }
-
-/*END*/
 
 /*Login and registration forms */
 .form {
     width: 50%
 }
-
 .form .row label{
     float: left;
     width: 28%;
@@ -251,32 +273,10 @@ body {
     width: 70%;
     min-height: 50px;
 }
-/*END */
 
 /*addCar page -- admin*/
-
 .form .description input{
     min-height: 50px;
-}
-
-/*END*/
-
-.open-search{
-    position: absolute;
-    left: 0;
-    bottom: -40px;
-    width: 100%;
-    text-align: center;
-}
-
-.container{
-    width: 1140px;
-    margin: 0 auto;
-    position: relative;
-    min-height: 1px;
-}
-.clear {
-    clear: both;
 }
 
 /*Settings page*/
@@ -288,14 +288,13 @@ body {
     width: 28%;
 }
 
-/*Object view elements*/
+/*OBJECT VIEW elements*/
 .detail-text{
     font-size: 1.05em;
     width: 38%;
     float: left;
     padding-right: 2%; 
 }
-/*Table*/
 .detail-text table{
     width: 100%;
     font-size: 1.05em;
@@ -303,11 +302,6 @@ body {
 .detail-text tr{
     height: 2.5em;
 }
-/*
-.detail-text tr:nth-child(odd){
-    background: #CFCDCD;
-}
-*/
 .detail-text tr{
     border-bottom: 2px solid rgb(61, 58, 58);
 }
@@ -318,8 +312,6 @@ body {
 .detail-text td:nth-child(even){
     font-weight: 600;
 }
-
-/*Textual stuff */
 .detail-text h2{
     border-bottom: 3px solid rgb(61, 58, 58);
     padding-bottom: 0;
@@ -333,14 +325,12 @@ body {
     width: 50%;
     padding:0.1em;
 }
-
 .ask-info{
     display:none;
 }
 .ask-info .form{
     width: 100%
 }
-
 .detail-img{
     width: 60%;
     float: left;
@@ -386,33 +376,7 @@ body {
     text-decoration : none;
     padding : 4px;
     display: inline-block;
-    text-align: center;
-    
-}
-.back :hover{
-
-}
-/*Object view elements END*/
-
-h1,h2,h3 {
-    line-height: 1.4em;
-    padding-bottom: 0.2em;
-    padding-top: 0.2em;
-}
-
-h1{
-    font-size: 21px;
-    font-weight: 600;
-    padding-bottom: 0.6em;
-    }
-
-h2{
-    font-size: 21px;
-    font-weight: 600;
-}
-h3 {
-    font-size: 18px;
-    font-weight: 400;
+    text-align: center;   
 }
 
 @media (max-width: 1150px){
