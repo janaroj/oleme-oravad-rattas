@@ -32,6 +32,7 @@
         <div class="ask-info">
             <div class="form">
             <?php echo CHtml::beginForm(); ?>
+            <?php echo CHtml::errorSummary($model);?>
 
              <div class="row">
                 <?php echo CHtml::activeLabel($model,'Nimi'); ?>
@@ -40,7 +41,7 @@
 
             <div class="row">
                 <?php echo CHtml::activeLabel($model,'Email'); ?>
-                <?php echo CHtml::activeTextField($model,'email') ?>
+                <?php echo CHtml::activeTextField($model,'mail') ?>
             </div>
          
             <div class="row">

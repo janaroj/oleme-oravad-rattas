@@ -56,6 +56,4 @@
       location.reload();
     });
 
-
-
-      });
+});

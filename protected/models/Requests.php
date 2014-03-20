@@ -32,6 +32,11 @@ class Requests extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			//For form
+			array('mail, phone, name, text', 'required'),
+			array('mail','email'),
+			array('phone','numerical'),
+
 			array('carId', 'numerical', 'integerOnly'=>true),
 			array('name, mail, phone', 'length', 'max'=>45),
 			array('text', 'length', 'max'=>250),
@@ -107,5 +112,18 @@ class Requests extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function request()
+	{		
+		$request = new Requests;
+		$request->carId = $this->carId;
+		$request->name = $this->name;
+		$request->text = $this->text;
+		$request->phone = $this->phone;
+		$request->mail = $this->mail;
+
+		$request->save();
+
 	}
 }

@@ -257,11 +257,11 @@ class SiteController extends Controller
 
 		$car_images = CarPictures::model()->findAll($criteria);
 
-		$model = new RequestForm;
+		$model = new Requests;
 
-		if(isset($_POST['RequestForm']))
+		if(isset($_POST['Requests']))
 		{
-			$model->attributes=$_POST['RequestForm'];
+			$model->attributes=$_POST['Requests'];
         	if($model->validate()) {
         		$model->carId = $car->ID;
         		$model->request();
