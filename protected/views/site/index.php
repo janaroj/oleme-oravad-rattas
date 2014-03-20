@@ -27,56 +27,68 @@
 
     <div class="search-box">
       <div class="container">
+
       <?php 
         $jada = array();
+        $jada[] = '(mark)';
         foreach ($cars as $car) {
           if(!in_array($car->make, $jada)){
             $jada[] = $car->make;  
           }
         } 
-        echo CHtml::dropDownList('categories', $jada,
-          $jada, array('empty' => '(Vali mark)')); 
+        echo CHtml::dropDownList('mark', $jada,
+          $jada); 
         ?>
       <?php 
         $jada = array();
+         $jada[] = '(värv)';
         foreach ($cars as $car) {
           if(!in_array($car->color, $jada)){
             $jada[] = $car->color;  
           }
         } 
-        echo CHtml::dropDownList('categories', $jada,
-          $jada, array('empty' => '(Vali mark)')); 
+        echo CHtml::dropDownList('color', $jada,
+          $jada); 
         ?>
-
-      <button class="logout">Otsi</button>
+   
+      <?php   echo CHtml::link('Otsi',array('search'),array('class'=>'login-as'));?> 
       <button class="more-details">Rohkem detaile</button>
-      <div class="detail-search">
-        <select>
-          <option>Mis iganes</option>
-          <option>Kes iganes</option>
-          <option>Kus iganes</option>
-          <option>Mida iganes</option>
-        </select>
-      <select>
-          <option>Mis iganes</option>
-          <option>Kes iganes</option>
-          <option>Kus iganes</option>
-          <option>Mida iganes</option>
-        </select>
-      <select>
-          <option>Mis iganes</option>
-          <option>Kes iganes</option>
-          <option>Kus iganes</option>
-          <option>Mida iganes</option>
-        </select>
-      <select>
-          <option>Mis iganes</option>
-          <option>Kes iganes</option>
-          <option>Kus iganes</option>
-          <option>Mida iganes</option>
-        </select>
-        
 
+      <div class="detail-search">
+        <?php 
+        $jada = array();
+         $jada[] = '(aasta)';
+        foreach ($cars as $car) {
+          if(!in_array($car->year, $jada)){
+            $jada[] = $car->year;  
+          }
+        } 
+        echo CHtml::dropDownList('year', $jada,
+          $jada); 
+        ?>
+     <?php 
+        $jada = array();
+         $jada[] = '(asukoht)';
+        foreach ($cars as $car) {
+          if(!in_array($car->location, $jada)){
+            $jada[] = $car->location;  
+          }
+        } 
+        echo CHtml::dropDownList('location', $jada,
+          $jada); 
+        ?>
+      <?php 
+        $jada = array();
+         $jada[] = '(Lisamise kuupäev)';
+        foreach ($cars as $car) {
+          $date = date("d.m.Y",strToTime($car->Date));
+          if(!in_array($date, $jada)){
+            $jada[] = $date;  
+          }
+        } 
+        echo CHtml::dropDownList('dateAdded', $jada,
+          $jada); 
+        ?>
       </div>
 
       </div>

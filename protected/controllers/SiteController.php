@@ -70,6 +70,20 @@ class SiteController extends Controller
 	}
 }
 
+	public function actionSearch() {
+		$criteria = new CDbCriteria();
+		$criteria->limit=8;
+		$criteria->offset=0;
+		$criteria->order="Date DESC";
+
+		
+		$cars = Cars::model()->findAll($criteria);
+
+		$this->render('index', array(
+			'cars'=>$cars
+		));	
+	}
+
 	public function actionChangeCar() {
 		$id = $_GET['carId'];
 		$model = Cars::model()->findByPk($id);
