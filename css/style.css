@@ -187,10 +187,6 @@ body {
     width: 67%;
     float: left;
 }
-.content-small .form {
-    width: 100%;
-}
-
 /*END*/
 
 /*Requests page -- admin*/
@@ -246,11 +242,6 @@ body {
     margin-left: 2em;
     float: left;
 }
-.form textarea{
-    max-width: 70%;
-    width: 70%;
-    min-height: 50px;
-}
 /*END */
 
 /*addCar page -- admin*/
@@ -277,15 +268,6 @@ body {
 }
 .clear {
     clear: both;
-}
-
-/*Settings page*/
-.content-small .row input {
-    width: 40%;
-    display: block;
-}
-.content-small .row label {
-    width: 28%;
 }
 
 /*Object view elements*/
@@ -337,9 +319,6 @@ body {
 .ask-info{
     display:none;
 }
-.ask-info .form{
-    width: 100%
-}
 
 .detail-img{
     width: 60%;
@@ -354,26 +333,20 @@ body {
     margin-left: 0;
     width: 24%;
     float: left;
-    display: block;
 }
 .small-image img  {
     width: auto;
     max-height: 100px;
     cursor: pointer;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
 }
 .big-image {
     width: 100%;
 }
 .big-image img{
-    max-height: 450px;
+    float: none;
+    max-height: 600px;
     max-width: 100%;
     width: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 .ask-for-information{
     margin: 1em 0;

@@ -45,7 +45,7 @@
 
                 <div class="row description">
                     <?php echo CHtml::activeLabel($model,'Kirjeldus'); ?>
-                    <?php echo CHtml::activeTextArea($model,'description') ?>
+                    <?php echo CHtml::activeTextField($model,'description') ?>
                 </div>
 
                 <div class="row">
