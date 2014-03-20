@@ -10,16 +10,18 @@
  
     <title>Oleme Oravad Rattas</title>
  
-    <?php 	
-    	$cs = Yii::app()->getClientScript();
-        $cs->registerCssFile('css/style.css');
-    	$cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js');
-    	$cs->registerScriptFile('js/custom.js');?>
+    
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css' />
     <!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
     <link rel="shortcut icon" href="images/favicon.png" />
+
+    <?php   
+        $cs = Yii::app()->getClientScript();
+        $cs->registerCssFile('css/style.css');
+        $cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js');
+        $cs->registerScriptFile('js/custom.js');?>
  
 </head>
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
