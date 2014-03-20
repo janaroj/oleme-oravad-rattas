@@ -259,6 +259,14 @@ class SiteController extends Controller
 
 		$model = new Requests;
 
+		if(isset($_POST['Requests']))
+		{
+			$model->attributes=$_POST['Requests'];
+        	if($model->validate()) {
+        		$model->carId = $car->ID;
+        		$model->request();
+        		}
+    	}
 		$this->render('object',array(
 			'car'=>$car,
 			'images' =>$car_images,
