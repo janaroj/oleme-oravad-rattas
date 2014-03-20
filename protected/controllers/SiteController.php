@@ -278,9 +278,10 @@ class SiteController extends Controller
 		$model = new Requests;
 		$model->attributes = $_POST;
 		if($model->save()) {
-			echo json_encode(array('success' => 'true'));
+			echo json_encode(array('success' => 1));
 		} else {
-			echo json_encode(array('success' => 'false'));
+			echo json_encode(array('success' => 0,
+				'errors' => CHtml::errorSummary($model)));
 		}
 
 	}

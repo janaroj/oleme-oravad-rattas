@@ -80,9 +80,16 @@
         data: item,
         dataType: 'JSON',
         success: function(data) {
-            $('.ask-info .form .row input').each(function(){
+          if (data.success == 1) {
+             $('.no-success').html(data.errors);
+             $('.ask-info .form .row input').each(function(){
               $(this).val('');
             });
+ 
+          } else {
+            $('.no-success').html(data.errors);
+          }
+            //$('.no-success').html("Errorsummary");
           }
         
       });

@@ -3,7 +3,6 @@
     <div class="content">
         <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>
         
-        <span><?php $this->widget('ext.hoauth.widgets.HOAuth'); ?></span>
         <div class="form">
         <?php echo CHtml::beginForm(); ?>
          
@@ -26,6 +25,7 @@
          
             <div class="row submit">
                 <?php echo CHtml::submitButton('Logi sisse'); ?>
+                <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
             </div>
          
         <?php echo CHtml::endForm(); ?>

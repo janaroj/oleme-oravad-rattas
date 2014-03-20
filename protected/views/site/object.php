@@ -33,7 +33,7 @@
             <div class="form">
             <input id="car_id" type="text" value="<?php echo $_GET['id']; ?>" style="display: none;">
             <?php echo CHtml::beginForm(); ?>
-            <?php echo CHtml::errorSummary($model);?>
+            <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
 
              <div class="row">
                 <?php echo CHtml::activeLabel($model,'Nimi'); ?>
@@ -54,7 +54,7 @@
                 <?php echo CHtml::activeTextField($model,'text') ?>
             </div>
 
-            <div class="row submit">
+            <div class="submit">
                 <?php echo CHtml::submitButton('Päri infot'); ?>
             </div>
 

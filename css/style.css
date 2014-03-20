@@ -211,20 +211,36 @@ body {
 /*END*/
 
 /*Login and registration forms */
+.form {
+    width: 50%
+}
+
 .form .row label{
     float: left;
-    width: 20%;
+    width: 28%;
     clear: left;
     text-transform: uppercase;
 }   
 .form .row input {
     float: left;
-    width: 35%;
+    width: 70%;
     margin-bottom: 0.6em;
 }
-
-.form .submit{
+.form .rememberMe label{
+    min-width: 28%;
+    width: auto;
+}
+.form .rememberMe input{
+    width: auto; 
+}
+.form .submit input{
+    float: left;
+    max-width: 40%;
     clear: both;
+}
+.google{
+    margin-left: 2em;
+    float: left;
 }
 /*END */
 
@@ -387,6 +403,7 @@ h3 {
     .small-image li{
         width: 49%;
     }
+
 }
 @media (max-width: 790px){
     .object{
@@ -397,6 +414,16 @@ h3 {
     }
     .object-img{
         height: auto;
+    }
+    .form{
+        width: 100%;
+    }
+
+    .row p{
+        clear: right;
+    }
+    .google{
+        margin-left: 1em;
     }
 
 }
