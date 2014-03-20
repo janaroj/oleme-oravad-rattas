@@ -48,6 +48,14 @@ table {
 }
 
 /*CSS RESET END*/
+a {
+    text-decoration: none;
+    line-height: 1.4em;
+    color:black;
+}
+a :visited{
+    color:black;
+}
 
 body {
     background: url("carbon_fibre.png") top left repeat;
@@ -114,10 +122,6 @@ body {
     margin-top: 100px;
 }
 
-.detail-search{
-    display: none;
-}
-
 .object:hover{
     background-color: #ECE8E2; 
 }
@@ -171,16 +175,12 @@ body {
 }
 .choices a{
     width: 100%;
-    color:black;
     padding: 5px 2px;
     float: right;
     display: block;
     clear: both;
     text-align: center;
     text-transform: uppercase;
-}
-.choices a:visited{
-    color: black;
 }
 .content-small{
     padding-left: 2%;
@@ -313,17 +313,41 @@ body {
     float: left;
 }
 .small-image li {
-    margin: 1%;
+    margin-top: 1%;
     margin-left: 0;
     width: 24%;
     float: left;
 }
 .small-image img  {
-    width: 100%;
+    width: auto;
+    max-height: 100px;
     cursor: pointer;
 }
+.big-image {
+    width: 100%;
+}
 .big-image img{
-    width: 100%; 
+    float: none;
+    max-height: 600px;
+    max-width: 100%;
+    width: auto;
+}
+.ask-for-information{
+    margin: 1em 0;
+}
+.back{
+    margin-top: 2em;
+    text-transform: uppercase;
+    border: solid rgb(61, 58, 58);
+    border-width : 1px 5px 5px 1px;
+    text-decoration : none;
+    padding : 4px;
+    display: inline-block;
+    text-align: center;
+    
+}
+.back :hover{
+
 }
 /*Object view elements END*/
 

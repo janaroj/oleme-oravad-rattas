@@ -1,18 +1,12 @@
 
 
   $(function(){
-    $(".data-input-table table").find("input").each(function(){
-          if(!$(this).val()){
-            $(this).attr("placeholder","Sisesta info");
-          }
-        });
-
-
-    $(".ask-for-information").click(function(){
-        $(".ask-info").toggle();
-    });
-
+    //Hide search when JS loads
+    $(".detail-search").hide();
+    
+    //Search slide toggle
     $(".more-details").click(function(){
+      
       $(".detail-search").slideToggle();
      
       if($(this).text() == "Rohkem detaile"){
@@ -24,6 +18,19 @@
     });
 
 
+    
+    $(".data-input-table table").find("input").each(function(){
+          if(!$(this).val()){
+            $(this).attr("placeholder","Sisesta info");
+          }
+        });
+
+
+    $(".ask-for-information").click(function(){
+        alert("miki");
+        $(".ask-info").toggle();
+    });
+    
     $(".small-image img").click(function(){
       var img = $('<img>');
       $('.big-image img').hide();

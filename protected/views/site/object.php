@@ -61,33 +61,30 @@
              <?php echo CHtml::endForm(); ?>
             </div>
         </div>
-      </div>
-      <div class="detail-img">
+    </div>
+    <div class="detail-img">
+      
       <div class="big-image">
         <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt" />
       </div>
+      
       <div class="small-image">
         <ul>
-        <li>
-          <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt"/>
-        </li>
-        
-        <?php foreach ($images as $image) { ?>
-        
+          <li>
+            <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt"/>
+          </li>
+          <?php foreach ($images as $image) { ?>
           <li>
             <img src="images/<?php echo $car->ID; echo "/"; echo $image->picture; ?>" alt="pilt autost" />
           </li>
-        
           <?php } ?>
-        
         </ul>
       </div>
+  
     </div>
-
-    <?php echo CHtml::link('Tagasi otsingutulemuste juurde',array('index')); ?>
-    
+  
     <div class="clear"></div>
-  </div>
-
+    <span class="back"><?php echo CHtml::link('Tagasi otsingutulemuste juurde',array('index')); ?></span>
   
   </div>
+</div>
