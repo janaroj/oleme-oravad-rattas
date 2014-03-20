@@ -259,19 +259,22 @@ class SiteController extends Controller
 
 		$model = new Requests;
 
-		if(isset($_POST['Requests']))
-		{
-			$model->attributes=$_POST['Requests'];
-        	if($model->validate()) {
-        		$model->carId = $car->ID;
-        		$model->request();
-        		}
-    	}
 		$this->render('object',array(
 			'car'=>$car,
 			'images' =>$car_images,
 			'model' =>$model
 		));
+	}
+
+	public function actionAjaxObject() {
+		$model = new Requests;
+		$model->attributes = $_POST;
+		if($model->save()) {
+			echo json_encode(array('success' => 'true'));
+		} else {
+			echo json_encode(array('success' => 'false'));
+		}
+
 	}
 
 	/**
@@ -310,7 +313,7 @@ class SiteController extends Controller
                 'roles'=>array('@'),
             ),
              array('allow',
-                'actions'=>array('index','error','object','login','registration'),
+                'actions'=>array('index','error','object','login','registration','AjaxObject'),
                 'roles'=>array('*'),
             ),
         );

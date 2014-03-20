@@ -31,6 +31,7 @@
         <button class="ask-for-information">Küsi infot</button>
         <div class="ask-info">
             <div class="form">
+            <input id="car_id" type="text" value="<?php echo $_GET['id']; ?>" style="display: none;">
             <?php echo CHtml::beginForm(); ?>
             <?php echo CHtml::errorSummary($model);?>
 

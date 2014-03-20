@@ -27,7 +27,6 @@
 
 
     $(".ask-for-information").click(function(){
-        alert("miki");
         $(".ask-info").toggle();
     });
     
@@ -63,4 +62,31 @@
       location.reload();
     });
 
+
+    //AJAX object page
+    $('.ask-info form input[type=submit]').click(function(e) {
+      e.preventDefault();
+        var item = {
+        carId: $('#car_id').val(),
+        name:  $('#Requests_name').val(),
+        mail: $('#Requests_mail').val(),
+        phone: $('#Requests_phone').val(),
+        text: $('#Requests_text').val() 
+      }
+
+      $.ajax({
+        url: '/oleme-oravad-rattas/index.php?r=site/AjaxObject',
+        type: 'POST',
+        data: item,
+        dataType: 'JSON',
+        success: function(data) {
+            $('.ask-info .form .row input').each(function(){
+              $(this).val('');
+            });
+          }
+        
+      });
+    })
+
+    
 });
