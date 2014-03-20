@@ -27,18 +27,27 @@
 
     <div class="search-box">
       <div class="container">
-        <select>
-          <option>Mis iganes</option>
-          <option>Kes iganes</option>
-          <option>Kus iganes</option>
-          <option>Mida iganes</option>
-        </select>
-      <select>
-          <option>Mis iganes</option>
-          <option>Kes iganes</option>
-          <option>Kus iganes</option>
-          <option>Mida iganes</option>
-        </select>
+      <?php 
+        $jada = array();
+        foreach ($cars as $car) {
+          if(!in_array($car->make, $jada)){
+            $jada[] = $car->make;  
+          }
+        } 
+        echo CHtml::dropDownList('categories', $jada,
+          $jada, array('empty' => '(Vali mark)')); 
+        ?>
+      <?php 
+        $jada = array();
+        foreach ($cars as $car) {
+          if(!in_array($car->color, $jada)){
+            $jada[] = $car->color;  
+          }
+        } 
+        echo CHtml::dropDownList('categories', $jada,
+          $jada, array('empty' => '(Vali mark)')); 
+        ?>
+
       <button class="logout">Otsi</button>
       <button class="more-details">Rohkem detaile</button>
       <div class="detail-search">
