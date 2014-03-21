@@ -28,17 +28,20 @@
     <div class="search-box">
       <div class="container">
 
-      <?php 
+      <?php
+        $srch = new Cars;
+
         $jada = array();
         $jada[] = '(mark)';
         foreach ($cars as $car) {
           if(!in_array($car->make, $jada)){
-            $jada[] = $car->make;  
+            $jada[] = $car->make;
           }
         } 
-        echo CHtml::dropDownList('mark', $jada,
-          $jada); 
+        echo CHtml::dropDownList('make', $jada,
+          $jada);
         ?>
+      
       <?php 
         $jada = array();
          $jada[] = '(värv)';
@@ -47,11 +50,18 @@
             $jada[] = $car->color;  
           }
         } 
-        echo CHtml::dropDownList('color', $jada,
-          $jada); 
+        echo CHtml::dropDownList('model', 'model',$jada); 
         ?>
-   
-      <?php   echo CHtml::link('Otsi',array('search'),array('class'=>'login-as'));?> 
+        
+      <?php 
+
+        echo CHtml::link('Otsi',array('search',
+            'make'=>$srch->make,
+            'model'=>$srch->model,
+            'year'=>$srch->year
+            )
+            ,array('class'=>'mikihiir login-as'));?>
+
       <button class="more-details">Rohkem detaile</button>
 
       <div class="detail-search">

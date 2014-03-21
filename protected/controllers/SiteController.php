@@ -71,16 +71,17 @@ class SiteController extends Controller
 }
 
 	public function actionSearch() {
-		$criteria = new CDbCriteria();
-		$criteria->limit=8;
-		$criteria->offset=0;
-		$criteria->order="Date DESC";
-
+		$acar = new Cars;
 		
-		$cars = Cars::model()->findAll($criteria);
+		$acar->make=$_GET['make'];
+		$acar->model=$_GET['model'];
+		$acar->year=$_GET['year'];
+				
+		
+		$dataprovider = $acar->search()->getData();
 
 		$this->render('index', array(
-			'cars'=>$cars
+			'cars'=>$dataprovider
 		));	
 	}
 
