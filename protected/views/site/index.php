@@ -29,6 +29,7 @@
       <div class="container">
       <div>
     <?php echo CHtml::beginForm(); ?>
+
       <?php
         
         $jada = array();
@@ -57,8 +58,9 @@
 
   echo CHtml::submitButton('Otsi'); 
             ?>
-
+</div>
       <div class="detail-search">
+      <div>
         <?php 
         $jada = array();
          $jada[] = '(aasta)';
@@ -101,11 +103,9 @@
         echo CHtml::dropDownList('price', 0, $jada); 
         ?>
         <?php echo CHtml::endForm(); ?>
-        </div>
-        </div>
-        <button class="more-details">Rohkem detaile</button>
+    <div>
       </div>
- 
+ <button class="more-details">Rohkem detaile</button>
       </div>
 
     </div>
@@ -137,5 +137,5 @@
     <button class="previous">Eelmised</button>
     <button class="next">Järgmised</button>
   </div>
-
+  </div>
 </div>
