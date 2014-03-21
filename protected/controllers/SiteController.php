@@ -52,6 +52,41 @@ class SiteController extends Controller
 		$criteria->offset=0;
 		$criteria->order="Date DESC";
 
+		if (isset($_POST['make'])) {
+			$make = $_POST['make'];
+			if ($make>0) {
+
+			}
+		}
+
+		if (isset($_POST['color'])) {
+			$color = $_POST['color'];
+			if ($color>0) {
+		
+			}
+		}
+
+		if (isset($_POST['year'])) {
+			$year = $_POST['year'];
+			if ($year>0) {
+				
+			}
+		}
+
+		if (isset($_POST['location'])) {
+			$location = $_POST['location'];
+			if ($location>0) {
+				
+			}
+		}
+
+		if (isset($_POST['dateAdded'])) {
+			$dateAdded = $_POST['dateAdded'];
+			if ($dateAdded>0) {
+				
+			}
+		}
+
 		$cars = Cars::model()->findAll($criteria);
 
 		$this->render('index', array(
@@ -69,21 +104,6 @@ class SiteController extends Controller
     rmdir($dir);
 	}
 }
-
-	public function actionSearch() {
-		$acar = new Cars;
-		
-		$acar->make=$_GET['make'];
-		$acar->model=$_GET['model'];
-		$acar->year=$_GET['year'];
-				
-		
-		$dataprovider = $acar->search()->getData();
-
-		$this->render('index', array(
-			'cars'=>$dataprovider
-		));	
-	}
 
 	public function actionChangeCar() {
 		$id = $_GET['carId'];

@@ -27,10 +27,9 @@
 
     <div class="search-box">
       <div class="container">
-
+    <?php echo CHtml::beginForm(); ?>
       <?php
-        $srch = new Cars;
-
+        
         $jada = array();
         $jada[] = '(mark)';
         foreach ($cars as $car) {
@@ -50,19 +49,13 @@
             $jada[] = $car->color;  
           }
         } 
-        echo CHtml::dropDownList('model', 'model',$jada); 
+        echo CHtml::dropDownList('color', 0,$jada); 
         ?>
         
       <?php 
 
-        echo CHtml::link('Otsi',array('search',
-            'make'=>$srch->make,
-            'model'=>$srch->model,
-            'year'=>$srch->year
-            )
-            ,array('class'=>'mikihiir login-as'));?>
-
-      <button class="more-details">Rohkem detaile</button>
+  echo CHtml::submitButton('Otsi'); 
+            ?>
 
       <div class="detail-search">
         <?php 
@@ -73,8 +66,7 @@
             $jada[] = $car->year;  
           }
         } 
-        echo CHtml::dropDownList('year', $jada,
-          $jada); 
+        echo CHtml::dropDownList('year', 0, $jada); 
         ?>
      <?php 
         $jada = array();
@@ -84,8 +76,7 @@
             $jada[] = $car->location;  
           }
         } 
-        echo CHtml::dropDownList('location', $jada,
-          $jada); 
+        echo CHtml::dropDownList('location', 0, $jada); 
         ?>
       <?php 
         $jada = array();
@@ -96,15 +87,28 @@
             $jada[] = $date;  
           }
         } 
-        echo CHtml::dropDownList('dateAdded', $jada,
-          $jada); 
+        echo CHtml::dropDownList('dateAdded', 0, $jada); 
         ?>
-      </div>
+        <?php 
+        $jada = array();
+         $jada[] = '(hind)';
+        foreach ($cars as $car) {
+          if(!in_array($car->price, $jada)){
+            $jada[] = $car->price;  
+          }
+        } 
+        echo CHtml::dropDownList('price', 0, $jada); 
+        ?>
+        <?php echo CHtml::endForm(); ?>
 
       </div>
+ <button class="more-details">Rohkem detaile</button>
+      </div>
+
     </div>
 
   </div>
+
 <div class="container">
 
   <div class="content">

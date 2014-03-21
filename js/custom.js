@@ -95,11 +95,5 @@
       });
     })
 
-    $('.mikihiir').click(function(){
-      var x = document.getElementById("make").selectedIndex;
-      var y = document.getElementById("make").options;
-      alert(y[x].text);
-    })
-
     
 });
