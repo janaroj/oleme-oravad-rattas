@@ -75,7 +75,7 @@
       }
 
       $.ajax({
-        url: '/oleme-oravad-rattas/index.php?r=site/AjaxObject',
+        url: '/index.php?r=site/AjaxObject',
         type: 'POST',
         data: item,
         dataType: 'JSON',
