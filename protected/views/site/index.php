@@ -27,6 +27,7 @@
 
     <div class="search-box">
       <div class="container">
+      <form>
     <?php echo CHtml::beginForm(); ?>
       <?php
         
@@ -100,7 +101,7 @@
         echo CHtml::dropDownList('price', 0, $jada); 
         ?>
         <?php echo CHtml::endForm(); ?>
-
+        </form>
       </div>
  <button class="more-details">Rohkem detaile</button>
       </div>
