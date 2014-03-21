@@ -53,14 +53,16 @@
         } 
         echo CHtml::dropDownList('color', 0,$jada); 
         
-        echo CHtml::submitButton('Otsi'); 
+        echo CHtml::submitButton('Otsi');
+
         ?>
+        <button class="more-details">Rohkem detaile</button>
         </div>
         <div class="detail-search">
         <div>
           <?php 
           $jada = array();
-           $jada[] = '(aasta)';
+          $jada[] = '(aasta)';
           foreach ($cars as $car) {
             if(!in_array($car->year, $jada)){
               $jada[] = $car->year;  
@@ -78,7 +80,7 @@
           echo CHtml::dropDownList('location', 0, $jada); 
 
           $jada = array();
-           $jada[] = '(Lisamise kuupäev)';
+          $jada[] = '(Lisamise kuupäev)';
           foreach ($cars as $car) {
             $date = date("d.m.Y",strToTime($car->Date));
             if(!in_array($date, $jada)){
@@ -97,7 +99,6 @@
           echo CHtml::dropDownList('price', 0, $jada); 
           ?>
           <?php echo CHtml::endForm(); ?>
-          <button class="more-details">Rohkem detaile</button>
         </div>
       </div>
     </div>
