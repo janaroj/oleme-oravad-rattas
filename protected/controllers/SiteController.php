@@ -340,15 +340,17 @@ class SiteController extends Controller
 
 	  public function actionGetCars()
     {
-        $cars = Cars::model()->findAll(array('order' => 'Date DESC'));
-        header('Content-Type: text/event-stream');
-        header('Cache-Control: no-cache');
+    	header('Content-Type: text/event-stream');
+		header('Cache-Control: no-cache');
         echo "retry: 10000\n"; // Optional. We tell the browser to retry after 10 seconds
+        $cars = Cars::model()->findAll();
         if(count($cars)) {
+        	echo "data:";
             foreach($cars as $key => $car) {
-                echo "data: <p>" . $car->make . "</p>\n";
+                echo $car->make;
             }
         }
+		echo "\n\n";
         flush();
     }
 
@@ -440,7 +442,7 @@ class SiteController extends Controller
                 'roles'=>array('@'),
             ),
              array('allow',
-                'actions'=>array('index','error','object','login','registration','AjaxObject'),
+                'actions'=>array('index','error','object','login','registration','AjaxObject','getMessage'),
                 'roles'=>array('*'),
             ),
         );

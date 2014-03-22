@@ -90,15 +90,11 @@ Yii::app()->clientScript->registerScript('cars-update', '
 if(typeof(EventSource) !== "undefined") {
     var source = new EventSource("' . CController::createUrl('getCars') . '");
     source.onmessage = function(event) {
-        $("#message").prepend(event.data).fadeIn(); // We want to display new messages above the stack
+        $(".content").prepend(event.data).fadeIn(); // We want to display new messages above the stack
     };
-}
-else {
-    $("#message").replaceWith("<div class=\"flash-notice\">Sorry, your browser doesn\'t support SSE.<br>Hint: get a real one :-)</div>"); // Don\'t be desperate, we\'ll see what we can do for you at the end of the wiki
 }
 ', CClientScript::POS_READY);
 ?>
-<div id="message"></div>
     <div class="bottom-nav">
       <button class="previous">Eelmised</button>
       <button class="next">Järgmised</button>
