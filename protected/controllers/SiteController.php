@@ -338,6 +338,20 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
+	  public function actionGetCars()
+    {
+        $cars = Cars::model()->findAll(array('order' => 'Date DESC'));
+        header('Content-Type: text/event-stream');
+        header('Cache-Control: no-cache');
+        echo "retry: 10000\n"; // Optional. We tell the browser to retry after 10 seconds
+        if(count($cars)) {
+            foreach($cars as $key => $car) {
+                echo "data: <p>" . $car->make . "</p>\n";
+            }
+        }
+        flush();
+    }
+
 	public function actionLogout()
 	{
 		 Yii::app()->user->logout();
