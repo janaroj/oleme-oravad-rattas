@@ -31,76 +31,35 @@
         <?php echo CHtml::beginForm(); ?>
 
         <?php
+      
+        echo CHtml::dropDownList('make', 0,$carMakes);
         
-        $jada = array();
-        $jada[] = '(mark)';
-        
-        foreach ($cars as $car) {
-          if(!in_array($car->make, $jada)){
-            $jada[] = $car->make;
-          }
-        } 
-        echo CHtml::dropDownList('make', $jada,
-          $jada);
-        
-        $jada = array();
-        $jada[] = '(värv)';
-        
-        foreach ($cars as $car) {
-          if(!in_array($car->color, $jada)){
-            $jada[] = $car->color;  
-          }
-        } 
-        echo CHtml::dropDownList('color', 0,$jada); 
+      
+        echo CHtml::dropDownList('color', 0,$carColors); 
         
         echo CHtml::submitButton('Otsi');
 
         ?>
-        <button class="more-details">Rohkem detaile</button>
+       
         </div>
         <div class="detail-search">
         <div>
           <?php 
-          $jada = array();
-          $jada[] = '(aasta)';
-          foreach ($cars as $car) {
-            if(!in_array($car->year, $jada)){
-              $jada[] = $car->year;  
-            }
-          } 
-          echo CHtml::dropDownList('year', 0, $jada); 
+        
+          echo CHtml::dropDownList('year', 0, $carYears); 
     
-          $jada = array();
-          $jada[] = '(asukoht)';
-          foreach ($cars as $car) {
-            if(!in_array($car->location, $jada)){
-              $jada[] = $car->location;  
-            }
-          } 
-          echo CHtml::dropDownList('location', 0, $jada); 
+          echo CHtml::dropDownList('location', 0, $carLocations); 
 
-          $jada = array();
-          $jada[] = '(Lisamise kuupäev)';
-          foreach ($cars as $car) {
-            $date = date("d.m.Y",strToTime($car->Date));
-            if(!in_array($date, $jada)){
-              $jada[] = $date;  
-            }
-          } 
-          echo CHtml::dropDownList('dateAdded', 0, $jada); 
+         
+          echo CHtml::dropDownList('dateAdded', 0, $carDates); 
 
-          $jada = array();
-           $jada[] = '(hind)';
-          foreach ($cars as $car) {
-            if(!in_array($car->price, $jada)){
-              $jada[] = $car->price;  
-            }
-          } 
-          echo CHtml::dropDownList('price', 0, $jada); 
+          
+          echo CHtml::dropDownList('price', 0, $carPrices); 
           ?>
           <?php echo CHtml::endForm(); ?>
         </div>
       </div>
+       <button class="more-details">Rohkem detaile</button>
     </div>
   </div>
 </div>

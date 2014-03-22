@@ -47,50 +47,119 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+
+		$carMakes = array();
+        $carMakes[] = '(mark)';
+		$carColors = array();
+		$carColors[] = '(värv)';
+		$carYears = array();
+		$carYears[] = '(aasta)';
+		$carLocations = array();
+		$carLocations[] = '(asukoht)';
+		$carDates = array();
+		$carDates[] = '(lisamise kuupäev)';
+		$carPrices = array();
+		$carPrices[] = '(hind)';
+
 		$criteria = new CDbCriteria();
 		$criteria->limit=8;
 		$criteria->offset=0;
 		$criteria->order="Date DESC";
 
-		if (isset($_POST['make'])) {
-			$make = $_POST['make'];
-			if ($make>0) {
-
-			}
-		}
-
-		if (isset($_POST['color'])) {
-			$color = $_POST['color'];
-			if ($color>0) {
-		
-			}
-		}
-
-		if (isset($_POST['year'])) {
-			$year = $_POST['year'];
-			if ($year>0) {
-				
-			}
-		}
-
-		if (isset($_POST['location'])) {
-			$location = $_POST['location'];
-			if ($location>0) {
-				
-			}
-		}
-
-		if (isset($_POST['dateAdded'])) {
-			$dateAdded = $_POST['dateAdded'];
-			if ($dateAdded>0) {
-				
-			}
-		}
-
 		$cars = Cars::model()->findAll($criteria);
+		
 
+		foreach ($cars as $car) {
+            if(!in_array($car->price, $carPrices)){
+              $carPrices[] = $car->price;  
+            }
+
+            $date = date("d.m.Y",strToTime($car->Date));
+            if(!in_array($date, $carDates)){
+              $carDates[] = $date;  
+            }
+
+            if(!in_array($car->location, $carLocations)){
+              $carLocations[] = $car->location;  
+            }
+
+            if(!in_array($car->year, $carYears)){
+              $carYears[] = $car->year;  
+            }
+
+            if(!in_array($car->color, $carColors)){
+            $carColors[] = $car->color;  
+          }
+
+          	 if(!in_array($car->make, $carMakes)){
+            $carMakes[] = $car->make;
+          }
+
+          } 
+
+        sort($carDates);
+        sort($carYears);
+        sort($carPrices);
+
+
+        if (isset($_POST['make']) || isset($_POST['color']) || isset($_POST['year']) || isset($_POST['location']) || isset($_POST['dateAdded']) || isset($_POST['price'])) 
+        {
+        	$car = new Cars;
+
+			if (isset($_POST['make'])) {
+				$make = $_POST['make'];
+				if ($make>0) {
+					$car->make = $carMakes[$make];
+				}
+			}
+
+			if (isset($_POST['color'])) {
+				$color = $_POST['color'];
+				if ($color>0) {
+					$car->color = $carColors[$color];
+				}
+			}	
+
+			if (isset($_POST['year'])) {
+				$year = $_POST['year'];
+				if ($year>0) {
+					$car->year = $carYears[$year];
+				}
+			}
+
+			if (isset($_POST['location'])) {
+				$location = $_POST['location'];
+				if ($location>0) {
+					$car->location = $carLocations[$location];
+				}
+			}
+
+			if (isset($_POST['dateAdded'])) {
+				$dateAdded = $_POST['dateAdded'];
+				if ($dateAdded>0) {
+					$car->Date = $carDates[$dateAdded];
+				}
+			}
+
+			if (isset($_POST['price'])) {
+				$price = $_POST['price'];
+				if ($price>0) {
+					$car->price = $carPrices[$price];	
+				}
+			}
+
+			$cars = $car->search()->getData();
+		}
+
+		
 		$this->render('index', array(
-			'cars'=>$cars
+			'cars'=>$cars,
+			'carMakes'=>$carMakes,
+			'carColors'=>$carColors,
+			'carYears' =>$carYears,
+			'carLocations' =>$carLocations,
+			'carDates' =>$carDates,
+			'carPrices' =>$carPrices
 		));	
 	}
 
