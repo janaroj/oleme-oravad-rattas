@@ -51,7 +51,7 @@
         
         echo CHtml::endForm(); ?>
       </div>
-      <button class="more-details">Rohkem detaile</button>
+      <!--button class="more-details">Rohkem detaile</button-->
     </div>
   </div>
 </div>
