@@ -63,7 +63,7 @@
     });
 
 
-    //AJAX object page
+    //AJAX object page ask for information
     $('.ask-info form input[type=submit]').click(function(e) {
       e.preventDefault();
         var item = {
