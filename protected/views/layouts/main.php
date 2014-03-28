@@ -3,11 +3,8 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="Content-Type" content="text/html"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame. Remove this if you use the .htaccess -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
- 
+
     <title>Oleme Oravad Rattas</title>
  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
