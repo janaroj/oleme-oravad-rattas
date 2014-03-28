@@ -35,10 +35,10 @@
             <?php echo CHtml::beginForm(); ?>
             <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
 
-            <p class="row">
+            
                 <?php echo CHtml::activeLabel($model,'Nimi'); ?>
                 <?php echo CHtml::activeTextField($model,'name') ?>
-            </p>
+            
 
             <span class="row">
                 <?php echo CHtml::activeLabel($model,'Email'); ?>
