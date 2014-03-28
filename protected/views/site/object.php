@@ -35,12 +35,12 @@
             <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
             <?php echo CHtml::beginForm(); ?>
             
-                <?php echo CHtml::activeLabel($model,'Nimi'); ?>
+                <?php echo CHtml::activeLabel($model,'name'); ?>
                 <?php echo CHtml::activeTextField($model,'name') ?>
             
 
             <span class="row">
-                <?php echo CHtml::activeLabel($model,'Email'); ?>
+                <?php echo CHtml::activeLabel($model,'mail'); ?>
                 <?php echo CHtml::activeTextField($model,'mail') ?>
             </span>
          
