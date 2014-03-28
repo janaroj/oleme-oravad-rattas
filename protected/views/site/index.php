@@ -34,9 +34,9 @@
           echo CHtml::dropDownList('color', 0,$carColors); 
           
           echo CHtml::submitButton('Otsi');?>
-        </div>
+        <!--</div>
         <div class="detail-search">
-        <div>
+        <div> -->
           <?php 
         
           echo CHtml::dropDownList('year', 0, $carYears); 
