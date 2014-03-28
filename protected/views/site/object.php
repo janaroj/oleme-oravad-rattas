@@ -32,9 +32,8 @@
         <div class="ask-info">
             <div class="form">
             <input id="car_id" type="text" value="<?php echo $_GET['id']; ?>" style="display: none;">
-            <?php echo CHtml::beginForm(); ?>
             <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
-
+            <?php echo CHtml::beginForm(); ?>
             
                 <?php echo CHtml::activeLabel($model,'Nimi'); ?>
                 <?php echo CHtml::activeTextField($model,'name') ?>
