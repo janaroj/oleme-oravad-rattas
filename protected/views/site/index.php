@@ -1,59 +1,61 @@
 <div class="header">
-    <div class="container">
-      <div class="logo"></div>
-      <div class="login">
-         <?php
-         if (Yii::app()->user->isGuest) { 
-          echo "<span class='login-as'>";
-          echo CHtml::link('Logi sisse',array('login'));
-          echo "</span><span class='login-as'>"; 
-          echo CHtml::link('Registreeri',array('registration'));
-          echo "</span>";
-        } else {
-          echo "<span class='login-as'>Oled sisse logitud kui: ";
-          echo Yii::app()->user->name;
-          echo "</span>";      
-          echo "<span class='login-as'>"; 
-          echo CHtml::link('Minu kasutaja',array('myUser'));
-          echo "</span><span class='login-as'>"; 
-          echo CHtml::link('Logi välja',array('logout'));
-          echo "</span>"; 
-          }
-          ?>    
-      </div>
-      <div class="clear"></div>
+  <div class="container">
+    <div class="logo"></div>
+    <div class="login">
+       <?php
+       if (Yii::app()->user->isGuest) { 
+        echo "<span class='login-as'>";
+        echo CHtml::link('Logi sisse',array('login'));
+        echo "</span><span class='login-as'>"; 
+        echo CHtml::link('Registreeri',array('registration'));
+        echo "</span>";
+      } else {
+        echo "<span class='login-as'>Oled sisse logitud kui: ";
+        echo Yii::app()->user->name;
+        echo "</span>";      
+        echo "<span class='login-as'>"; 
+        echo CHtml::link('Minu kasutaja',array('myUser'));
+        echo "</span><span class='login-as'>"; 
+        echo CHtml::link('Logi välja',array('logout'));
+        echo "</span>"; 
+        }
+        ?>    
     </div>
+    <div class="clear"></div>
+  </div>
 
-    <div class="search-box">
-      <div class="container">
-        <div>
-          <?php echo CHtml::beginForm();
+  <div class="search-box">
+    <div class="container">
+      <div>
+        <?php echo CHtml::beginForm();
+      
+        echo CHtml::dropDownList('make', 0,$carMakes);
+      
+        echo CHtml::dropDownList('color', 0,$carColors); 
         
-          echo CHtml::dropDownList('make', 0,$carMakes);
-        
-          echo CHtml::dropDownList('color', 0,$carColors); 
-          
-          echo CHtml::submitButton('Otsi');?>
-        <!--</div>
-        <div class="detail-search">
-        <div> -->
-          <?php 
-        
-          echo CHtml::dropDownList('year', 0, $carYears); 
-    
-          echo CHtml::dropDownList('location', 0, $carLocations); 
+        ?>
+      <!--</div>
+      <div class="detail-search">
+      <div> -->
+        <?php 
+      
+        echo CHtml::dropDownList('year', 0, $carYears); 
+  
+        echo CHtml::dropDownList('location', 0, $carLocations); 
 
-          echo CHtml::dropDownList('dateAdded', 0, $carDates); 
-          
-          echo CHtml::dropDownList('price', 0, $carPrices); 
-          
-          echo CHtml::endForm(); ?>
-        </div>
+        echo CHtml::dropDownList('dateAdded', 0, $carDates); 
+        
+        echo CHtml::dropDownList('price', 0, $carPrices); 
+        
+        echo CHtml::submitButton('Otsi');
+        
+        echo CHtml::endForm(); ?>
       </div>
       <button class="more-details">Rohkem detaile</button>
     </div>
   </div>
 </div>
+
 
 <div class="container">
   <div class="content">
