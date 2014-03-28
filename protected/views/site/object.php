@@ -35,21 +35,22 @@
             <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
             <?php echo CHtml::beginForm(); ?>
             
+            <div class="row">
                 <?php echo CHtml::activeLabel($model,'name'); ?>
                 <?php echo CHtml::activeTextField($model,'name') ?>
-            
+            </div>
 
-            <span class="row">
+            <div class="row">
                 <?php echo CHtml::activeLabel($model,'mail'); ?>
                 <?php echo CHtml::activeTextField($model,'mail') ?>
-            </span>
+            </div>
          
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'Telefon'); ?>
+                <?php echo CHtml::activeLabel($model,'phone'); ?>
                 <?php echo CHtml::activeTextField($model,'phone') ?>
             </div>
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'Lisainfo'); ?>
+                <?php echo CHtml::activeLabel($model,'text'); ?>
                 <?php echo CHtml::activeTextField($model,'text') ?>
             </div>
 
