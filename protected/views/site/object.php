@@ -44,7 +44,7 @@
                 <?php echo CHtml::activeLabel($model,'mail'); ?>
                 <?php echo CHtml::activeTextField($model,'mail') ?>
             </div>
-         
+         mys
             <div class="row">
                 <?php echo CHtml::activeLabel($model,'phone'); ?>
                 <?php echo CHtml::activeTextField($model,'phone') ?>

@@ -9,12 +9,12 @@
             <?php echo CHtml::errorSummary($model); ?>
          
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'Email'); ?>
+                <?php echo CHtml::activeLabel($model,'mail'); ?>
                 <?php echo CHtml::activeTextField($model,'mail') ?>
             </div>
          
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'Parool'); ?>
+                <?php echo CHtml::activeLabel($model,'password'); ?>
                 <?php echo CHtml::activePasswordField($model,'password') ?>
             </div>
          
