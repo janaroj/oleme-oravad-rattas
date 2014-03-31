@@ -1,34 +1,27 @@
 
 <div class="container">
     <div class="content">
-        <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>
-        
+        <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>        
         <div class="form">
-        <?php echo CHtml::beginForm(); ?>
-         
-            <?php echo CHtml::errorSummary($model); ?>
-         
+            <?php echo CHtml::beginForm(); 
+                  echo CHtml::errorSummary($model); ?>         
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'mail'); ?>
-                <?php echo CHtml::activeTextField($model,'mail') ?>
-            </div>
-         
+                <?php echo CHtml::activeLabel($model,'mail'); 
+                      echo CHtml::activeTextField($model,'mail') ?>
+            </div>         
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'password'); ?>
-                <?php echo CHtml::activePasswordField($model,'password') ?>
-            </div>
-         
+                <?php echo CHtml::activeLabel($model,'password');   
+                      echo CHtml::activePasswordField($model,'password') ?>
+            </div>         
             <div class="row rememberMe">
-                <?php echo CHtml::activeLabel($model,'rememberMe'); ?>
-                <?php echo CHtml::activeCheckBox($model,'rememberMe'); ?>
-            </div>
-         
+                <?php echo CHtml::activeLabel($model,'rememberMe'); 
+                      echo CHtml::activeCheckBox($model,'rememberMe'); ?>
+            </div>         
             <div class="row submit">
-                <?php echo CHtml::submitButton('Logi sisse'); ?>
-                <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
-            </div>
-         
-        <?php echo CHtml::endForm(); ?>
+                <?php echo CHtml::submitButton('Logi sisse'); 
+                      $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+            </div>         
+            <?php echo CHtml::endForm(); ?>
         </div><!-- form -->
         <div class="clear"></div>
     </div>
