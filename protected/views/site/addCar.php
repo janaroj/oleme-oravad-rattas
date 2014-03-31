@@ -1,11 +1,9 @@
 <div class="container">
     <div class="content">        
         <?php include 'admin-sidebar.php'; ?>
-
         <div class="content-small">
             <h1>Siin saad sa lisada uue auto</h1>
-
-        <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
+            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
         	<div class="form">
             	<?php   echo CHtml::beginForm(); 
                         echo CHtml::errorSummary($model); ?>         
