@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="content">
         <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>        
@@ -26,4 +25,3 @@
         <div class="clear"></div>
     </div>
 </div>
-    

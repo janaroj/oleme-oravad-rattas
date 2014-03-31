@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="content">
   	<?php include 'admin-sidebar.php'; ?>    
