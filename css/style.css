@@ -172,6 +172,8 @@ h3 {
     vertical-align: middle;
 }
 .object-text{
+    max-height: 13em;
+    overflow: hidden;
     width: 60%;
     float: left;
 }
