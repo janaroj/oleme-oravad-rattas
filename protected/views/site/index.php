@@ -7,7 +7,7 @@
         echo "<span class='login-as'>";
         echo CHtml::link('Logi sisse',array('login'));
         echo "</span><span class='login-as'>"; 
-        echo CHtml::link('Registreeri',array('registration'));
+        echo CHtml::link('Registreeru',array('registration'));
         echo "</span>";
       } else {
         echo "<span class='login-as'>Oled sisse logitud kui: ";
@@ -32,12 +32,6 @@
         echo CHtml::dropDownList('make', 0,$carMakes);
       
         echo CHtml::dropDownList('color', 0,$carColors); 
-        
-        ?>
-      <!--</div>
-      <div class="detail-search">
-      <div> -->
-        <?php 
       
         echo CHtml::dropDownList('year', 0, $carYears); 
   
@@ -55,7 +49,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="container">
   <div class="content">

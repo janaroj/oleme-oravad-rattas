@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="content">
     <div class="detail-text">
       <h2><?php echo $car->make; echo " "; echo $car->model;?></h2>
