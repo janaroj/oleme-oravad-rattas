@@ -15,7 +15,7 @@
     <?php   
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile('css/style.css');
-        $cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js');
+        $cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js',async='async'));
         $cs->registerScriptFile('js/custom.js');?>
  
 </head>
