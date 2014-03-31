@@ -16,7 +16,7 @@
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile('css/style.css');
         $cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js',null,array('async'=>'async'));
-        $cs->registerScriptFile('js/custom.js');?>
+        $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));?>
  
 </head>
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
