@@ -29,7 +29,16 @@
 if (!(Yii::app()->user->isGuest)) {
 $userId = Yii::app()->user->id;
 $sql="UPDATE users SET lastActive=NOW() WHERE users.id = $userId";
-Yii::app()->db->createCommand($sql)->query();}
+Yii::app()->db->createCommand($sql)->query();
+  Yii::app()->clientScript->registerScript('check-activity', '
+      if(typeof(EventSource) !== "undefined") {
+      var source = new EventSource("' . CController::createUrl('isActive') . '");
+      source.onmessage = function(event) {
+          $(".content").prepend(event.data).fadeIn(); // We want to display new messages above the stack
+      };
+      }
+      ', CClientScript::POS_READY); 
+}
 ?>
 
 </body>

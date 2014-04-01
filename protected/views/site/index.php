@@ -53,18 +53,7 @@
     </div>  
   <?php } ?>    
     <div class="clear"></div>
-    <?php
-      /*
-      Yii::app()->clientScript->registerScript('cars-update', '
-      if(typeof(EventSource) !== "undefined") {
-      var source = new EventSource("' . CController::createUrl('getCars') . '");
-      source.onmessage = function(event) {
-          $(".content").prepend(event.data).fadeIn(); // We want to display new messages above the stack
-      };
-      }
-      ', CClientScript::POS_READY); 
-      */
-      ?>
+ 
     <div class="bottom-nav">
       <button class="previous">Eelmised</button>
       <button class="next">Järgmised</button>

@@ -338,20 +338,25 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
-	  public function actionGetCars()
+	  public function actionIsActive()
     {
     	header('Content-Type: text/event-stream');
 		header('Cache-Control: no-cache');
         echo "retry: 10000\n"; // Optional. We tell the browser to retry after 10 seconds
-        $cars = Cars::model()->findAll();
-        if(count($cars)) {
-        	echo "data:";
-            foreach($cars as $key => $car) {
-                echo $car->make;
-            }
-        }
+        $id = Yii::app()->user->id;
+		$model = Users::model()->findByPk($id);
+		
+        
+		if ($model->isMinutesPassed(1)) {
+
+        echo "data:";
+        echo "Sa pole minut aega sisse loginud";
+         }
+                
 		echo "\n\n";
         flush();
+
+
     }
 
 	public function actionLogout()

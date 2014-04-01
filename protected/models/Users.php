@@ -127,4 +127,15 @@ class Users extends CActiveRecord
  	 	}
  	 	return false;
  	 } 
+
+ 	 public function isMinutesPassed ($minutes) {
+ 	 	$time = strtotime($this->lastActive);
+    $timeDifference = time() - $time; // to get the time since that moment
+
+    if ($timeDifference >= 60 * $minutes) {
+    	return true;
+    }
+    return false;
+
+	}
 }
