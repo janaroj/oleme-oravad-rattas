@@ -342,21 +342,18 @@ class SiteController extends Controller
     {
     	header('Content-Type: text/event-stream');
 		header('Cache-Control: no-cache');
-        echo "retry: 10000\n"; // Optional. We tell the browser to retry after 10 seconds
+        echo "retry: 5000\n"; // Optional. We tell the browser to retry after 5 seconds
         $id = Yii::app()->user->id;
 		$model = Users::model()->findByPk($id);
 		
         
-		if ($model->isMinutesPassed(1)) {
-
+		if ($model->isMinutesPassed(0.5)) {
         echo "data:";
-        echo "Sa pole minut aega sisse loginud";
-         }
-                
-		echo "\n\n";
+        echo "Sa pole mõnda aega midagi teinud, kas soovid välja logida?";
+        echo "\n\n";
         flush();
-
-
+         }
+               
     }
 
 	public function actionLogout()

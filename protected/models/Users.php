@@ -7,9 +7,11 @@
  * @property integer $ID
  * @property string $firstName
  * @property string $lastName
- * @property string $mail
+ * @property string $email
  * @property string $phone
  * @property string $password
+ * @property integer $acc_status
+ * @property string $lastActive
  *
  * The followings are the available model relations:
  * @property Cars[] $cars
@@ -33,9 +35,10 @@ class Users extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('firstName, lastName, email, phone, password', 'length', 'max'=>45),
+			array('lastActive', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, firstName, lastName, email, phone, password', 'safe', 'on'=>'search'),
+			array('ID, firstName, lastName, email, phone, password, acc_status, lastActive', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +66,8 @@ class Users extends CActiveRecord
 			'email' => 'Email',
 			'phone' => 'Phone',
 			'password' => 'Password',
+			'acc_status' => 'Acc Status',
+			'lastActive' => 'Last Active',
 		);
 	}
 
@@ -90,6 +95,8 @@ class Users extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('password',$this->password,true);
+		$criteria->compare('acc_status',$this->acc_status);
+		$criteria->compare('lastActive',$this->lastActive,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -106,8 +113,8 @@ class Users extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
-	  /**
+	
+   /**
    * Returns User model by its email
    * 
    * @param string $email 

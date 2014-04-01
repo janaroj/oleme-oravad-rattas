@@ -34,12 +34,24 @@ Yii::app()->db->createCommand($sql)->query();
       if(typeof(EventSource) !== "undefined") {
       var source = new EventSource("' . CController::createUrl('isActive') . '");
       source.onmessage = function(event) {
-          $(".content").prepend(event.data).fadeIn(); // We want to display new messages above the stack
+          $(".modalContent").empty(); //NOT NEEDED LATER
+          $(".modalContent").prepend(event.data).fadeIn(); // We want to display new messages above the stack
+          $(".modalDialog").fadeTo("slow",1.0);
+          $(".modalDialog").css( "pointer-events", "auto" ); //can get rid of it somehow?
       };
       }
       ', CClientScript::POS_READY); 
 }
 ?>
 
+
+<div id="openModal" class="modalDialog">
+  <div>
+    <h2>Hei</h2>
+    <p class="modalContent"></p>
+    <button id="logout">Jah, logi mind välja</button> <!-- add button actions, force logout after x seconds? -->
+  <button id="stayOnline">Ei</button>
+  </div>
+</div>
 </body>
 </html>
