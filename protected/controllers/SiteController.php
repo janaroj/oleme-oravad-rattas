@@ -2,7 +2,6 @@
 
 class SiteController extends Controller
 {
-
 	   /**
      * Declares class-based actions.
      */
@@ -37,10 +36,6 @@ class SiteController extends Controller
       ),
         );
     }
-
-
-
-
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -95,7 +90,7 @@ class SiteController extends Controller
             $carMakes[] = $car->make;
           }
 
-          } 
+        } 
 
         sort($carDates);
         sort($carYears);
@@ -164,15 +159,15 @@ class SiteController extends Controller
 	}
 
 	private function rmdir_recursive($dir) {
-	if (file_exists ($dir)) {
-    foreach(scandir($dir) as $file) {
-        if ('.' === $file || '..' === $file) continue;
-        if (is_dir("$dir/$file")) rmdir_recursive("$dir/$file");
-        else unlink("$dir/$file");
-    }
-    rmdir($dir);
+		if (file_exists ($dir)) {
+		    foreach(scandir($dir) as $file) {
+		        if ('.' === $file || '..' === $file) continue;
+		        	if (is_dir("$dir/$file")) rmdir_recursive("$dir/$file");
+		        	else unlink("$dir/$file");
+		    }
+	    	rmdir($dir);
+		}
 	}
-}
 
 	public function actionChangeCar() {
 		$id = $_GET['carId'];
@@ -184,22 +179,17 @@ class SiteController extends Controller
 			$uploadedFile=CUploadedFile::getInstance($model,'image');
   			$uploadedFiles=CUploadedFile::getInstancesByName('images');
 
-		
-			if ($model->validate()) {
-			
-           
+			if ($model->validate()) {           
 				$transaction = Yii::app()->db->beginTransaction();
 				try {
- 			 $model->saveData($uploadedFile,$uploadedFiles);
- 			 $transaction->commit();
- 			 Yii::app()->user->returnUrl=array('myCars');
-        	 $this->redirect(Yii::app()->user->returnUrl);
-        	 }
-				catch (Exception $e)
-				{
-				$transaction->rollBack();
+		 			$model->saveData($uploadedFile,$uploadedFiles);
+		 			$transaction->commit();
+		 			Yii::app()->user->returnUrl=array('myCars');
+		        	$this->redirect(Yii::app()->user->returnUrl);
+	        	}
+				catch (Exception $e) {
+					$transaction->rollBack();
 				} 
-
         	}
 			
 
@@ -231,61 +221,54 @@ class SiteController extends Controller
 		$this->render('myRequests',array('requests'=>$requests));
 	}
 
-	public function actionMyCars(){
-
+	public function actionMyCars() {
 		$cars = cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
 		$this->render('myCars',array('cars'=>$cars));
 	}
 
-	public function actionMyUser()
-	{	
+	public function actionMyUser() {	
 		$this->render('myUser');
 	}
 
-	public function actionSettings()
-	{
+	public function actionSettings() {
 		$id = Yii::app()->user->id;
-
 		$model = Users::model()->findByPk($id);
-
+		if (Yii::app()->request->isPostRequest) {
+			$model->attributes = $_POST['Users'];
+			if ($model->validate()) {
+				$model->save();
+			}
+		}
 		$this->render('settings',array('model'=>$model));
 	}
 
-	public function actionAddCar()
-	{
+	public function actionAddCar() {
 		$model = new Cars;
-		if(isset($_POST['Cars']))
-		{
-	
+		if(isset($_POST['Cars'])) {
+
 			$model->attributes=$_POST['Cars'];
            	$uploadedFile=CUploadedFile::getInstance($model,'image');
   			$uploadedFiles=CUploadedFile::getInstancesByName('images');
-
   			
 			if ($model->validate()) {
 
 				$model->userId = Yii::app()->user->id;
 				$transaction = Yii::app()->db->beginTransaction();
-				try 
-				{
-				$model->saveData($uploadedFile,$uploadedFiles);
-				$transaction->commit();
-				Yii::app()->user->returnUrl=array('myUser');
-        		$this->redirect(Yii::app()->user->returnUrl);
+				try {
+					$model->saveData($uploadedFile,$uploadedFiles);
+					$transaction->commit();
+					Yii::app()->user->returnUrl=array('myUser');
+	        		$this->redirect(Yii::app()->user->returnUrl);
 				}
-				catch (Exception $e)
-				{
+				catch (Exception $e) {
 				$transaction->rollBack();
-				} 
-				
-				
+				}
 			}
 		}
 		$this->render('addCar',array('model'=>$model));
 	}
 
-	public function actionRegistration() 
-	{
+	public function actionRegistration() {
 		$model = new RegistrationForm;
 		if(isset($_POST['RegistrationForm']))
 		{
@@ -299,9 +282,7 @@ class SiteController extends Controller
 		$this->render('registration',array('model'=>$model));
 	}
 
-	public function actionLogin()
-	{
-
+	public function actionLogin() {
    		/* 
 		$config = array( 
       		"base_url" => "http://oravadrattas.azurewebsites.com/protected/extensions/hoauth/hybridauth/",  
@@ -338,22 +319,20 @@ class SiteController extends Controller
 		$this->render('login',array('model'=>$model));
 	}
 
-	  public function actionIsActive()
-    {
+	public function actionIsActive(){
     	header('Content-Type: text/event-stream');
 		header('Cache-Control: no-cache');
         echo "retry: 5000\n"; // Optional. We tell the browser to retry after 5 seconds
         $id = Yii::app()->user->id;
 		$model = Users::model()->findByPk($id);
-		
-        
+		   
 		if ($model->isMinutesPassed(0.5)) {
-        echo "data:";
-        echo "Sa pole mõnda aega midagi teinud, kas soovid välja logida?";
-        echo "\n\n";
+	        echo "data:";
+	        echo "Sa pole juba terve minut aktiivne olnud";
+        }
+		echo "\n\n";
         flush();
-         }
-               
+
     }
 
 	public function actionLogout()
@@ -362,14 +341,10 @@ class SiteController extends Controller
 		 Yii::app()->user->clearStates();
 		 $_SESSION = array();
 		 $this->redirect(array("index"));
-
 	}
 
-
-
-	public function actionObject()
-	{
-
+	public function actionObject() {
+		
 		$id = $_GET['id'];
 		
 		$car = Cars::model()->findByPk($id);

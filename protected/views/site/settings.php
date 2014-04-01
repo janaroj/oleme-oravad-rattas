@@ -3,6 +3,7 @@
         <?php include 'admin-sidebar.php' ?>                
         <div class="content-small">
             <h1>Siin saad sa oma seadeid muuta</h1>
+            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
             <div class="row">
                 <?php echo CHtml::activeLabel($model,'Eesnimi'); 
                       echo CHtml::activeTextField($model,'firstName') ?>
@@ -27,6 +28,10 @@
                 <?php echo CHtml::activeLabel($model,'Korda parooli'); 
                       echo CHtml::activePasswordField($model,'password') ?>
             </div>
+            <div class="row submit">
+                <?php echo CHtml::submitButton('Muuda oma andmeid'); ?>
+            </div>
+            <?php echo CHtml::endForm(); ?>
         </div>
         <div class="clear"></div>
     </div>
