@@ -1,6 +1,5 @@
-$(function(){
 
-  
+    
     $(".data-input-table table").find("input").each(function(){
           if(!$(this).val()){
             $(this).attr("placeholder","Sisesta info");
@@ -51,7 +50,7 @@ $(function(){
         var item = {
         carId: $('#car_id').val(),
         name:  $('#Requests_name').val(),
-        email: $('#Requests_email').val(),
+        mail: $('#Requests_mail').val(),
         phone: $('#Requests_phone').val(),
         text: $('#Requests_text').val() 
       }
