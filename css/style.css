@@ -203,20 +203,39 @@ h3 {
 
 /*mySite view layout elements */
 .side-nav{
+    border-right: dotted 2px black ;
     width: 30%;
     float: left;
-    padding-top: 2.5em;
-    padding-bottom: 100px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    margin-left: -15px;
     background-color: #EAEAEA;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.first a{
+    border-top: 1.5px solid black;
 }
 .choices a{
-    width: 100%;
+    width: 98%;
     padding: 5px 2px;
     float: right;
     display: block;
     clear: both;
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
+    min-height: 2em;
+    border-bottom: 1.5px solid black;
+}
+.choices a:hover{
+    background-color: #DCE3E3;
+}
+.choices{
+    vertical-align: middle;
+}
+.spacing a{
+    margin-top: 10em;
 }
 .content-small{
     padding-left: 2%;
