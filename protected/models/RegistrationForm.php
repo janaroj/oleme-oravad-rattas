@@ -32,7 +32,7 @@ class RegistrationForm extends CFormModel
 			//username must be email
 			array('email','email'),
 			//username must be unique
-			array('email','unique', 'className' => 'Users', 'attributeName' => 'mail'),
+			array('email','unique', 'className' => 'Users', 'attributeName' => 'email'),
 		);
 	}
 
@@ -47,7 +47,7 @@ class RegistrationForm extends CFormModel
 		$user->firstName=$this->firstName;
 		$user->lastName=$this->lastName;
 		$user->password=$this->password;
-		$user->mail=$this->email;
+		$user->email=$this->email;
 		$user->phone=$this->phone;
 
 		$user->save();

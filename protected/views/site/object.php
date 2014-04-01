@@ -36,8 +36,8 @@
                   echo CHtml::activeTextField($model,'name') ?>
           </div>
           <div class="row">
-              <?php echo CHtml::activeLabel($model,'mail'); 
-                    echo CHtml::activeTextField($model,'mail') ?>
+              <?php echo CHtml::activeLabel($model,'email'); 
+                    echo CHtml::activeTextField($model,'email') ?>
           </div>
           <div class="row">
               <?php echo CHtml::activeLabel($model,'phone'); 

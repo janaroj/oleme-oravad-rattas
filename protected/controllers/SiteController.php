@@ -223,7 +223,7 @@ class SiteController extends Controller
 
 		$userId = Yii::app()->user->id;
 
-		$sql="SELECT cars.make,cars.model,requests.mail,requests.phone,requests.text from requests inner join cars on requests.carId = cars.ID inner join users on cars.UserId = users.ID where users.ID = $userId";
+		$sql="SELECT cars.make,cars.model,requests.email,requests.phone,requests.text from requests inner join cars on requests.carId = cars.ID inner join users on cars.UserId = users.ID where users.ID = $userId";
 		$connection=Yii::app()->db; 
 		$command=$connection->createCommand($sql);
 		$requests=$command->query();

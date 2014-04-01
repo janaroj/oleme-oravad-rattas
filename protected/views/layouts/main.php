@@ -25,7 +25,12 @@
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
-<?php echo $content; ?>
+<?php echo $content; 
+if (!(Yii::app()->user->isGuest)) {
+$userId = Yii::app()->user->id;
+$sql="UPDATE users SET lastActive=NOW() WHERE users.id = $userId";
+Yii::app()->db->createCommand($sql)->query();}
+?>
 
 </body>
 </html>

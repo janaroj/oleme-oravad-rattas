@@ -7,7 +7,7 @@
  */
 class LoginForm extends CFormModel
 {
-	public $mail;
+	public $email;
 	public $password;
 	public $rememberMe;
 
@@ -22,7 +22,7 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			// mail and password are required
-			array('mail, password', 'required'),
+			array('email, password', 'required'),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
@@ -48,7 +48,7 @@ class LoginForm extends CFormModel
 	{
 		// we only want to authenticate when no input errors
     if (! $this->hasErrors()) {
-        $identity = new UserIdentity($this->mail, $this->password);
+        $identity = new UserIdentity($this->email, $this->password);
         $identity->authenticate();
         switch ($identity->errorCode) {
             case UserIdentity::ERROR_NONE:

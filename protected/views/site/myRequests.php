@@ -15,7 +15,7 @@
         <?php foreach ($requests as $request) { ?>
      		<tr>
     			<td><?php echo $request['make'];echo " ";echo $request['model'] ?></td>
-    			<td><?php echo $request['mail']; ?></td>
+    			<td><?php echo $request['email']; ?></td>
     			<td><?php echo $request['phone']; ?></td>
     			<td><?php echo $request['text']; ?></td>
           <td class="req-answer">Vasta</td>

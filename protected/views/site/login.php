@@ -5,8 +5,8 @@
             <?php echo CHtml::beginForm(); 
                   echo CHtml::errorSummary($model); ?>         
             <div class="row">
-                <?php echo CHtml::activeLabel($model,'mail'); 
-                      echo CHtml::activeTextField($model,'mail') ?>
+                <?php echo CHtml::activeLabel($model,'email'); 
+                      echo CHtml::activeTextField($model,'email') ?>
             </div>         
             <div class="row">
                 <?php echo CHtml::activeLabel($model,'password');   

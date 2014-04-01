@@ -60,7 +60,7 @@ class Users extends CActiveRecord
 			'ID' => 'ID',
 			'firstName' => 'First Name',
 			'lastName' => 'Last Name',
-			'email' => 'Mail',
+			'email' => 'Email',
 			'phone' => 'Phone',
 			'password' => 'Password',
 		);

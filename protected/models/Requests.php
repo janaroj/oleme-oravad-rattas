@@ -7,7 +7,7 @@
  * @property integer $ID
  * @property integer $carId
  * @property string $name
- * @property string $mail
+ * @property string $email
  * @property string $phone
  * @property string $text
  *
@@ -33,16 +33,16 @@ class Requests extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//For form
-			array('mail, phone, name, text', 'required'),
-			array('mail','email'),
+			array('email, phone, name, text', 'required'),
+			array('email','email'),
 			array('phone','numerical'),
 
 			array('carId', 'numerical', 'integerOnly'=>true),
-			array('name, mail, phone', 'length', 'max'=>45),
+			array('name, email, phone', 'length', 'max'=>45),
 			array('text', 'length', 'max'=>250),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, carId, name, mail, phone, text', 'safe', 'on'=>'search'),
+			array('ID, carId, name, email, phone, text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,7 +67,7 @@ class Requests extends CActiveRecord
 			'ID' => 'ID',
 			'carId' => 'Car',
 			'name' => 'Name',
-			'mail' => 'Mail',
+			'email' => 'Email',
 			'phone' => 'Phone',
 			'text' => 'Text',
 		);
@@ -94,7 +94,7 @@ class Requests extends CActiveRecord
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('carId',$this->carId);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('mail',$this->mail,true);
+		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('text',$this->text,true);
 
@@ -121,7 +121,7 @@ class Requests extends CActiveRecord
 		$request->name = $this->name;
 		$request->text = $this->text;
 		$request->phone = $this->phone;
-		$request->mail = $this->mail;
+		$request->email = $this->email;
 
 		$request->save();
 

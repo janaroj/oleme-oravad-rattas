@@ -1,23 +1,4 @@
 
-
-  $(function(){
-    //Hide search when JS loads
-    $(".detail-search").hide();
-    
-    //Search slide toggle
-    $(".more-details").click(function(){
-      
-      $(".detail-search").slideToggle();
-     
-      if($(this).text() == "Rohkem detaile"){
-        $(this).text("Vähem detaile");
-      }
-      else{
-        $(this).text("Rohkem detaile");
-      }
-    });
-
-
     
     $(".data-input-table table").find("input").each(function(){
           if(!$(this).val()){
