@@ -1,6 +1,4 @@
-$(function(){
 
-  
     $(".data-input-table table").find("input").each(function(){
           if(!$(this).val()){
             $(this).attr("placeholder","Sisesta info");
@@ -78,4 +76,3 @@ $(function(){
     })
 
     
-});
