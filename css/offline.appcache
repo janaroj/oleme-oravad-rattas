@@ -1,1 +1,9 @@
 CACHE MANIFEST
+
+CACHE:
+
+#CSS
+/css/style.css
+
+#JS
+/js/custom.js
