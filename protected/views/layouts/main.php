@@ -15,7 +15,7 @@
     <?php   
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
-        $cs->registerScriptFile('//code.jquery.com/jquery-1.10.2.min.js',null);
+        $cs->registerScriptFile('/js/jquery-1.11.0.js',null);
         $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));?>
  
 </head>
@@ -25,25 +25,26 @@
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
-<?php echo $content; 
-if (!(Yii::app()->user->isGuest)) {
-$userId = Yii::app()->user->id;
-$sql="UPDATE users SET lastActive=NOW() WHERE users.id = $userId";
-Yii::app()->db->createCommand($sql)->query();
-  Yii::app()->clientScript->registerScript('check-activity', '
-      if(typeof(EventSource) !== "undefined") {
-      var source = new EventSource("' . CController::createUrl('isActive') . '");
-      source.onmessage = function(event) {
-          $(".modalContent").empty(); //NOT NEEDED LATER
-          $(".modalContent").prepend(event.data).fadeIn(); // We want to display new messages above the stack
-          $(".modalDialog").fadeTo("slow",1.0);
-          $(".modalDialog").css( "pointer-events", "auto" ); //can get rid of it somehow?
-      };
-      }
-      ', CClientScript::POS_READY); 
-}
-?>
+<?php echo $content;
 
+    if (!(Yii::app()->user->isGuest)) {
+      $userId = Yii::app()->user->id;
+      $sql="UPDATE users SET lastActive=NOW() WHERE users.id = $userId";
+      Yii::app()->db->createCommand($sql)->query();
+      
+      Yii::app()->clientScript->registerScript('check-activity', '
+          if(typeof(EventSource) !== "undefined") {
+          var source = new EventSource("' . CController::createUrl('isActive') . '");
+          source.onmessage = function(event) {
+              $(".modalContent").empty(); //NOT NEEDED LATER
+              $(".modalContent").prepend(event.data).fadeIn(); // We want to display new messages above the stack
+              $(".modalDialog").fadeTo("slow",1.0);
+              $(".modalDialog").css( "pointer-events", "auto" ); //can get rid of it somehow?
+          };
+          }
+          ', CClientScript::POS_READY); 
+    }
+?>
 
 <div id="openModal" class="modalDialog">
   <div>
