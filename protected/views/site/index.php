@@ -21,6 +21,7 @@
       </div>
     <div class="clear"></div>
   </div>
+  <button class="open-search">OTSING</button>
   <div class="search-box">
     <div class="container">
       <div>

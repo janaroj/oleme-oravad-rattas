@@ -15,6 +15,9 @@
       }
     });
 
+    $(".open-search").click(function(){
+      $(".search-box").toggle();
+    });
     
     $(".data-input-table table").find("input").each(function(){
           if(!$(this).val()){
