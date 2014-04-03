@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html manifest="/oleme-oravad-rattas/css/offline.appcache">
+<html>
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -24,29 +24,7 @@
 <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
-<div class="header">
-  <div class="container">
-    <div class="logo"></div>
-      <div class="login">
-          <?php if (Yii::app()->user->isGuest) { 
-                echo "<span class='login-as'>";
-                echo CHtml::link('Logi sisse',array('login'));
-                echo "</span><span class='login-as'>"; 
-                echo CHtml::link('Registreeru',array('registration'));
-                echo "</span>";
-                } else {
-                echo "<span class='login-as'>Oled sisse logitud kui: ";
-                echo Yii::app()->user->name;
-                echo "</span>";      
-                echo "<span class='login-as'>"; 
-                echo CHtml::link('Minu kasutaja',array('myUser'));
-                echo "</span><span class='login-as'>"; 
-                echo CHtml::link('Logi välja',array('logout'));
-                echo "</span>"; 
-                } ?>    
-      </div>
-    <div class="clear"></div>
-  </div>
+
 <?php echo $content;
 
     if (!(Yii::app()->user->isGuest)) {

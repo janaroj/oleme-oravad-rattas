@@ -1,27 +1,4 @@
-<div class="header">
-  <div class="container">
-    <div class="logo"></div>
-      <div class="login">
-          <?php if (Yii::app()->user->isGuest) { 
-                echo "<span class='login-as'>";
-                echo CHtml::link('Logi sisse',array('login'));
-                echo "</span><span class='login-as'>"; 
-                echo CHtml::link('Registreeru',array('registration'));
-                echo "</span>";
-                } else {
-                echo "<span class='login-as'>Oled sisse logitud kui: ";
-                echo Yii::app()->user->name;
-                echo "</span>";      
-                echo "<span class='login-as'>"; 
-                echo CHtml::link('Minu kasutaja',array('myUser'));
-                echo "</span><span class='login-as'>"; 
-                echo CHtml::link('Logi välja',array('logout'));
-                echo "</span>"; 
-                } ?>    
-      </div>
-    <div class="clear"></div>
-  </div>
-  <button class="open-search">OTSING</button>
+<button class="open-search">OTSING</button>
   <div class="search-box">
     <div class="container">
       <div>

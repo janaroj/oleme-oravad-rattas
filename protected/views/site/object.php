@@ -1,3 +1,5 @@
+<!-- To end top navigation, this page has no search but div needs to be closed.-->
+</div>
 <div class="container">
   <div class="content">
     <div class="detail-text">

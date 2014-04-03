@@ -42,7 +42,6 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-
 		$carMakes = array();
         $carMakes[] = '(mark)';
 		$carColors = array();
@@ -210,7 +209,8 @@ class SiteController extends Controller
 	}
 
 	public function actionMyRequests(){
-
+		$this->layout='user';	
+		
 		$userId = Yii::app()->user->id;
 
 		$sql="SELECT cars.make,cars.model,requests.email,requests.phone,requests.text from requests inner join cars on requests.carId = cars.ID inner join users on cars.UserId = users.ID where users.ID = $userId";
@@ -222,15 +222,19 @@ class SiteController extends Controller
 	}
 
 	public function actionMyCars() {
+		$this->layout='user';
 		$cars = cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
 		$this->render('myCars',array('cars'=>$cars));
 	}
 
-	public function actionMyUser() {	
+	public function actionMyUser() {
+		$this->layout='user';	
 		$this->render('myUser');
 	}
 
 	public function actionSettings() {
+		$this->layout='user';	
+		
 		$id = Yii::app()->user->id;
 		$model = Users::model()->findByPk($id);
 		if (Yii::app()->request->isPostRequest) {
@@ -243,6 +247,8 @@ class SiteController extends Controller
 	}
 
 	public function actionAddCar() {
+		$this->layout='user';	
+		
 		$model = new Cars;
 		if(isset($_POST['Cars'])) {
 
@@ -269,6 +275,8 @@ class SiteController extends Controller
 	}
 
 	public function actionRegistration() {
+		$this->layout='user';
+		
 		$model = new RegistrationForm;
 		if(isset($_POST['RegistrationForm']))
 		{
@@ -283,6 +291,8 @@ class SiteController extends Controller
 	}
 
 	public function actionLogin() {
+   		$this->layout='user';	
+		
    		/* 
 		$config = array( 
       		"base_url" => "http://oravadrattas.azurewebsites.com/protected/extensions/hoauth/hybridauth/",  
@@ -335,16 +345,16 @@ class SiteController extends Controller
 
     }
 
-	public function actionLogout()
-	{
-		 Yii::app()->user->logout();
-		 Yii::app()->user->clearStates();
-		 $_SESSION = array();
-		 $this->redirect(array("index"));
+	public function actionLogout(){
+		$this->layout='user';	
+				
+		Yii::app()->user->logout();
+		Yii::app()->user->clearStates();
+		$_SESSION = array();
+		$this->redirect(array("index"));
 	}
 
 	public function actionObject() {
-		
 		$id = $_GET['id'];
 		
 		$car = Cars::model()->findByPk($id);

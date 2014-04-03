@@ -1,9 +1,9 @@
 CACHE MANIFEST
 
 CACHE:
-
-#CSS
+/css/stiilneauto.png
 /css/style.css
-
-#JS
 /js/custom.js
+
+NETWORK:
+*
