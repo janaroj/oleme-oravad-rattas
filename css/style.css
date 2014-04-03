@@ -49,6 +49,29 @@ table {
 
 /*CSS RESET END*/
 
+
+/*FONTS*/
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Semibold-webfont.eot');
+    src: url('fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
 /*Main CSS elements and frame*/
 a{
     text-decoration: none;
@@ -61,8 +84,8 @@ a :visited{
 body {
     background: url("carbon_fibre.png") top left repeat;
     background: url("real_cf.png") top left repeat;
-    font-family: "Open Sans", sans-serif;
-    font-size: 13px;
+    font-family: "Open Sans";
+    font-size: 14px;
     line-height: 1.4em;
 }
 h1,h2,h3 {
@@ -72,7 +95,7 @@ h1,h2,h3 {
 }
 
 h1{
-    font-size: 21px;
+    font-size: 23px;
     font-weight: 600;
     padding-bottom: 0.6em;
     }

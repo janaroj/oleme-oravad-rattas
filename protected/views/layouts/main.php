@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>Oleme Oravad Rattas</title>
- 
+    <!-- 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css' />
+    -->
     <!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
     <link rel="shortcut icon" href="images/favicon.png" />
 
