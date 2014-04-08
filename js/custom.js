@@ -62,6 +62,12 @@
       location.reload();
     });
 
+      $("#stayOnline").click(function(){
+      $(".modalDialog").fadeTo("fast",0.0);
+      $(".modalDialog").css( "pointer-events", "none" ); 
+      $(".timer").countdown("destroy");
+    });
+
 
     //AJAX object page ask for information
     $('.ask-info form input[type=submit]').click(function(e) {

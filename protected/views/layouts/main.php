@@ -12,12 +12,16 @@
     -->
     <!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
     <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
 
     <?php   
         $cs = Yii::app()->getClientScript();
+
         $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
-        $cs->registerScriptFile('/js/jquery-1.11.0.js',null);
-        $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));?>
+        $cs->registerScriptFile('js/jquery-1.11.0.js',null);
+        $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));
+        $cs->registerScriptFile('js/jquery.plugin.min.js',null,array('async'=>'async'));
+        $cs->registerScriptFile('js/jquery.countdown.min.js',null,array('async'=>'async'));?>
  
 </head>
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
@@ -62,7 +66,11 @@
               $(".modalContent").empty(); //NOT NEEDED LATER
               $(".modalContent").prepend(event.data).fadeIn(); // We want to display new messages above the stack
               $(".modalDialog").fadeTo("slow",1.0);
-              $(".modalDialog").css( "pointer-events", "auto" ); //can get rid of it somehow?
+              $(".modalDialog").css( "pointer-events", "auto" ); 
+              $(".timer").countdown("destroy");
+              $(".timer").countdown({until: +5, format: "s", onExpiry: function() {
+                window.location = $(".logout").attr("href");
+},}); 
           };
           }
           ', CClientScript::POS_READY); 
@@ -73,9 +81,12 @@
   <div>
     <h2>Hei</h2>
     <p class="modalContent"></p>
-    <button id="logout">Jah, logi mind välja</button> <!-- add button actions, force logout after x seconds? -->
-  <button id="stayOnline">Ei</button>
+    <br>
+    <div class="timer"></div>
+    <?php echo CHtml::link('Jah, logi välja',array('logout'),array('class'=>'button-link logout')); ?>
+  <button id="stayOnline" class="button-link">Ei, jää sisse</button>
   </div>
+</div>
 </div>
 </body>
 </html>

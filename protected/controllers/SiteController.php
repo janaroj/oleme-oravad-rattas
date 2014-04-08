@@ -332,14 +332,18 @@ class SiteController extends Controller
 	public function actionIsActive(){
     	header('Content-Type: text/event-stream');
 		header('Cache-Control: no-cache');
-        echo "retry: 5000\n"; // Optional. We tell the browser to retry after 5 seconds
+        echo "retry: 3000\n"; // Optional. We tell the browser to retry after 3 seconds
         $id = Yii::app()->user->id;
 		$model = Users::model()->findByPk($id);
-		   
-		if ($model->isMinutesPassed(0.5)) {
-	        echo "data:";
-	        echo "Sa pole juba terve minut aktiivne olnud";
+		
+		$minutesNotActive = 0.2;
+
+		if ($model->isMinutesPassed($minutesNotActive)) {
+			echo "data:";
+	   		echo "Sa pole juba tervelt "; echo $minutesNotActive; echo " minutit aktiivne olnud, kas soovid välja logida";
         }
+     
+        
 		echo "\n\n";
         flush();
 
