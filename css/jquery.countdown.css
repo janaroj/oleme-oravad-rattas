@@ -1,7 +1,10 @@
 /* jQuery Countdown styles 2.0.0. */
 .is-countdown {
 	border: 1px solid #ccc;
-	background-color: #eee;
+	background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
 }
 .countdown-rtl {
 	direction: rtl;

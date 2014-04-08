@@ -63,8 +63,8 @@
           if(typeof(EventSource) !== "undefined") {
           var source = new EventSource("' . CController::createUrl('isActive') . '");
           source.onmessage = function(event) {
-              $(".modalContent").empty(); //NOT NEEDED LATER
-              $(".modalContent").prepend(event.data).fadeIn(); // We want to display new messages above the stack
+              $(".modalContent").empty();
+              $(".modalContent").prepend(event.data).fadeIn(); 
               $(".modalDialog").fadeTo("slow",1.0);
               $(".modalDialog").css( "pointer-events", "auto" ); 
               $(".timer").countdown("destroy");

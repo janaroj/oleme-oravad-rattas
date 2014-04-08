@@ -341,6 +341,9 @@ class SiteController extends Controller
 		if ($model->isMinutesPassed($minutesNotActive)) {
 			echo "data:";
 	   		echo "Sa pole juba tervelt "; echo $minutesNotActive; echo " minutit aktiivne olnud, kas soovid välja logida";
+	   		$userId = Yii::app()->user->id;
+      		$sql="UPDATE users SET lastActive=NOW() WHERE users.id = $userId";
+      		Yii::app()->db->createCommand($sql)->query();
         }
      
         
