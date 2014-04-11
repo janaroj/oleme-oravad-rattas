@@ -52,7 +52,7 @@
       </div>
     <div class="clear"></div>
   </div>
-</div>
+
 <?php echo $content;
 
     if (!(Yii::app()->user->isGuest)) {
