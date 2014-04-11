@@ -52,6 +52,7 @@
       </div>
     <div class="clear"></div>
   </div>
+</div>
 <?php echo $content;
 
     if (!(Yii::app()->user->isGuest)) {
@@ -87,6 +88,6 @@
   <button id="stayOnline" class="button-link">Ei, jää sisse</button>
   </div>
 </div>
-</div>
+
 </body>
 </html>
