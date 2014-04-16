@@ -187,7 +187,8 @@ h3 {
 .object-img{
     overflow: hidden;
     max-height: 150px;
-    width: 39%;
+    max-width: 200px;
+    width: 42%;
     float: left;
     padding-right: 1%;
     margin-top: 3em;
@@ -199,7 +200,7 @@ h3 {
 .object-text{
     max-height: 13em;
     overflow: hidden;
-    width: 60%;
+    width: 57%;
     float: left;
 }
 .object a {
