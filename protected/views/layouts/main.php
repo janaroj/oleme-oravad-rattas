@@ -17,10 +17,11 @@
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile('css/jquery.countdown.css',null,array('async'=>'async'));
         $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
+        $cs->registerScriptFile('js/jquery-1.11.0.js',null);
         $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));
         $cs->registerScriptFile('js/jquery.plugin.min.js',null,array('async'=>'async'));
         $cs->registerScriptFile('js/jquery.countdown.min.js',null,array('async'=>'async'));
-        $cs->registerScriptFile('js/jquery-1.11.0.js',null);?>
+        ?>
  
 </head>
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
