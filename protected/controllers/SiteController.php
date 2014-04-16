@@ -336,7 +336,7 @@ class SiteController extends Controller
         $id = Yii::app()->user->id;
 		$model = Users::model()->findByPk($id);
 		
-		$minutesNotActive = 0.2;
+		$minutesNotActive = 10;
 
 		if ($model->isMinutesPassed($minutesNotActive)) {
 			echo "data:";

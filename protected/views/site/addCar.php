@@ -3,9 +3,7 @@
         <?php include 'admin-sidebar.php'; ?>
         <div class="content-small">
             <h1>Siin saad sa lisada uue auto</h1>
-            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); 
-            $taht = '\U+00C4';
-            ?>
+            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
         	<div class="form">
             	<?php   echo CHtml::beginForm(); 
                         echo CHtml::errorSummary($model); ?>         
@@ -22,12 +20,12 @@
                         echo CHtml::activeTextField($model,'location') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'V'+json_decode('"'.$taht.'"');+'jalaskeaasta'); 
-                        echo CHtml::activeTextField($model,'year') ?>
+                       
+                       <?php echo CHtml::activeTextField($model,'year') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Värvus'); 
-                        echo CHtml::activeTextField($model,'color') ?>
+                        <label>Värvus</label>
+                        <?phpecho CHtml::activeTextField($model,'color') ?>
             </div>
             <div class="row">
                 <?php   echo CHtml::activeLabel($model,'Saadavus'); 
@@ -42,11 +40,11 @@
                         echo CHtml::activeTextField($model,'price') ?>
             </div>
             <div class="row">
-               <?php    echo CHtml::activeLabel($model,'Põhipilt'); 
-                        echo CHtml::activeFileField($model, 'image'); ?>             
+                        <label>Põhipilt</label>
+                        <?phpecho CHtml::activeFileField($model, 'image'); ?>             
             </div>
             <div class="row">
-               <?php    echo CHtml::activeLabel($model,'Ülejäänud pildid');
+               <?php    echo CHtml::activeLabel($model,'Teised pildid');
                         $this->widget('CMultiFileUpload', array(
                         'name' => 'images',
                         'htmlOptions' => array('enctype' => 'multipart/form-data','multiple' => 'multiple'),
