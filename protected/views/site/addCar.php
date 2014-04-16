@@ -20,12 +20,12 @@
                         echo CHtml::activeTextField($model,'location') ?>
             </div>
             <div class="row">
-                       
+                       <label>Väljalaskeaasta</label>
                        <?php echo CHtml::activeTextField($model,'year') ?>
             </div>
             <div class="row">
                         <label>Värvus</label>
-                        <?phpecho CHtml::activeTextField($model,'color') ?>
+                        <?php echo CHtml::activeTextField($model,'color') ?>
             </div>
             <div class="row">
                 <?php   echo CHtml::activeLabel($model,'Saadavus'); 
@@ -41,7 +41,7 @@
             </div>
             <div class="row">
                         <label>Põhipilt</label>
-                        <?phpecho CHtml::activeFileField($model, 'image'); ?>             
+                        <?php echo CHtml::activeFileField($model, 'image'); ?>             
             </div>
             <div class="row">
                <?php    echo CHtml::activeLabel($model,'Teised pildid');
