@@ -75,7 +75,7 @@
         var item = {
         carId: $('#car_id').val(),
         name:  $('#Requests_name').val(),
-        mail: $('#Requests_mail').val(),
+        email: $('#Requests_email').val(),
         phone: $('#Requests_phone').val(),
         text: $('#Requests_text').val() 
       }
