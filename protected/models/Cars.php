@@ -98,6 +98,7 @@ class Cars extends CActiveRecord
 				 	$image = Yii::app()->image->load($fileSavePath.'/'.$fileName);
     				$image->resize(800, 600); //RESIZE right values needed
     				$image->save();
+
 				 }
 			 if (!empty($uploadedFile)) {
 			 	$fileName = "{$uploadedFile}";  
@@ -105,6 +106,8 @@ class Cars extends CActiveRecord
 			 	$image = Yii::app()->image->load($fileSavePath.'/'.$fileName);
     			$image->resize(800, 600);
     			$image->save();
+    			$image->resize(200, 150);
+    			$image->save($fileSavePath.'/small_'.$fileName);
 			}
 
 
