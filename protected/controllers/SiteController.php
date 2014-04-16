@@ -40,8 +40,10 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
+
+
 	public function actionIndex()
-	{
+	{	
 		$carMakes = array();
         $carMakes[] = '(mark)';
 		$carColors = array();
@@ -56,9 +58,16 @@ class SiteController extends Controller
 		$carPrices[] = '(hind)';
 
 		$criteria = new CDbCriteria();
-		$criteria->limit=8;
-		$criteria->offset=0;
 		$criteria->order="Date DESC";
+		
+		//Pagination
+		
+        $item_count = Cars::model()->count($criteria);
+                
+        $pages = new CPagination($item_count);
+        $pages->setPageSize(Yii::app()->params['listPerPage']);
+        $pages->applyLimit($criteria);  // the trick is here!
+        //END
 
 		$cars = Cars::model()->findAll($criteria);
 		
@@ -145,8 +154,36 @@ class SiteController extends Controller
 			$cars = $car->search()->getData();
 		}
 
-		
+		$cars_array;
+		$cars_array = array();
+		$counter = 0;
+		$cars_temp = array();
+		foreach ($cars as $car) {
+		 	$cars_temp[] = $car;
+		 	$counter++;
+		 	if($counter == 4){
+		 		$counter = 0;
+		 		$cars_array[] = $cars_temp;
+		 		unset($cars_temp);
+		 		$cars_temp = array();
+		 	}
+		}
+		if(!empty($cars_temp)){
+		 	$cars_array[] = $cars_temp;
+		}
+
+
+        
 		$this->render('index', array(
+			//Pagination
+		    'model'=> Cars::model()->findAll($criteria), // must be the same as $item_count
+            'item_count'=>$item_count,
+            'page_size'=>Yii::app()->params['listPerPage'],
+            'items_count'=>$item_count,
+            'pages'=>$pages,
+            //END
+
+			'carsAr'=>$cars_array,
 			'cars'=>$cars,
 			'carMakes'=>$carMakes,
 			'carColors'=>$carColors,

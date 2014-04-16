@@ -89,5 +89,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'ando@ut.ee',
+        'listPerPage'=> 6, // <-- insert this line with the number you prefer
 	),
 );
