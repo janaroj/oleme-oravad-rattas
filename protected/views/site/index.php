@@ -22,7 +22,7 @@
     <div class="object">
       <a href="?r=site/object&amp;id=<?php echo $car->ID; ?>"></a>
       <div class="object-img">
-        <img alt="" src="images/<?php echo $car->ID; echo "/small_"; echo $car->mainImg; ?>" />
+        <img alt="" src="images/<?php echo $car->ID; echo "/small_"; echo $car->mainImg; ?>" width="100%" height="auto"/>
       </div>    
       <div class="object-text">
         <h2><?php echo $car->make; echo " "; echo $car->model; ?></h2>
