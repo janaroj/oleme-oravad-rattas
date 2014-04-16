@@ -3,7 +3,9 @@
         <?php include 'admin-sidebar.php'; ?>
         <div class="content-small">
             <h1>Siin saad sa lisada uue auto</h1>
-            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); ?>
+            <?php echo CHtml::form('','post',array('enctype'=>'multipart/form-data')); 
+            $taht = '\U+00C4';
+            ?>
         	<div class="form">
             	<?php   echo CHtml::beginForm(); 
                         echo CHtml::errorSummary($model); ?>         
@@ -20,7 +22,7 @@
                         echo CHtml::activeTextField($model,'location') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'V&Auml;ljalaskeaasta'); 
+                <?php   echo CHtml::activeLabel($model,'V'+json_decode('"'.$taht.'"');+'jalaskeaasta'); 
                         echo CHtml::activeTextField($model,'year') ?>
             </div>
             <div class="row">
