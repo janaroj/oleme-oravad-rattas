@@ -20,7 +20,7 @@
                         echo CHtml::activeTextField($model,'location') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Väljalaskeaasta'); 
+                <?php   echo CHtml::activeLabel($model,'V&Auml;ljalaskeaasta'); 
                         echo CHtml::activeTextField($model,'year') ?>
             </div>
             <div class="row">
