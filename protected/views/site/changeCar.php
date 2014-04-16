@@ -20,12 +20,12 @@
                         echo CHtml::activeTextField($model,'location') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Väljalaskeaasta'); 
-                        echo CHtml::activeTextField($model,'year') ?>
+                       <label>Väljalaskeaasta</label>
+                       <?php echo CHtml::activeTextField($model,'year') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Värvus'); 
-                        echo CHtml::activeTextField($model,'color') ?>
+                        <label>Värvus</label>
+                        <?php echo CHtml::activeTextField($model,'color') ?>
             </div>
             <div class="row">
                 <?php   echo CHtml::activeLabel($model,'Saadavus'); 
@@ -40,11 +40,11 @@
                         echo CHtml::activeTextField($model,'price') ?>
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Põhipilt'); 
-                        echo CHtml::activeFileField($model, 'image'); ?>                 
+                        <label>Põhipilt</label>
+                        <?php echo CHtml::activeFileField($model, 'image'); ?>              
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Ülejäänud pildid'); 
+                <?php   echo CHtml::activeLabel($model,'Teised pildid'); 
                         $this->widget('CMultiFileUpload', array(
                         'name' => 'images',
                         'htmlOptions' => array('enctype' => 'multipart/form-data','multiple' => 'multiple'),
