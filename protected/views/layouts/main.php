@@ -12,16 +12,16 @@
     -->
     <!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
     <link rel="shortcut icon" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
+    
 
     <?php   
         $cs = Yii::app()->getClientScript();
-
+        $cs->registerCssFile('css/jquery.countdown.css',null,array('async'=>'async'));
         $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
-        $cs->registerScriptFile('js/jquery-1.11.0.js',null);
         $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));
         $cs->registerScriptFile('js/jquery.plugin.min.js',null,array('async'=>'async'));
-        $cs->registerScriptFile('js/jquery.countdown.min.js',null,array('async'=>'async'));?>
+        $cs->registerScriptFile('js/jquery.countdown.min.js',null,array('async'=>'async'));
+        $cs->registerScriptFile('js/jquery-1.11.0.js',null);?>
  
 </head>
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
