@@ -62,8 +62,7 @@ $this->widget('CLinkPager', array(
         'htmlOptions'=>array('class'=>'pages'),
         )); ?>
 
-      <button class="previous">Eelmised</button>
-      <button class="next">Järgmised</button>
+
     </div>
   </div>
 </div>
