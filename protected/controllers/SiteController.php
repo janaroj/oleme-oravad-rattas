@@ -238,8 +238,15 @@ class SiteController extends Controller
 			if ($model->validate()) {
 				$model->save();
 			}
+
 		}
 		$this->render('settings',array('model'=>$model));
+	}
+	public function actionDeleteUser() {
+		$id = Yii::app()->user->id;
+		$model = Users::model()->findByPk($id);
+		$model->delete();
+		$this->redirect(array("logout"));
 	}
 
 	public function actionAddCar() {
@@ -269,6 +276,7 @@ class SiteController extends Controller
 		}
 		$this->render('addCar',array('model'=>$model));
 	}
+	
 
 	public function actionRegistration() {
 		$this->layout='user';

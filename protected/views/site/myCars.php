@@ -19,7 +19,7 @@
     			<td><?php echo $car['location']; ?></td>
     			<td><?php echo $car['status']; ?></td>
           <td class="req-answer"><?php echo CHtml::link('Muuda',array('changeCar','carId' =>$car['ID']))?></td>
-          <td class="req-answer"><?php echo CHtml::link('Kustuta',array('deleteCar','carId' =>$car['ID']))?></td>
+          <td class="req-answer"><?php echo CHtml::link('Kustuta',array('deleteCar','carId' =>$car['ID']),array('confirm'=>"Oled kindel?"))?></td>
   		  </tr>
         <?php } ?>
       </table>

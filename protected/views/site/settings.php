@@ -32,6 +32,9 @@
                 <?php echo CHtml::submitButton('Muuda oma andmeid'); ?>
             </div>
             <?php echo CHtml::endForm(); ?>
+            <div class="row">
+               <?php echo CHtml::link('Kustuta',array('deleteUser'),array('class'=>'button-link','confirm'=>"Oled kindel?"))?>
+            </div>
         </div>
         <div class="clear"></div>
     </div>
