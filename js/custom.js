@@ -68,6 +68,9 @@
       $(".timer").countdown("destroy");
     });
 
+    $(".del-user").click(function(){
+
+    });   
 
     //AJAX object page ask for information
     $('.ask-info form input[type=submit]').click(function(e) {
@@ -100,5 +103,28 @@
         
       });
     });
-  
+
+    $('.mikihiirepidu').click(function(e) {
+     
+    });
+
+    $(window).load(function() {
+    if ($("#indexPage").length) {
+      $.ajax({
+        url: '/index.php?r=site/AjaxIndex',
+        type: 'GET',
+        success: function(data) {
+          $.each(data.cars, function(i,item){
+            $('.content').prepend('<div class="object"><a href="?r=site/object&amp;id='+item.ID+'"></a><div class="object-img"><img width="100%" height="auto" alt="" src="images/'+item.ID+'/small_'+item.mainImg+'"></div><div class="object-text"><h2>'+item.make+' '+item.model+'</h2><p>'+item.description+'</p></div></div>');       
+          });
+            //$('.no-success').html("Errorsummary");
+          },
+          error: function(data) {
+            alert(error);
+          }
+        
+      });
+  }
+    });   
 });
+  

@@ -40,7 +40,60 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
+	public function actionAjaxIndex() {
+		
+		$criteria = new CDbCriteria();
+		$criteria->order="Date DESC";
+		
+		$model = Cars::model()->findAll($criteria);
+	
+		//$model->attributes = $_GET;
+		$data = $this->convertModelToArray($model);
+		header('Content-Type: application/json');
+		echo json_encode(array('cars' => $data));
+		//$this->_sendResponse(200, NJSON::encode($data,true));
+		/*
+		//Pagination	
+        $item_count = Cars::model()->count($criteria);
+        //$item_count = count($cars);
+                
+        $pages = new CPagination($item_count);
+        $pages->setPageSize(Yii::app()->params['listPerPage']);
+        $pages->applyLimit($criteria);  // the trick is here!
+        //END
 
+        'model'=> Cars::model()->findAll($criteria), // must be the same as $item_count
+	*/
+	}
+
+	
+
+	   public function convertModelToArray($models) {
+        if (is_array($models))
+            $arrayMode = TRUE;
+        else {
+            $models = array($models);
+            $arrayMode = FALSE;
+        }
+
+        $result = array();
+        foreach ($models as $model) {
+            $attributes = $model->getAttributes();
+            $relations = array();
+            foreach ($model->relations() as $key => $related) {
+                if ($model->hasRelated($key)) {
+                    $relations[$key] = convertModelToArray($model->$key);
+                }
+            }
+            $all = array_merge($attributes, $relations);
+
+            if ($arrayMode)
+                array_push($result, $all);
+            else
+                $result = $all;
+        }
+        return $result;
+    }
 
 	public function actionIndex()
 	{	
@@ -62,7 +115,7 @@ class SiteController extends Controller
 		
 		$cars = Cars::model()->findAll($criteria);
 		
-		//Otsingukastid
+		//Otsingukastids
 		foreach ($cars as $car) {
             if(!in_array($car->price, $carPrices)){
               $carPrices[] = $car->price;  
@@ -123,27 +176,9 @@ class SiteController extends Controller
 			$criteria->params = array(':price' => $carPrices[$price] );
 		}
 	
-		//Pagination
-		
-        $item_count = Cars::model()->count($criteria);
-        //$item_count = count($cars);
-                
-        $pages = new CPagination($item_count);
-        $pages->setPageSize(Yii::app()->params['listPerPage']);
-        $pages->applyLimit($criteria);  // the trick is here!
-        //END
+
 
 		$this->render('index', array(
-			//Pagination
-		    'model'=> Cars::model()->findAll($criteria), // must be the same as $item_count
-            
-            'item_count'=>$item_count,
-            'page_size'=>Yii::app()->params['listPerPage'],
-            'items_count'=>$item_count,
-            'pages'=>$pages,
-            //END
-
-			'cars'=>$cars,
 			'carMakes'=>$carMakes,
 			'carColors'=>$carColors,
 			'carYears' =>$carYears,
