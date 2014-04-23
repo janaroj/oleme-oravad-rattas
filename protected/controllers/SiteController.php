@@ -60,26 +60,12 @@ class SiteController extends Controller
 		$criteria = new CDbCriteria();
 		$criteria->order="Date DESC";
 		
-		//Pagination
-		
-        $item_count = Cars::model()->count($criteria);
-                
-        $pages = new CPagination($item_count);
-        $pages->setPageSize(Yii::app()->params['listPerPage']);
-        $pages->applyLimit($criteria);  // the trick is here!
-        //END
-
 		$cars = Cars::model()->findAll($criteria);
 		
-
+		//Otsingukastid
 		foreach ($cars as $car) {
             if(!in_array($car->price, $carPrices)){
               $carPrices[] = $car->price;  
-            }
-
-            $date = date("d.m.Y",strToTime($car->Date));
-            if(!in_array($date, $carDates)){
-              $carDates[] = $date;  
             }
 
             if(!in_array($car->location, $carLocations)){
@@ -103,87 +89,60 @@ class SiteController extends Controller
         sort($carDates);
         sort($carYears);
         sort($carPrices);
-
-
-        if (isset($_POST['make']) || isset($_POST['color']) || isset($_POST['year']) || isset($_POST['location']) || isset($_POST['dateAdded']) || isset($_POST['price'])) 
-        {
-        	$car = new Cars;
-
-			if (isset($_POST['make'])) {
-				$make = $_POST['make'];
-				if ($make>0) {
-					$car->make = $carMakes[$make];
-				}
-			}
-
-			if (isset($_POST['color'])) {
-				$color = $_POST['color'];
-				if ($color>0) {
-					$car->color = $carColors[$color];
-				}
-			}	
-
-			if (isset($_POST['year'])) {
-				$year = $_POST['year'];
-				if ($year>0) {
-					$car->year = $carYears[$year];
-				}
-			}
-
-			if (isset($_POST['location'])) {
-				$location = $_POST['location'];
-				if ($location>0) {
-					$car->location = $carLocations[$location];
-				}
-			}
-
-			if (isset($_POST['dateAdded'])) {
-				$dateAdded = $_POST['dateAdded'];
-				if ($dateAdded>0) {
-					$car->Date = $carDates[$dateAdded];
-				}
-			}
-
-			if (isset($_POST['price'])) {
-				$price = $_POST['price'];
-				if ($price>0) {
-					$car->price = $carPrices[$price];	
-				}
-			}
-
-			$cars = $car->search()->getData();
+        //Optionite END
+			
+		$make = (isset($_POST['make']) ? $_POST['make']:0);
+		$color = (isset($_POST['color']) ? $_POST['color']:0);
+		$year = (isset($_POST['year']) ? $_POST['year']:0);
+		$location = (isset($_POST['location']) ? $_POST['location']:0);
+		$price = (isset($_POST['price']) ? $_POST['price']:0);
+					
+		if ($make>0) {
+        	$criteria->condition="make=:make";
+			$criteria->params = array(':make' => $carMakes[$make] );
 		}
 
-		$cars_array;
-		$cars_array = array();
-		$counter = 0;
-		$cars_temp = array();
-		foreach ($cars as $car) {
-		 	$cars_temp[] = $car;
-		 	$counter++;
-		 	if($counter == 4){
-		 		$counter = 0;
-		 		$cars_array[] = $cars_temp;
-		 		unset($cars_temp);
-		 		$cars_temp = array();
-		 	}
+		if ($color>0) {
+			$criteria->condition="color=:color";
+			$criteria->params = array(':color' => $carColors[$color] );
 		}
-		if(!empty($cars_temp)){
-		 	$cars_array[] = $cars_temp;
+	
+		if ($year>0) {
+			$criteria->condition="year=:year";
+			$criteria->params = array(':year' => $carYears[$year] );
 		}
+	
+		if ($location>0) {
+			$criteria->condition="location=:location";
+			$criteria->params = array(':location' => $carLocations[$location] );
+		}
+	
+	
+		if ($price>0) {
+			$criteria->condition="price=:price";
+			$criteria->params = array(':price' => $carPrices[$price] );
+		}
+	
+		//Pagination
+		
+        $item_count = Cars::model()->count($criteria);
+        //$item_count = count($cars);
+                
+        $pages = new CPagination($item_count);
+        $pages->setPageSize(Yii::app()->params['listPerPage']);
+        $pages->applyLimit($criteria);  // the trick is here!
+        //END
 
-
-        
 		$this->render('index', array(
 			//Pagination
 		    'model'=> Cars::model()->findAll($criteria), // must be the same as $item_count
+            
             'item_count'=>$item_count,
             'page_size'=>Yii::app()->params['listPerPage'],
             'items_count'=>$item_count,
             'pages'=>$pages,
             //END
 
-			'carsAr'=>$cars_array,
 			'cars'=>$cars,
 			'carMakes'=>$carMakes,
 			'carColors'=>$carColors,

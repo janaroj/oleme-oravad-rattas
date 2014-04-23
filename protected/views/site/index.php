@@ -19,13 +19,16 @@
 <div class="container">
   <div class="content">    
     <?php 
+    /*
     $i = 0;
     $cars_temp = $carsAr[0];
-      echo '<input id="mina" type="hidden" value="1" />'
-
+      echo '<input id="mina" type="hidden" value="';
+      echo count($cars_temp);
+      echo '" />';
+    */
       ?>
 
-        <?php foreach ($cars_temp as $car) {?>    
+        <?php foreach ($model as $car) {?>    
         <div class="object">
           <a href="?r=site/object&amp;id=<?php echo $car->ID; ?>"></a>
           <div class="object-img">
@@ -44,12 +47,7 @@
     
 
     <div class="bottom-nav">
-<?php 
-
-$data = array();
-foreach($model as $m){  // loop to get the data (this is different from the complex way)
-$data[] = $m->attributes;
-}
+    <?php 
 
 // the pagination widget with some options to mess
 $this->widget('CLinkPager', array(
@@ -59,7 +57,7 @@ $this->widget('CLinkPager', array(
             'maxButtonCount'=>5,
             //'nextPageLabel'=>'My text >',
             'header'=>'',
-        'htmlOptions'=>array('class'=>'pages'),
+            'htmlOptions'=>array('class'=>'pages'),
         )); ?>
 
 
