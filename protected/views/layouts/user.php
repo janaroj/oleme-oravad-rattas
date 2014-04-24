@@ -49,7 +49,7 @@
           ', CClientScript::POS_READY); 
     }
 ?>
-
+<!--
 <div id="openModal" class="modalDialog">
   <div>
     <h2>Hei</h2>
@@ -59,7 +59,7 @@
     <?php echo CHtml::link('Jah, logi välja',array('logout'),array('class'=>'button-link logout')); ?>
   <button id="stayOnline" class="button-link">Ei, jää sisse</button>
   </div>
-</div>
+</div>-->
 </div>
 </body>
 </html>
