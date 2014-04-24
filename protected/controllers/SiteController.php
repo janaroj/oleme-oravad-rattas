@@ -40,17 +40,17 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	public function actionAjaxIndex() {
-		
+	public function actionAjaxPictures() {
+		$id = $_GET['id'];
+
 		$criteria = new CDbCriteria();
-		$criteria->order="Date DESC";
+		$criteria->condition="carId=:id";
+		$criteria->params = array(":id" => $id );
 		
-		$model = Cars::model()->findAll($criteria);
+		$model = CarPictures::model()->findAll($criteria);
 	
 		//$model->attributes = $_GET;
-		$data = $this->convertModelToArray($model);
-		header('Content-Type: application/json');
-		echo json_encode(array('cars' => $data));
+			echo json_encode(array('pictures' => $data));
 		//$this->_sendResponse(200, NJSON::encode($data,true));
 		/*
 		//Pagination	
@@ -66,35 +66,25 @@ class SiteController extends Controller
 	*/
 	}
 
+	public function actionAjaxIndex() {
+header('Content-Type: application/json');
 	
+		$page = (isset($_GET['page']) ? $_GET['page'] : 0 );
+		$dataprovider = new CActiveDataProvider('Cars',array(
+			'criteria' => array(
+				'order' => 'Date DESC',
+			),
+			'pagination' => array(
+				'pageSize' => '6',
+				'currentPage' => $page
+			), 
+		));
 
-	   public function convertModelToArray($models) {
-        if (is_array($models))
-            $arrayMode = TRUE;
-        else {
-            $models = array($models);
-            $arrayMode = FALSE;
-        }
+		echo CJSON::encode($dataprovider->getData());
+		Yii::app()->end();
+	}
 
-        $result = array();
-        foreach ($models as $model) {
-            $attributes = $model->getAttributes();
-            $relations = array();
-            foreach ($model->relations() as $key => $related) {
-                if ($model->hasRelated($key)) {
-                    $relations[$key] = convertModelToArray($model->$key);
-                }
-            }
-            $all = array_merge($attributes, $relations);
-
-            if ($arrayMode)
-                array_push($result, $all);
-            else
-                $result = $all;
-        }
-        return $result;
-    }
-
+	
 	public function actionIndex()
 	{	
 		$carMakes = array();
@@ -175,16 +165,28 @@ class SiteController extends Controller
 			$criteria->condition="price=:price";
 			$criteria->params = array(':price' => $carPrices[$price] );
 		}
+
+		
+
+		$count=Cars::model()->count($criteria);
+		$pages=new CPagination($count);
+
+		    // results per page
+		$pages->pageSize=6;
+		$pages->applyLimit($criteria);
+		$model=Cars::model()->findAll($criteria);
+
 	
-
-
 		$this->render('index', array(
+			'model' => $model,
 			'carMakes'=>$carMakes,
 			'carColors'=>$carColors,
 			'carYears' =>$carYears,
 			'carLocations' =>$carLocations,
 			'carDates' =>$carDates,
-			'carPrices' =>$carPrices
+			'carPrices' =>$carPrices,
+			'pages' => $pages
+
 		));	
 	}
 

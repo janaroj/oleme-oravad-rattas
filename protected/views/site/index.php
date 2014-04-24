@@ -17,18 +17,28 @@
   </div>
 </div>
 <div class="container" id="indexPage">
-  <div class="content">    
-   
+  <div class="content">
+    <?php foreach ($model as $car) { ?>
+      <div class="object">
+        <a href="?r=site/object&amp;id=<?php echo $car->ID ?>"></a>
+        <div class="object-img">
+        <img width="100%" height="auto" alt="" src="images/<?php echo $car->ID ?>/small_<?php echo $car->mainImg ?>"></div>
+        <div class="object-text">
+          <h2><?php echo $car->make; echo " "; echo $car->model; ?></h2>
+          <p><?php echo $car->description; ?></p>
+        </div>
+      </div>    
+    <?php } ?>    
+  <div class="bottom-nav">
+      <button class="mikihiirepidu">aksdjaklsdjas</button>
+      <button id="previous" click="">Previous</button>
+      <button id="next">Next</button>
+      <?php $this->widget('CLinkPager', array(
+          'pages' => $pages,
 
-   
-      <div class="clear"></div>
-
-
-    
-
-    <div class="bottom-nav">
-    <button class="mikihiirepidu">aksdjaklsdjas</button>
-
-    </div>
+      )) ?>
   </div>
+  <div class="clear"></div>
+  </div>
+  
 </div>
