@@ -136,7 +136,7 @@ function ajaxPaging(page){
         $('.content .object').remove();
         
         $.each(data, function(i,item){
-          $('.content').prepend('<div class="object"><a href="?r=site/object&amp;id='+item.ID+'"></a><div class="object-img"><img width="200" height="auto" alt="" src="images/'+item.ID+'/small_'+item.mainImg+'"></div><div class="object-text"><h2>'+item.make+' '+item.model+'</h2><p>'+item.description+'</p></div></div>');     
+          $('.content').prepend('<div class="object"><a href="?r=site/object&amp;id='+item.ID+'"></a><div class="object-img"><img alt="" src="images/'+item.ID+'/small_'+item.mainImg+'"></div><div class="object-text"><h2>'+item.make+' '+item.model+'</h2><p>'+item.description+'</p></div></div>');     
         });
           $('#yw0 li.page').removeClass('selected');
   // $('#yw0 li.page:get('+(page-1)+')').addClass('selected');
