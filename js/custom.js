@@ -101,49 +101,35 @@ $(function(){
   });
 
   function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||1;
   }
+
+  $(window).on('popstate', function (e) {
+  e.preventDefault();
+
+  var page = getURLParameter('page')-1;
+
+  ajaxPaging(page);
+  
+});
 
   $('#yw0 a').click(function(e){
     e.preventDefault();
     
     window.history.pushState("object or string", "Title", $(this).attr('href'));
     
-    var page = getURLParameter('page');
-    
-    window.location.hash = page;
+    var page = getURLParameter('page')-1;
+ 
+   ajaxPaging(page);
 
-    ajaxPaging(page);
-
-    if(!page){ 
-      page = 1;
-  }
     
-  $('#yw0 li.page').removeClass('selected');
-  // $('#yw0 li.page:get('+(page-1)+')').addClass('selected');
-  $('#yw0 li.page:eq('+(page-1)+')').addClass('selected');
-  
   });
 });
-$(window).bind('hashchange', function(e){
-  e.preventDefault();
-
-  var paljuvaja = (this.location.hash);
-  paljuvaja = paljuvaja.replace('#','');
-  if(paljuvaja === null){
-    paljuvaja = 1;
-  }
-  console.log(paljuvaja);
-
-  if(paljuvaja.length != 0){
-    ajaxPaging(paljuvaja);
-  }
-})
 
 function ajaxPaging(page){
   $.ajax({
 
-      url: 'http://localhost/oleme-oravad-rattas/index.php?r=site/AjaxIndex&page='+page,
+      url: 'index.php?r=site/AjaxIndex&page='+page,
       type: 'GET',
       success: function(data) {
         
@@ -152,9 +138,13 @@ function ajaxPaging(page){
         $.each(data, function(i,item){
           $('.content').prepend('<div class="object"><a href="?r=site/object&amp;id='+item.ID+'"></a><div class="object-img"><img width="100%" height="auto" alt="" src="images/'+item.ID+'/small_'+item.mainImg+'"></div><div class="object-text"><h2>'+item.make+' '+item.model+'</h2><p>'+item.description+'</p></div></div>');     
         });
+          $('#yw0 li.page').removeClass('selected');
+  // $('#yw0 li.page:get('+(page-1)+')').addClass('selected');
+     $('#yw0 li.page:eq('+(page)+')').addClass('selected');
+  
         },
         error: function(data) {
-          alert(data);
+          alert("Viga");
         }
     });
 }

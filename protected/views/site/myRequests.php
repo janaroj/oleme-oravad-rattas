@@ -18,8 +18,8 @@
     			<td><?php echo $request['email']; ?></td>
     			<td><?php echo $request['phone']; ?></td>
     			<td><?php echo $request['text']; ?></td>
-          <td class="req-answer">Vasta</td>
-          <td class="req-answer">Keeldu</td>          			
+          <td class="req-answer"><?php echo CHtml::link('Vasta',array('answerRequest','requestId' =>$request['ID']))?></td>
+          <td class="req-answer"><?php echo CHtml::link('Kustuta',array('deleteRequest','requestId'=>$request['ID']),array('confirm'=>"Oled kindel?"))?></td>          			
     		</tr>
         <?php } ?> 
       </table>

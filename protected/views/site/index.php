@@ -30,9 +30,8 @@
       </div>    
     <?php } ?>    
   <div class="bottom-nav">
-      <button class="mikihiirepidu">aksdjaklsdjas</button>
-      <button id="previous" click="">Previous</button>
-      <button id="next">Next</button>
+  
+    <div>Navigatsioon</div>
       <?php $this->widget('CLinkPager', array(
           'pages' => $pages,
 

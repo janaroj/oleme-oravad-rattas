@@ -67,21 +67,22 @@ class SiteController extends Controller
 	}
 
 	public function actionAjaxIndex() {
-header('Content-Type: application/json');
+	header('Content-Type: application/json');
 	
-		$page = (isset($_GET['page']) ? $_GET['page'] : 0 );
+		$page = (isset($_GET['page']) ? $_GET['page'] : 1 );
+
 		$dataprovider = new CActiveDataProvider('Cars',array(
 			'criteria' => array(
 				'order' => 'Date DESC',
 			),
 			'pagination' => array(
-				'pageSize' => '6',
+				'pageSize' => '2',
 				'currentPage' => $page
 			), 
 		));
 
 		echo CJSON::encode($dataprovider->getData());
-		Yii::app()->end();
+
 	}
 
 	
@@ -172,7 +173,7 @@ header('Content-Type: application/json');
 		$pages=new CPagination($count);
 
 		    // results per page
-		$pages->pageSize=6;
+		$pages->pageSize=2;
 		$pages->applyLimit($criteria);
 		$model=Cars::model()->findAll($criteria);
 
@@ -246,7 +247,7 @@ header('Content-Type: application/json');
 		
 		$userId = Yii::app()->user->id;
 
-		$sql="SELECT cars.make,cars.model,requests.email,requests.phone,requests.text from requests inner join cars on requests.carId = cars.ID inner join users on cars.UserId = users.ID where users.ID = $userId";
+		$sql="SELECT cars.make,cars.model,requests.ID,requests.email,requests.phone,requests.text from requests inner join cars on requests.carId = cars.ID inner join users on cars.UserId = users.ID where users.ID = $userId";
 		$connection=Yii::app()->db; 
 		$command=$connection->createCommand($sql);
 		$requests=$command->query();
@@ -254,9 +255,22 @@ header('Content-Type: application/json');
 		$this->render('myRequests',array('requests'=>$requests));
 	}
 
+	public function actionAnswerRequest(){
+		$this->actionDeleteRequest();
+	}
+
+	public function actionDeleteRequest(){
+		$id = $_GET['requestId'];
+		$request = Requests::model()->findByPk($id);
+		$request->delete();
+
+		$this->redirect(array('myRequests'));
+
+	}
+
 	public function actionMyCars() {
 		$this->layout='user';
-		$cars = cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
+		$cars = Cars::model()->findAll('userId=:userId',array(':userId'=>Yii::app()->user->id));
 		$this->render('myCars',array('cars'=>$cars));
 	}
 
