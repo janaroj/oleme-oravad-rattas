@@ -49,12 +49,13 @@
                     echo CHtml::activeTextField($model,'text') ?>
           </div>
           <div class="submit">
-              <?php echo CHtml::submitButton('Päri infot'); ?>
+              <?php echo CHtml::submitButton('Saada päring'); ?>
           </div>
           <?php echo CHtml::endForm(); ?>
-          <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
-          
         </div>
+        <div class="clear"></div>
+        <div class="no-success"><?php echo CHtml::errorSummary($model); ?></div>
+          
       </div>
     </div>
     <div class="detail-img">      
