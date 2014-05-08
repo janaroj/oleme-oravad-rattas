@@ -306,8 +306,20 @@ h3 {
 }
 
 /*Login and registration forms */
+.one-half{
+    width: 50%;
+    float: left;
+}
+#reg-info p{
+    padding-top: 25px;
+    font-size: 16px;
+}
+#reg-info p a{
+    font-weight: 600;
+}
+
 .form {
-    width: 50%
+    width: 100%;
 }
 .form .row label{
     float: left;

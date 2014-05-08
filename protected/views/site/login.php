@@ -1,5 +1,6 @@
 <div class="container">
     <div class="content" id="login">
+        <div class="one-half">
         <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>        
         <div class="form">
             <?php echo CHtml::beginForm(); 
@@ -22,6 +23,13 @@
             </div>         
             <?php echo CHtml::endForm(); ?>
         </div><!-- form -->
-        <div class="clear"></div>
+    </div>
+    <div class="one-half" id="reg-info">
+        <h2>Ei ole kasutaja?</h2>
+    
+        <p>Registreeru kasutajaks <a href="/oleme-oravad-rattas/index.php?r=site/registration">SIIN</a></p>
+    </div>
+
+    <div class="clear"></div>
     </div>
 </div>
