@@ -31,7 +31,6 @@
       <div class="ask-info">
         <div class="form">
           <input id="car_id" type="text" value="<?php echo $_GET['id']; ?>" style="display: none;">
-          <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
           <?php echo CHtml::beginForm(); ?>          
           <div class="row">
             <?php echo CHtml::activeLabel($model,'name');
@@ -53,6 +52,8 @@
               <?php echo CHtml::submitButton('Päri infot'); ?>
           </div>
           <?php echo CHtml::endForm(); ?>
+          <span class="no-success"><?php echo CHtml::errorSummary($model); ?></span>
+          
         </div>
       </div>
     </div>

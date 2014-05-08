@@ -504,6 +504,11 @@ h3 {
 
 #cont1{
 }
+.no-success{
+    color: red;
+    font-size: 16px;
+    
+}
 
 @media (max-width: 1150px){
     .container{
