@@ -77,6 +77,6 @@
       </div>  
     </div>  
     <div class="clear"></div>
-    <span class="back"><?php echo CHtml::link('Tagasi otsingutulemuste juurde',array('index')); ?></span>  
+    <span class="back"><?php echo CHtml::link('Tagasi otsingutulemuste juurde',Yii::app()->request->urlReferrer); ?></span>  
   </div>
 </div>
