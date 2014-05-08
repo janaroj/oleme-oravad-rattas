@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="content">
+    <div class="content" id="login">
         <h2>Logi sisse, et hallata oma kontot ja autosid.</h2>        
         <div class="form">
             <?php echo CHtml::beginForm(); 

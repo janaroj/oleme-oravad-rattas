@@ -7,7 +7,7 @@
               echo CHtml::dropDownList('color', 0,$carColors);            
               echo CHtml::dropDownList('year', 0, $carYears);         
               echo CHtml::dropDownList('location', 0, $carLocations);
-              echo CHtml::dropDownList('dateAdded', 0, $carDates);               
+              // echo CHtml::dropDownList('dateAdded', 0, $carDates);               
               echo CHtml::dropDownList('price', 0, $carPrices);               
               echo CHtml::submitButton('Otsi');              
               echo CHtml::endForm(); ?>
@@ -32,7 +32,6 @@
   <div class="clear"></div>    
   <div class="bottom-nav">
   
-    <div>Navigatsioon</div>
       <?php $this->widget('ext.CustomLinkPager', array(
           'pages' => $pages,
 
