@@ -1,4 +1,5 @@
 <!-- To end top navigation, this page has no search but div needs to be closed.-->
+<div class="search-box"></div>
 </div>
 <div class="container">
   <div class="content">

@@ -28,7 +28,8 @@
           <p><?php echo $car->description; ?></p>
         </div>
       </div>    
-    <?php } ?>    
+    <?php } ?>
+  <div class="clear"></div>    
   <div class="bottom-nav">
   
     <div>Navigatsioon</div>
