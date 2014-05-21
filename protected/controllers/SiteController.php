@@ -76,7 +76,7 @@ class SiteController extends Controller
 				'order' => 'Date DESC',
 			),
 			'pagination' => array(
-				'pageSize' => '2',
+				'pageSize' => '6',
 				'currentPage' => $page
 			), 
 		));
