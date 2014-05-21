@@ -23,6 +23,10 @@
           <td>Saadavus</td>
           <td><?php echo $car->status; ?></td>
         </tr>
+        <tr>
+          <td>Hind</td>
+          <td><?php echo $car->price; ?></td>
+        </tr>
       </table>        
       <h3>Info</h3>
       <p>

@@ -44,7 +44,7 @@
                         <?php echo CHtml::activeFileField($model, 'image'); ?>              
             </div>
             <div class="row">
-                <?php   echo CHtml::activeLabel($model,'Teised pildid'); 
+                <?php   echo CHtml::activeLabel($model,'pildid'); 
                         $this->widget('CMultiFileUpload', array(
                         'name' => 'images',
                         'htmlOptions' => array('enctype' => 'multipart/form-data','multiple' => 'multiple'),
@@ -52,6 +52,20 @@
                         'duplicate' => 'Duplicate file!', // useful, i think
                         'denied' => 'Invalid file type', // useful, i think
                         )); ?>                 
+            </div> 
+            <div class="row">
+               <div class="small-image">
+                <ul>
+                  <li>
+                    <img src="images/<?php echo $model->ID; echo "/"; echo $model->mainImg; ?>" alt="peamine pilt"/>
+                </li>
+                <?php foreach ($images as $image) { ?>
+                <li>
+                    <img src="images/<?php echo $model->ID; echo "/"; echo $image->picture; ?>" alt="pildid autost" />
+                </li>
+                <?php } ?>
+            </ul>
+        </div>  
             </div>
             <div class="row submit">
                 <?php echo CHtml::submitButton('Muuda autot'); ?>

@@ -205,6 +205,12 @@ class SiteController extends Controller
 	public function actionChangeCar() {
 		$id = $_GET['carId'];
 		$model = Cars::model()->findByPk($id);
+		
+		$criteria = new CDbCriteria();
+		$criteria->condition="carId=:id";
+		$criteria->params = array(':id' => $id );
+
+		$images = CarPictures::model()->findAll($criteria);
 
 		if(isset($_POST['Cars']))
 		{
@@ -228,7 +234,7 @@ class SiteController extends Controller
 
 		}
 
-		$this->render('changeCar',array('model'=>$model));
+		$this->render('changeCar',array('model'=>$model,'images'=>$images));
 	}
 
 	public function actionDeleteCar() { 
