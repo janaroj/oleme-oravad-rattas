@@ -256,8 +256,46 @@ class SiteController extends Controller
 	}
 
 	public function actionAnswerRequest(){
-		$this->actionDeleteRequest();
+
+		if(@mail('ando@ladaklubi.ee','test subject','test message')){
+	      echo('ok');
+	    }
+		else{
+	      echo('not ok');
+	    }
+
+		header("access-control-allow-origin: *");
+
+		$id = $_GET['requestId'];
+		$request = Requests::model()->findByPk($id);
+
+		$users = Yii::app()->user->id;
+
+		$user = Users::model()->findByPk($users);
+
+		$from = $user->email;
+		$to  =  $request->email ; 
+		
+		$subject = 'Kontaktandmete päringu vastus';
+
+		$message = '
+		  Do you plan to work exclusively: '.$user->email.'';
+
+		 $headers = "From:" . $from;
+
+		            $returnpath = "-f" . $from;
+		            $ok = @mail($to, $subject, $message, $headers);
+		            if($ok){
+		            	$this->redirect(array('myRequests'));
+					}
+					else{
+						print_r($subject.$message);
+					}
 	}
+		    //This function will correct file array from $_FILES[[file][position]] to $_FILES[[position][file]] .. Very important
+
+
+ 	
 
 	public function actionDeleteRequest(){
 		$id = $_GET['requestId'];

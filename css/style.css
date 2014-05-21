@@ -348,6 +348,11 @@ h3 {
     margin-left: 2em;
     float: left;
 }
+.registration-google p .google{
+    margin-left: 0;
+    margin-top: 0.4em;
+}
+
 .form textarea{
     max-width: 70%;
     width: 70%;

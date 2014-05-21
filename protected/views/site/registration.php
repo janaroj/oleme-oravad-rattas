@@ -35,6 +35,14 @@
                 <?php echo CHtml::endForm(); ?>
             </div><!-- form -->
         </div>
+        <div class="one-half">
+            <h2>Soovid registreerida Google kontoga?</h2>
+            <p>Lubame, et kasutame sinu andmeid vaid konto loomiseks ning ei tee mitte midagi halba :)</p>
+
+            <div class="registration-google">
+                <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+            </div>
+        </div>
         <div class="clear"></div>
     </div>
 </div>
