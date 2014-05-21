@@ -57,11 +57,11 @@
                <div class="small-image">
                 <ul>
                   <li>
-                    <img src="images/<?php echo $model->ID; echo "/"; echo $model->mainImg; ?>" alt="peamine pilt"/>
+                  <?php echo CHtml::link('<img src="images/'.$model->ID.'"/"'.$model->mainImg.'" alt="peamine pilt"',array('deleteCarPicture','pictureId' =>$image['ID']),array('confirm'=>"Oled kindel?"))?>
                 </li>
                 <?php foreach ($images as $image) { ?>
                 <li>
-                    <img src="images/<?php echo $model->ID; echo "/"; echo $image->picture; ?>" alt="pildid autost" />
+                    <?php echo CHtml::link('<img src="images/'.$model->ID.'"/"'.$image->picture.'" alt="pildid autost"',array('deleteCarPicture','pictureId' =>$image['ID']),array('confirm'=>"Oled kindel?"))?>
                 </li>
                 <?php } ?>
             </ul>
