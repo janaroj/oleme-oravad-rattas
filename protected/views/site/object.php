@@ -4,12 +4,12 @@
 <div class="container">
   <div class="content">
     <div class="detail-text">
-      <h2><?php echo $car->make; echo " "; echo $car->model;?></h2>        
+      <h2><?php echo ucwords($car->make." ".$car->model);?></h2>        
       <h3>Üldandmed</h3>
       <table>
         <tr>
           <td>Asukoht</td>
-          <td><?php echo $car->location; ?></td>
+          <td><?php echo ucwords($car->location); ?></td>
         </tr>
         <tr>
           <td>Väljalaskeaasta</td>

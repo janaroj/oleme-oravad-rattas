@@ -112,20 +112,20 @@ class SiteController extends Controller
               $carPrices[] = $car->price;  
             }
 
-            if(!in_array($car->location, $carLocations)){
-              $carLocations[] = $car->location;  
+            if(!in_array(ucwords($car->location), $carLocations)){
+              $carLocations[] = ucwords($car->location);  
             }
 
             if(!in_array($car->year, $carYears)){
               $carYears[] = $car->year;  
             }
 
-            if(!in_array($car->color, $carColors)){
-            $carColors[] = $car->color;  
+            if(!in_array(ucwords($car->color), $carColors)){
+            $carColors[] = ucwords($car->color);  
           }
 
-          	 if(!in_array($car->make, $carMakes)){
-            $carMakes[] = $car->make;
+          	 if(!in_array(ucwords($car->make), $carMakes)){
+            $carMakes[] = ucwords($car->make);
           }
 
         } 
@@ -173,7 +173,7 @@ class SiteController extends Controller
 		$pages=new CPagination($count);
 
 		    // results per page
-		$pages->pageSize=2;
+		$pages->pageSize=6;
 		$pages->applyLimit($criteria);
 		$model=Cars::model()->findAll($criteria);
 
@@ -255,47 +255,6 @@ class SiteController extends Controller
 		$this->render('myRequests',array('requests'=>$requests));
 	}
 
-	public function actionAnswerRequest(){
-
-		if(@mail('ando@ladaklubi.ee','test subject','test message')){
-	      echo('ok');
-	    }
-		else{
-	      echo('not ok');
-	    }
-
-		header("access-control-allow-origin: *");
-
-		$id = $_GET['requestId'];
-		$request = Requests::model()->findByPk($id);
-
-		$users = Yii::app()->user->id;
-
-		$user = Users::model()->findByPk($users);
-
-		$from = $user->email;
-		$to  =  $request->email ; 
-		
-		$subject = 'Kontaktandmete päringu vastus';
-
-		$message = '
-		  Do you plan to work exclusively: '.$user->email.'';
-
-		 $headers = "From:" . $from;
-
-		            $returnpath = "-f" . $from;
-		            $ok = @mail($to, $subject, $message, $headers);
-		            if($ok){
-		            	$this->redirect(array('myRequests'));
-					}
-					else{
-						print_r($subject.$message);
-					}
-	}
-		    //This function will correct file array from $_FILES[[file][position]] to $_FILES[[position][file]] .. Very important
-
-
- 	
 
 	public function actionDeleteRequest(){
 		$id = $_GET['requestId'];

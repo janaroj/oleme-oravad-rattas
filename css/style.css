@@ -300,11 +300,16 @@ h3 {
 .request-table td{
     padding-top: 1em;
 }
+.request-table td a{
+    color: blue;
+}
 .req-answer{
     font-weight: 600;
     text-transform: uppercase;
 }
-
+.request-table .req-answer a{
+    color: red;
+}
 /*Login and registration forms */
 .one-half{
     width: 50%;

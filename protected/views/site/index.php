@@ -24,7 +24,7 @@
         <div class="object-img">
         <img alt="" src="images/<?php echo $car->ID ?>/small_<?php echo $car->mainImg ?>"></div>
         <div class="object-text">
-          <h2><?php echo $car->make; echo " "; echo $car->model; ?></h2>
+          <h2><?php echo ucwords($car->make." ".$car->model); ?></h2>
           <p><?php echo $car->description; ?></p>
         </div>
       </div>    
