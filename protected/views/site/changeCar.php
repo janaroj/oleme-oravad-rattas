@@ -56,9 +56,6 @@
             <div class="row">
                <div class="small-image">
                 <ul>
-                  <li>
-                  <?php echo CHtml::link('<img src="images/'.$model->ID.'"/"'.$model->mainImg.'" alt="peamine pilt"',array('deleteCarPicture','pictureId' =>$image['ID']),array('confirm'=>"Oled kindel?"))?>
-                </li>
                 <?php foreach ($images as $image) { ?>
                 <li>
                     <?php echo CHtml::link('<img src="images/'.$model->ID.'"/"'.$image->picture.'" alt="pildid autost"',array('deleteCarPicture','pictureId' =>$image['ID']),array('confirm'=>"Oled kindel?"))?>
