@@ -18,7 +18,8 @@
         $cs->registerCssFile('css/jquery.countdown.min.css',null,array('async'=>'async'));
         $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
         $cs->registerScriptFile('js/jquery-1.11.0.min.js',null);
-        $cs->registerScriptFile('js/custom.min.js',null,array('async'=>'async'));
+        $cs->registerScriptFile('js/owl.carousel.min.js',null,array('async'=>'async'));
+        $cs->registerScriptFile('js/custom.js',null,array('async'=>'async'));
         $cs->registerScriptFile('js/jquery.plugin.min.js',null,array('async'=>'async'));
         $cs->registerScriptFile('js/jquery.countdown.min.js',null,array('async'=>'async'));
         ?>

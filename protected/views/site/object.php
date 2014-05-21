@@ -67,18 +67,15 @@
       <div class="big-image">
         <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt" />
       </div>      
-      <div class="small-image">
-        <ul>
-          <li>
-            <img src="images/<?php echo $car->ID; echo "/"; echo $car->mainImg; ?>" alt="peamine pilt"/>
-          </li>
+      <div class="small-image" id="owl-demo">
+        
           <?php foreach ($images as $image) { ?>
-          <li>
+          <div class="~item">
             <img src="images/<?php echo $car->ID; echo "/"; echo $image->picture; ?>" alt="pilt autost" />
-          </li>
+          </div>
           <?php } ?>
-        </ul>
-      </div>  
+        
+        </div>  
     </div>  
     <div class="clear"></div>
     <span class="back"><?php echo CHtml::link('Tagasi otsingutulemuste juurde',Yii::app()->request->urlReferrer); ?></span>  
