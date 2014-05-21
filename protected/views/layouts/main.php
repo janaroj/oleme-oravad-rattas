@@ -16,10 +16,11 @@
     <?php   
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile('css/jquery.countdown.min.css',null,array('async'=>'async'));
-        $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
         $cs->registerCssFile('css/owl.theme.css',null,array('async'=>'async'));
         $cs->registerCssFile('css/owl.carousel.css',null,array('async'=>'async'));
         $cs->registerCssFile('css/owl.transitions.css',null,array('async'=>'async'));
+        
+        $cs->registerCssFile('css/style.css',null,array('async'=>'async'));
         
         $cs->registerScriptFile('js/jquery-1.11.0.min.js',null);
         $cs->registerScriptFile('js/owl.carousel.min.js',null,array('async'=>'async'));
