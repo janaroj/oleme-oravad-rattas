@@ -254,7 +254,7 @@ class SiteController extends Controller
 		$carPicture->delete();
 		$fileSavePath = Yii::app()->basePath.'/../images/'.$id;
 		$this->rmdir_recursive($fileSavePath);
-		
+		$this->redirect(Yii::app()->request->urlReferrer);
 	}
 
 	public function actionMyRequests(){
