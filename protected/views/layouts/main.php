@@ -31,7 +31,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 <div class="header">
   <div class="container">
-    <div class="logo"></div>
+    <a href="/"><div class="logo"></div></a>
       <div class="login">
           <?php if (Yii::app()->user->isGuest) { 
                 echo "<span class='login-as'>";
