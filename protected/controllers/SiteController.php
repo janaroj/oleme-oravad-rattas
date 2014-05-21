@@ -248,6 +248,15 @@ class SiteController extends Controller
 		$this->render('myCars',array('cars'=>$cars));
 	}
 
+	public function actionDeleteCarPicture() { 
+		$id = $_GET['pictureId'];
+		$carPicture = CarPictures::model()->findByPk($id);
+		$carPicture->delete();
+		$fileSavePath = Yii::app()->basePath.'/../images/'.$id;
+		$this->rmdir_recursive($fileSavePath);
+		
+	}
+
 	public function actionMyRequests(){
 		$this->layout='user';	
 		

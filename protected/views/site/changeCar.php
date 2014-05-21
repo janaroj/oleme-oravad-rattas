@@ -58,7 +58,7 @@
                 <ul>
                 <?php foreach ($images as $image) { ?>
                 <li>
-                    <?php echo CHtml::link('<img src="images/'.$model->ID.'/'.$image->picture.'" alt="pildid autost"></img>',array('deleteCarPicture','pictureId' =>$image['ID']),array('confirm'=>"Oled kindel?"))?>
+                    <?php echo CHtml::link('<img src="images/'.$model->ID.'/'.$image->picture.'" alt="pildid autost"></img>',array('deleteCarPicture','pictureId'=>$image['ID']),array('confirm'=>"Oled kindel?"))?>
                 </li>
                 <?php } ?>
             </ul>
