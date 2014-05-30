@@ -140,13 +140,10 @@ class SiteController extends Controller
 		$year = (isset($_POST['year']) ? $_POST['year']:0);
 		$location = (isset($_POST['location']) ? $_POST['location']:0);
 		$price = (isset($_POST['price']) ? $_POST['price']:0);
-		
-		$finalprms = array();
-
+					
 		if ($make>0) {
         	$criteria->condition="make=:make";
 			$criteria->params = array(':make' => $carMakes[$make] );
-			$finalprms['make'] = $carMakes[$make]);
 		}
 
 		if ($color>0) {
@@ -157,23 +154,20 @@ class SiteController extends Controller
 		if ($year>0) {
 			$criteria->condition="year=:year";
 			$criteria->params = array(':year' => $carYears[$year] );
-
 		}
 	
 		if ($location>0) {
 			$criteria->condition="location=:location";
 			$criteria->params = array(':location' => $carLocations[$location] );
-
 		}
 	
 	
 		if ($price>0) {
 			$criteria->condition="price=:price";
 			$criteria->params = array(':price' => $carPrices[$price] );
-	
 		}
 
-		$criteria->params = $finalprms;
+		
 
 		$count=Cars::model()->count($criteria);
 		$pages=new CPagination($count);
