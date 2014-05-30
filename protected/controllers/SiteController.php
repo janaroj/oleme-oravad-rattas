@@ -167,7 +167,8 @@ class SiteController extends Controller
 			$criteria->params = array(':price' => $carPrices[$price] );
 		}
 
-		
+		$criteria->params = array(':make' => $carMakes[$make], ':color' => $carColors[$color], ':year' => $carYears[$year], ':location' => $carLocations[$location], ':price' => $carPrices[$price] );
+				
 
 		$count=Cars::model()->count($criteria);
 		$pages=new CPagination($count);
