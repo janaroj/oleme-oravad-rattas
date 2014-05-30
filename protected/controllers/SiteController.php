@@ -178,7 +178,7 @@ class SiteController extends Controller
 		
 		}
 
-		$criteria->params = $finalprms;
+		//$criteria->params = $finalprms;
 
 		$count=Cars::model()->count($criteria);
 		$pages=new CPagination($count);
