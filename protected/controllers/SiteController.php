@@ -146,39 +146,34 @@ class SiteController extends Controller
 		if ($make>0) {
         	$criteria->condition="make=:make";
 			$criteria->params = array(':make' => $carMakes[$make] );
-			array_push($finalprms, ':make' => $carMakes[$make]);
+			$finalprms['make'] = $carMakes[$make]);
 		}
 
 		if ($color>0) {
 			$criteria->condition="color=:color";
 			$criteria->params = array(':color' => $carColors[$color] );
-			array_push($finalprms, ':color' => $carColors[$color]);
-
 		}
 	
 		if ($year>0) {
 			$criteria->condition="year=:year";
 			$criteria->params = array(':year' => $carYears[$year] );
-			array_push($finalprms, ':year' => $carYears[$year]);
 
 		}
 	
 		if ($location>0) {
 			$criteria->condition="location=:location";
 			$criteria->params = array(':location' => $carLocations[$location] );
-			array_push($finalprms, ':location' => $carLocations[$location]);
-		
+
 		}
 	
 	
 		if ($price>0) {
 			$criteria->condition="price=:price";
 			$criteria->params = array(':price' => $carPrices[$price] );
-			array_push($finalprms, ':price' => $carPrices[$price]);
-		
+	
 		}
 
-		//$criteria->params = $finalprms;
+		$criteria->params = $finalprms;
 
 		$count=Cars::model()->count($criteria);
 		$pages=new CPagination($count);
